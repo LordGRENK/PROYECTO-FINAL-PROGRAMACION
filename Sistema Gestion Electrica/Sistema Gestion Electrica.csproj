@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7E6B74ED-3838-46D4-83D3-06815C7E29CF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Sistema_Gestion_Electrica</RootNamespace>
+    <AssemblyName>Sistema Gestion Electrica</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgregarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarUsuario.Designer.cs">
+      <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CalcularCostos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalcularCostos.Designer.cs">
+      <DependentUpon>CalcularCostos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConteoConsumoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConteoConsumoUsuario.Designer.cs">
+      <DependentUpon>ConteoConsumoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CostoKw_h.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CostoKw_h.Designer.cs">
+      <DependentUpon>CostoKw_h.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarUsuario.Designer.cs">
+      <DependentUpon>EditarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IngresarServicioElectrico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresarServicioElectrico.Designer.cs">
+      <DependentUpon>IngresarServicioElectrico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IngresarServicioUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresarServicioUsuario.Designer.cs">
+      <DependentUpon>IngresarServicioUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaPrincipal.Designer.cs">
+      <DependentUpon>PaginaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AgregarUsuario.resx">
+      <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CalcularCostos.resx">
+      <DependentUpon>CalcularCostos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConteoConsumoUsuario.resx">
+      <DependentUpon>ConteoConsumoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CostoKw_h.resx">
+      <DependentUpon>CostoKw_h.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarUsuario.resx">
+      <DependentUpon>EditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngresarServicioElectrico.resx">
+      <DependentUpon>IngresarServicioElectrico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngresarServicioUsuario.resx">
+      <DependentUpon>IngresarServicioUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaPrincipal.resx">
+      <DependentUpon>PaginaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
