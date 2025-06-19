@@ -33,8 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +58,9 @@
     </Compile>
     <Compile Include="AgregarUsuario.Designer.cs">
       <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="agregarUsuarioTabla.cs">
+      <DependentUpon>GiselDB.tt</DependentUpon>
     </Compile>
     <Compile Include="CalcularCostos.cs">
       <SubType>Form</SubType>
@@ -75,6 +85,21 @@
     </Compile>
     <Compile Include="EditarUsuario.Designer.cs">
       <DependentUpon>EditarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GiselDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GiselDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GiselDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GiselDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GiselDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GiselDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="IngresarServicioElectrico.cs">
       <SubType>Form</SubType>
@@ -138,6 +163,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="GiselDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GiselDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="GiselDB.edmx.diagram">
+      <DependentUpon>GiselDB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -150,6 +183,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GiselDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GiselDB.Context.cs</LastGenOutput>
+      <DependentUpon>GiselDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="GiselDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GiselDB.edmx</DependentUpon>
+      <LastGenOutput>GiselDB.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

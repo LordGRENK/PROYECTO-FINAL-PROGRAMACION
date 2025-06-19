@@ -30,6 +30,10 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.uSUARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ingresarServicioAUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calcularCostoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gESTIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarCostoKwhDelMesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarConteoConsumoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,10 +41,6 @@
             this.lOGINToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ingresarServicioAUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.calcularCostoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@
             this.lOGINToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(871, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -66,6 +66,34 @@
             this.uSUARIOToolStripMenuItem.Name = "uSUARIOToolStripMenuItem";
             this.uSUARIOToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.uSUARIOToolStripMenuItem.Text = "USUARIO";
+            // 
+            // agregarUsuarioToolStripMenuItem
+            // 
+            this.agregarUsuarioToolStripMenuItem.Name = "agregarUsuarioToolStripMenuItem";
+            this.agregarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.agregarUsuarioToolStripMenuItem.Text = "Agregar Usuario";
+            this.agregarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.agregarUsuarioToolStripMenuItem_Click);
+            // 
+            // ingresarServicioAUsuarioToolStripMenuItem
+            // 
+            this.ingresarServicioAUsuarioToolStripMenuItem.Name = "ingresarServicioAUsuarioToolStripMenuItem";
+            this.ingresarServicioAUsuarioToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.ingresarServicioAUsuarioToolStripMenuItem.Text = "Ingresar Servicio a Usuario";
+            this.ingresarServicioAUsuarioToolStripMenuItem.Click += new System.EventHandler(this.ingresarServicioAUsuarioToolStripMenuItem_Click);
+            // 
+            // calcularCostoUsuarioToolStripMenuItem
+            // 
+            this.calcularCostoUsuarioToolStripMenuItem.Name = "calcularCostoUsuarioToolStripMenuItem";
+            this.calcularCostoUsuarioToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.calcularCostoUsuarioToolStripMenuItem.Text = "Calcular Costo Usuario";
+            this.calcularCostoUsuarioToolStripMenuItem.Click += new System.EventHandler(this.calcularCostoUsuarioToolStripMenuItem_Click);
+            // 
+            // editarUsuarioToolStripMenuItem
+            // 
+            this.editarUsuarioToolStripMenuItem.Name = "editarUsuarioToolStripMenuItem";
+            this.editarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.editarUsuarioToolStripMenuItem.Text = "Ver Usuario";
+            this.editarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.editarUsuarioToolStripMenuItem_Click);
             // 
             // gESTIONToolStripMenuItem
             // 
@@ -121,39 +149,11 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // agregarUsuarioToolStripMenuItem
-            // 
-            this.agregarUsuarioToolStripMenuItem.Name = "agregarUsuarioToolStripMenuItem";
-            this.agregarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.agregarUsuarioToolStripMenuItem.Text = "Agregar Usuario";
-            this.agregarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.agregarUsuarioToolStripMenuItem_Click);
-            // 
-            // ingresarServicioAUsuarioToolStripMenuItem
-            // 
-            this.ingresarServicioAUsuarioToolStripMenuItem.Name = "ingresarServicioAUsuarioToolStripMenuItem";
-            this.ingresarServicioAUsuarioToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.ingresarServicioAUsuarioToolStripMenuItem.Text = "Ingresar Servicio a Usuario";
-            this.ingresarServicioAUsuarioToolStripMenuItem.Click += new System.EventHandler(this.ingresarServicioAUsuarioToolStripMenuItem_Click);
-            // 
-            // calcularCostoUsuarioToolStripMenuItem
-            // 
-            this.calcularCostoUsuarioToolStripMenuItem.Name = "calcularCostoUsuarioToolStripMenuItem";
-            this.calcularCostoUsuarioToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.calcularCostoUsuarioToolStripMenuItem.Text = "Calcular Costo Usuario";
-            this.calcularCostoUsuarioToolStripMenuItem.Click += new System.EventHandler(this.calcularCostoUsuarioToolStripMenuItem_Click);
-            // 
-            // editarUsuarioToolStripMenuItem
-            // 
-            this.editarUsuarioToolStripMenuItem.Name = "editarUsuarioToolStripMenuItem";
-            this.editarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.editarUsuarioToolStripMenuItem.Text = "Ver Usuario";
-            this.editarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.editarUsuarioToolStripMenuItem_Click);
-            // 
             // PaginaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(871, 543);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
