@@ -34,11 +34,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnSubiryGuardar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.tbIdUsuario = new System.Windows.Forms.TextBox();
+            this.cbServicios = new System.Windows.Forms.ComboBox();
+            this.cbVoltaje = new System.Windows.Forms.ComboBox();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
-            this.btnBuscarNis = new System.Windows.Forms.Button();
+            this.btnBuscarId = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -56,12 +56,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(40, 64);
+            this.label1.Location = new System.Drawing.Point(129, 72);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(232, 28);
+            this.label1.Size = new System.Drawing.Size(143, 28);
             this.label1.TabIndex = 13;
-            this.label1.Text = "Ingrese su numero NIS:";
+            this.label1.Text = "Ingrese su ID:";
             // 
             // lblUsuario
             // 
@@ -108,28 +108,28 @@
             this.btnSubiryGuardar.Text = "SUBIR Y GUARDAR";
             this.btnSubiryGuardar.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // tbIdUsuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(281, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 19;
+            this.tbIdUsuario.Location = new System.Drawing.Point(281, 72);
+            this.tbIdUsuario.Name = "tbIdUsuario";
+            this.tbIdUsuario.Size = new System.Drawing.Size(100, 20);
+            this.tbIdUsuario.TabIndex = 19;
             // 
-            // comboBox1
+            // cbServicios
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(281, 159);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 22;
+            this.cbServicios.FormattingEnabled = true;
+            this.cbServicios.Location = new System.Drawing.Point(281, 159);
+            this.cbServicios.Name = "cbServicios";
+            this.cbServicios.Size = new System.Drawing.Size(121, 21);
+            this.cbServicios.TabIndex = 22;
             // 
-            // comboBox2
+            // cbVoltaje
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(281, 199);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 23;
+            this.cbVoltaje.FormattingEnabled = true;
+            this.cbVoltaje.Location = new System.Drawing.Point(281, 199);
+            this.cbVoltaje.Name = "cbVoltaje";
+            this.cbVoltaje.Size = new System.Drawing.Size(121, 21);
+            this.cbVoltaje.TabIndex = 23;
             // 
             // lblNombreUsuario
             // 
@@ -143,28 +143,29 @@
             this.lblNombreUsuario.Text = "Usuario";
             this.lblNombreUsuario.Click += new System.EventHandler(this.label7_Click);
             // 
-            // btnBuscarNis
+            // btnBuscarId
             // 
-            this.btnBuscarNis.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuscarNis.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarNis.Location = new System.Drawing.Point(397, 67);
-            this.btnBuscarNis.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBuscarNis.Name = "btnBuscarNis";
-            this.btnBuscarNis.Size = new System.Drawing.Size(104, 28);
-            this.btnBuscarNis.TabIndex = 26;
-            this.btnBuscarNis.Text = "BUSCAR";
-            this.btnBuscarNis.UseVisualStyleBackColor = true;
+            this.btnBuscarId.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscarId.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarId.Location = new System.Drawing.Point(397, 67);
+            this.btnBuscarId.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscarId.Name = "btnBuscarId";
+            this.btnBuscarId.Size = new System.Drawing.Size(104, 28);
+            this.btnBuscarId.TabIndex = 26;
+            this.btnBuscarId.Text = "BUSCAR";
+            this.btnBuscarId.UseVisualStyleBackColor = true;
+            this.btnBuscarId.Click += new System.EventHandler(this.btnBuscarId_Click);
             // 
             // IngresarServicioUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 304);
-            this.Controls.Add(this.btnBuscarNis);
+            this.Controls.Add(this.btnBuscarId);
             this.Controls.Add(this.lblNombreUsuario);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cbVoltaje);
+            this.Controls.Add(this.cbServicios);
+            this.Controls.Add(this.tbIdUsuario);
             this.Controls.Add(this.btnSubiryGuardar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
@@ -186,10 +187,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnSubiryGuardar;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox tbIdUsuario;
+        private System.Windows.Forms.ComboBox cbServicios;
+        private System.Windows.Forms.ComboBox cbVoltaje;
         private System.Windows.Forms.Label lblNombreUsuario;
-        private System.Windows.Forms.Button btnBuscarNis;
+        private System.Windows.Forms.Button btnBuscarId;
     }
 }
