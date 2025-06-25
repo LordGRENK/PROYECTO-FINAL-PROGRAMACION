@@ -31,7 +31,6 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnSubiryGuardar = new System.Windows.Forms.Button();
@@ -39,7 +38,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
-            this.lblNombreCompañia = new System.Windows.Forms.Label();
             this.btnBuscarNis = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -69,23 +67,12 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(179, 95);
+            this.lblUsuario.Location = new System.Drawing.Point(179, 111);
             this.lblUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(93, 28);
             this.lblUsuario.TabIndex = 14;
             this.lblUsuario.Text = "Usuario:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(159, 124);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 28);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Compañia:";
             // 
             // label4
             // 
@@ -148,24 +135,13 @@
             // 
             this.lblNombreUsuario.AutoSize = true;
             this.lblNombreUsuario.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreUsuario.Location = new System.Drawing.Point(276, 95);
+            this.lblNombreUsuario.Location = new System.Drawing.Point(276, 111);
             this.lblNombreUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
             this.lblNombreUsuario.Size = new System.Drawing.Size(86, 28);
             this.lblNombreUsuario.TabIndex = 24;
             this.lblNombreUsuario.Text = "Usuario";
             this.lblNombreUsuario.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // lblNombreCompañia
-            // 
-            this.lblNombreCompañia.AutoSize = true;
-            this.lblNombreCompañia.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreCompañia.Location = new System.Drawing.Point(276, 124);
-            this.lblNombreCompañia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblNombreCompañia.Name = "lblNombreCompañia";
-            this.lblNombreCompañia.Size = new System.Drawing.Size(106, 28);
-            this.lblNombreCompañia.TabIndex = 25;
-            this.lblNombreCompañia.Text = "Compañia";
             // 
             // btnBuscarNis
             // 
@@ -185,7 +161,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 304);
             this.Controls.Add(this.btnBuscarNis);
-            this.Controls.Add(this.lblNombreCompañia);
             this.Controls.Add(this.lblNombreUsuario);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
@@ -193,7 +168,6 @@
             this.Controls.Add(this.btnSubiryGuardar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTitulo);
@@ -209,7 +183,6 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnSubiryGuardar;
@@ -217,7 +190,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label lblNombreUsuario;
-        private System.Windows.Forms.Label lblNombreCompañia;
         private System.Windows.Forms.Button btnBuscarNis;
     }
 }

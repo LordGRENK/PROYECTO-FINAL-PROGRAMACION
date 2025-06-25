@@ -40,7 +40,56 @@ namespace Sistema_Gestion_Electrica
             var agregarUsuario = new AgregarUsuario();
             agregarUsuario.MdiParent = PaginaPrincipal.ActiveForm; // Establece el formulario padre como la página principal
             agregarUsuario.Show();
-            gvUsuariosGisel.DataSource = _bd.agregarUsuarioTabla.ToList(); // Actualiza la lista de usuarios después de agregar uno nuevo
+           
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var eliminarUsuario = gvUsuariosGisel.SelectedRows.Cast<DataGridViewRow>().FirstOrDefault();
+            if (eliminarUsuario != null)
+            {
+                int idUsuario = Convert.ToInt32(eliminarUsuario.Cells["id"].Value);
+                var usuario = _bd.agregarUsuarioTabla.Find(idUsuario);
+                if (usuario != null)
+                {
+                    _bd.agregarUsuarioTabla.Remove(usuario);
+                    _bd.SaveChanges();
+                    MessageBox.Show("Usuario eliminado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    gvUsuariosGisel.DataSource = _bd.agregarUsuarioTabla.ToList(); // Actualiza la lista de usuarios después de eliminar uno
+                }
+                else
+                {
+                    MessageBox.Show("Usuario no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un usuario para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var editarUsuario = gvUsuariosGisel.SelectedRows.Cast<DataGridViewRow>().FirstOrDefault();
+            if (editarUsuario != null)
+            {
+                int idUsuario = Convert.ToInt32(editarUsuario.Cells["id"].Value);
+                var usuario = _bd.agregarUsuarioTabla.Find(idUsuario);
+                if (usuario != null)
+                {
+                    var agregarUsuario = new AgregarUsuario(usuario); // Pasa el usuario seleccionado al formulario de agregar/editar
+                    agregarUsuario.MdiParent = PaginaPrincipal.ActiveForm; // Establece el formulario padre como la página principal
+                    agregarUsuario.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un usuario para editar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
