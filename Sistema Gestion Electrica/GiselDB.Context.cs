@@ -26,5 +26,6 @@ namespace Sistema_Gestion_Electrica
         }
     
         public DbSet<agregarUsuarioTabla> agregarUsuarioTabla { get; set; }
+        public DbSet<agregarServicioEléctrico> agregarServicioEléctrico { get; set; }
     }
 }

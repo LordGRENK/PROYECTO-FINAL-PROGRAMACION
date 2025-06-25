@@ -51,12 +51,7 @@ namespace Sistema_Gestion_Electrica
             ingresarServicio.Show();
         }
 
-        private void agregarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var agregarUsuario = new AgregarUsuario();
-            agregarUsuario.MdiParent = this;
-            agregarUsuario.Show();
-        }
+
 
         private void ingresarServicioAUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {

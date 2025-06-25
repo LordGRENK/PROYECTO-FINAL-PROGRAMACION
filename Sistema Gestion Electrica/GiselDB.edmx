@@ -4,7 +4,16 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="GISELModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="GISELModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="agregarServicioEléctrico">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombredelServicio" Type="nchar" MaxLength="20" />
+          <Property Name="estadodelServicio" Type="nchar" MaxLength="10" />
+          <Property Name="compañiadelServicio" Type="nchar" MaxLength="20" />
+        </EntityType>
         <EntityType Name="agregarUsuarioTabla">
           <Key>
             <PropertyRef Name="id" />
@@ -16,10 +25,10 @@
           <Property Name="emailUsuario" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <EntityContainer Name="GISELModelStoreContainer">
+          <EntitySet Name="agregarServicioEléctrico" EntityType="Self.agregarServicioEléctrico" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="agregarUsuarioTabla" EntityType="Self.agregarUsuarioTabla" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GISELModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -35,7 +44,17 @@
         </EntityType>
         <EntityContainer Name="GISELEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="agregarUsuarioTabla" EntityType="Self.agregarUsuarioTabla" />
+          <EntitySet Name="agregarServicioEléctrico" EntityType="GISELModel.agregarServicioEléctrico" />
         </EntityContainer>
+        <EntityType Name="agregarServicioEléctrico">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombredelServicio" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="estadodelServicio" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="compañiadelServicio" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -50,6 +69,16 @@
                 <ScalarProperty Name="direccionUsuario" ColumnName="direccionUsuario" />
                 <ScalarProperty Name="telefonoUsuario" ColumnName="telefonoUsuario" />
                 <ScalarProperty Name="emailUsuario" ColumnName="emailUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="agregarServicioEléctrico">
+            <EntityTypeMapping TypeName="GISELModel.agregarServicioEléctrico">
+              <MappingFragment StoreEntitySet="agregarServicioEléctrico">
+                <ScalarProperty Name="compañiadelServicio" ColumnName="compañiadelServicio" />
+                <ScalarProperty Name="estadodelServicio" ColumnName="estadodelServicio" />
+                <ScalarProperty Name="nombredelServicio" ColumnName="nombredelServicio" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

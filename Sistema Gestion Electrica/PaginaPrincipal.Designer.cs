@@ -30,7 +30,6 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.uSUARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarServicioAUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calcularCostoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,20 +58,12 @@
             // uSUARIOToolStripMenuItem
             // 
             this.uSUARIOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarUsuarioToolStripMenuItem,
+            this.editarUsuarioToolStripMenuItem,
             this.ingresarServicioAUsuarioToolStripMenuItem,
-            this.calcularCostoUsuarioToolStripMenuItem,
-            this.editarUsuarioToolStripMenuItem});
+            this.calcularCostoUsuarioToolStripMenuItem});
             this.uSUARIOToolStripMenuItem.Name = "uSUARIOToolStripMenuItem";
             this.uSUARIOToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.uSUARIOToolStripMenuItem.Text = "USUARIO";
-            // 
-            // agregarUsuarioToolStripMenuItem
-            // 
-            this.agregarUsuarioToolStripMenuItem.Name = "agregarUsuarioToolStripMenuItem";
-            this.agregarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.agregarUsuarioToolStripMenuItem.Text = "Agregar Usuario";
-            this.agregarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.agregarUsuarioToolStripMenuItem_Click);
             // 
             // ingresarServicioAUsuarioToolStripMenuItem
             // 
@@ -177,7 +168,6 @@
         private System.Windows.Forms.ToolStripMenuItem agregarCostoKwhDelMesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarConteoConsumoUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingresarServicioElectricoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem agregarUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingresarServicioAUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem calcularCostoUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarUsuarioToolStripMenuItem;

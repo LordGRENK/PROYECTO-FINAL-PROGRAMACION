@@ -53,6 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="agregarServicioEléctrico.cs">
+      <DependentUpon>GiselDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="AgregarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
