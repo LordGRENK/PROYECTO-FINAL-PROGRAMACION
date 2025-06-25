@@ -24,9 +24,19 @@
           <Property Name="telefonoUsuario" Type="nvarchar" MaxLength="200" />
           <Property Name="emailUsuario" Type="nvarchar" MaxLength="200" />
         </EntityType>
+        <EntityType Name="ingresarServicio">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usuarioServicio" Type="nchar" MaxLength="50" />
+          <Property Name="servicioAnexado" Type="nchar" MaxLength="50" />
+          <Property Name="voltajeServicio" Type="nchar" MaxLength="10" />
+        </EntityType>
         <EntityContainer Name="GISELModelStoreContainer">
           <EntitySet Name="agregarServicioEléctrico" EntityType="Self.agregarServicioEléctrico" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="agregarUsuarioTabla" EntityType="Self.agregarUsuarioTabla" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ingresarServicio" EntityType="Self.ingresarServicio" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -45,6 +55,7 @@
         <EntityContainer Name="GISELEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="agregarUsuarioTabla" EntityType="Self.agregarUsuarioTabla" />
           <EntitySet Name="agregarServicioEléctrico" EntityType="GISELModel.agregarServicioEléctrico" />
+          <EntitySet Name="ingresarServicio" EntityType="GISELModel.ingresarServicio" />
         </EntityContainer>
         <EntityType Name="agregarServicioEléctrico">
           <Key>
@@ -54,6 +65,15 @@
           <Property Name="nombredelServicio" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="estadodelServicio" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="compañiadelServicio" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ingresarServicio">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usuarioServicio" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="servicioAnexado" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="voltajeServicio" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -78,6 +98,16 @@
                 <ScalarProperty Name="compañiadelServicio" ColumnName="compañiadelServicio" />
                 <ScalarProperty Name="estadodelServicio" ColumnName="estadodelServicio" />
                 <ScalarProperty Name="nombredelServicio" ColumnName="nombredelServicio" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ingresarServicio">
+            <EntityTypeMapping TypeName="GISELModel.ingresarServicio">
+              <MappingFragment StoreEntitySet="ingresarServicio">
+                <ScalarProperty Name="voltajeServicio" ColumnName="voltajeServicio" />
+                <ScalarProperty Name="servicioAnexado" ColumnName="servicioAnexado" />
+                <ScalarProperty Name="usuarioServicio" ColumnName="usuarioServicio" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

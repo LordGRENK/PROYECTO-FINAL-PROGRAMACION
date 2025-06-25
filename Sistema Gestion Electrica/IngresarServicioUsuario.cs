@@ -18,6 +18,14 @@ namespace Sistema_Gestion_Electrica
             InitializeComponent();
             _bd = new GISELEntities(); // Inicializa la instancia de GISELEntities
 
+            // Llenar ComboBox de servicios
+            var servicios = _bd.agregarServicioEléctrico
+                .Select(s => s.nombredelServicio)
+                .ToList();
+            cbServicios.DataSource = servicios;
+
+            // Llenar ComboBox de voltaje (puedes ajustar los valores según tu necesidad)
+            cbVoltaje.Items.AddRange(new string[] { "110V", "220V", "440V" });
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -43,6 +51,20 @@ namespace Sistema_Gestion_Electrica
             {
                 lblNombreUsuario.Text = "ID inválido";
             }
+        }
+
+        private void btnSubiryGuardar_Click(object sender, EventArgs e)
+        {
+            var agregarServicio = new ingresarServicio
+            {
+
+                usuarioServicio = lblNombreUsuario.Text,
+                servicioAnexado = cbVoltaje.SelectedItem.ToString(), 
+                voltajeServicio = cbVoltaje.Text
+            }; 
+            _bd.ingresarServicio.Add(agregarServicio); // Agrega el nuevo servicio a la base de datos
+            _bd.SaveChanges();
+            MessageBox.Show("Usuario agregado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

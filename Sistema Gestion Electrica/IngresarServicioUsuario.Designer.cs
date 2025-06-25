@@ -100,13 +100,14 @@
             // 
             this.btnSubiryGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSubiryGuardar.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubiryGuardar.Location = new System.Drawing.Point(93, 255);
+            this.btnSubiryGuardar.Location = new System.Drawing.Point(102, 239);
             this.btnSubiryGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubiryGuardar.Name = "btnSubiryGuardar";
             this.btnSubiryGuardar.Size = new System.Drawing.Size(320, 35);
             this.btnSubiryGuardar.TabIndex = 18;
             this.btnSubiryGuardar.Text = "SUBIR Y GUARDAR";
             this.btnSubiryGuardar.UseVisualStyleBackColor = true;
+            this.btnSubiryGuardar.Click += new System.EventHandler(this.btnSubiryGuardar_Click);
             // 
             // tbIdUsuario
             // 
@@ -117,6 +118,7 @@
             // 
             // cbServicios
             // 
+            this.cbServicios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbServicios.FormattingEnabled = true;
             this.cbServicios.Location = new System.Drawing.Point(281, 159);
             this.cbServicios.Name = "cbServicios";
@@ -125,6 +127,7 @@
             // 
             // cbVoltaje
             // 
+            this.cbVoltaje.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbVoltaje.FormattingEnabled = true;
             this.cbVoltaje.Location = new System.Drawing.Point(281, 199);
             this.cbVoltaje.Name = "cbVoltaje";

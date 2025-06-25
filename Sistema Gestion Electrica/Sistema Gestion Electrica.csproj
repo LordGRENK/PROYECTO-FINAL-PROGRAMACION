@@ -104,6 +104,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GiselDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ingresarServicio.cs">
+      <DependentUpon>GiselDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="IngresarServicioElectrico.cs">
       <SubType>Form</SubType>
     </Compile>
