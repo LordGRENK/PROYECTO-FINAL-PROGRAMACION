@@ -91,5 +91,15 @@ namespace Sistema_Gestion_Electrica
                 MessageBox.Show("Por favor, seleccione un usuario para editar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void lblVerUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close(); // Cierra el formulario actual
+        }
     }
 }

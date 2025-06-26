@@ -96,7 +96,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 28);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Telefono:";
+            this.label3.Text = "Teléfono:";
             // 
             // label2
             // 
@@ -107,7 +107,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 28);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Direccion:";
+            this.label2.Text = "Dirección:";
             // 
             // label1
             // 
@@ -127,9 +127,9 @@
             this.label4.Location = new System.Drawing.Point(2, 177);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 28);
+            this.label4.Size = new System.Drawing.Size(75, 28);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Email";
+            this.label4.Text = "Email:";
             // 
             // tbTelefonoUsuario
             // 
@@ -142,7 +142,7 @@
             // 
             this.lbTitulo.AutoSize = true;
             this.lbTitulo.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.Location = new System.Drawing.Point(140, 21);
+            this.lbTitulo.Location = new System.Drawing.Point(135, 9);
             this.lbTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTitulo.Name = "lbTitulo";
             this.lbTitulo.Size = new System.Drawing.Size(259, 28);
@@ -153,7 +153,7 @@
             // 
             this.btnGuardarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardarUsuario.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarUsuario.Location = new System.Drawing.Point(38, 295);
+            this.btnGuardarUsuario.Location = new System.Drawing.Point(31, 295);
             this.btnGuardarUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardarUsuario.Name = "btnGuardarUsuario";
             this.btnGuardarUsuario.Size = new System.Drawing.Size(238, 35);
@@ -166,7 +166,7 @@
             // 
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancelar.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(280, 295);
+            this.btnCancelar.Location = new System.Drawing.Point(273, 295);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(238, 35);
@@ -179,7 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(551, 450);
+            this.ClientSize = new System.Drawing.Size(551, 353);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardarUsuario);
             this.Controls.Add(this.lbTitulo);

@@ -36,9 +36,9 @@
             this.btnSubiryGuardar = new System.Windows.Forms.Button();
             this.tbIdUsuario = new System.Windows.Forms.TextBox();
             this.cbServicios = new System.Windows.Forms.ComboBox();
-            this.cbVoltaje = new System.Windows.Forms.ComboBox();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.btnBuscarId = new System.Windows.Forms.Button();
+            this.lblEscrituraVoltaje = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -48,9 +48,9 @@
             this.lblTitulo.Location = new System.Drawing.Point(48, 9);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(456, 47);
+            this.lblTitulo.Size = new System.Drawing.Size(437, 47);
             this.lblTitulo.TabIndex = 12;
-            this.lblTitulo.Text = "Designar Servicio a Usuario";
+            this.lblTitulo.Text = "Asignar Servicio a Usuario";
             // 
             // label1
             // 
@@ -83,7 +83,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(261, 28);
             this.label4.TabIndex = 16;
-            this.label4.Text = "Que servicio desea anexar:";
+            this.label4.Text = "Qué servicio desea anexar:";
             // 
             // label6
             // 
@@ -125,15 +125,6 @@
             this.cbServicios.Size = new System.Drawing.Size(121, 21);
             this.cbServicios.TabIndex = 22;
             // 
-            // cbVoltaje
-            // 
-            this.cbVoltaje.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbVoltaje.FormattingEnabled = true;
-            this.cbVoltaje.Location = new System.Drawing.Point(281, 199);
-            this.cbVoltaje.Name = "cbVoltaje";
-            this.cbVoltaje.Size = new System.Drawing.Size(121, 21);
-            this.cbVoltaje.TabIndex = 23;
-            // 
             // lblNombreUsuario
             // 
             this.lblNombreUsuario.AutoSize = true;
@@ -159,14 +150,24 @@
             this.btnBuscarId.UseVisualStyleBackColor = true;
             this.btnBuscarId.Click += new System.EventHandler(this.btnBuscarId_Click);
             // 
+            // lblEscrituraVoltaje
+            // 
+            this.lblEscrituraVoltaje.AutoSize = true;
+            this.lblEscrituraVoltaje.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEscrituraVoltaje.Location = new System.Drawing.Point(276, 192);
+            this.lblEscrituraVoltaje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEscrituraVoltaje.Name = "lblEscrituraVoltaje";
+            this.lblEscrituraVoltaje.Size = new System.Drawing.Size(0, 28);
+            this.lblEscrituraVoltaje.TabIndex = 27;
+            // 
             // IngresarServicioUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 304);
+            this.Controls.Add(this.lblEscrituraVoltaje);
             this.Controls.Add(this.btnBuscarId);
             this.Controls.Add(this.lblNombreUsuario);
-            this.Controls.Add(this.cbVoltaje);
             this.Controls.Add(this.cbServicios);
             this.Controls.Add(this.tbIdUsuario);
             this.Controls.Add(this.btnSubiryGuardar);
@@ -176,7 +177,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTitulo);
             this.Name = "IngresarServicioUsuario";
-            this.Text = "IngresarServicioUsuario";
+            this.Text = "AsignarServicioUsuario";
+            this.Load += new System.EventHandler(this.IngresarServicioUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,8 +194,8 @@
         private System.Windows.Forms.Button btnSubiryGuardar;
         private System.Windows.Forms.TextBox tbIdUsuario;
         private System.Windows.Forms.ComboBox cbServicios;
-        private System.Windows.Forms.ComboBox cbVoltaje;
         private System.Windows.Forms.Label lblNombreUsuario;
         private System.Windows.Forms.Button btnBuscarId;
+        private System.Windows.Forms.Label lblEscrituraVoltaje;
     }
 }

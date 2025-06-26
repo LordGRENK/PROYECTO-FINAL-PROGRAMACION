@@ -18,5 +18,6 @@ namespace Sistema_Gestion_Electrica
         public string nombredelServicio { get; set; }
         public string estadodelServicio { get; set; }
         public string compañiadelServicio { get; set; }
+        public Nullable<int> voltajedelServicio { get; set; }
     }
 }

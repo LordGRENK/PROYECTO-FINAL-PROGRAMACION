@@ -73,5 +73,15 @@ namespace Sistema_Gestion_Electrica
             editarUsuario.MdiParent = this;
             editarUsuario.Show();
         }
+
+        private void gESTIONToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PaginaPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

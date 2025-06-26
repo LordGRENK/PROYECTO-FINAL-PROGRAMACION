@@ -25,9 +25,10 @@ namespace Sistema_Gestion_Electrica
         }
         private void llenarCampos(IngresarServicioElectrico ingresarServicioElectrico)
         {
-            tbIngresarServicioEléctrico = ingresarServicioElectrico.tbIngresarServicioEléctrico; // Asignar valores a los campos de texto
+            tbIngresarServicioEléctrico = ingresarServicioElectrico.tbCompañiaEléctrica; // Asignar valores a los campos de texto
             tbCompañiaEléctrica = ingresarServicioElectrico.tbCompañiaEléctrica;
             gbEstadodelServicio = ingresarServicioElectrico.gbEstadodelServicio;
+            tbVoltajeServicio = ingresarServicioElectrico.tbVoltajeServicio;
         }
 
         private void btnGuardarServicio_Click(object sender, EventArgs e)
@@ -37,7 +38,8 @@ namespace Sistema_Gestion_Electrica
             {
                 nombredelServicio = tbIngresarServicioEléctrico.Text,
                 estadodelServicio = estado,
-                compañiadelServicio = tbCompañiaEléctrica.Text
+                compañiadelServicio = tbCompañiaEléctrica.Text,
+                voltajedelServicio = Convert.ToInt32(tbVoltajeServicio.Text)
             };
             _bd.agregarServicioEléctrico.Add(ingresarServicioElectrico);
             _bd.SaveChanges();
@@ -51,6 +53,11 @@ namespace Sistema_Gestion_Electrica
         }
 
         private void rbActivo_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IngresarServicioElectrico_Load(object sender, EventArgs e)
         {
 
         }

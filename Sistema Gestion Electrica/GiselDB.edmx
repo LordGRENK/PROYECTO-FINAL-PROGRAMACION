@@ -13,6 +13,7 @@
           <Property Name="nombredelServicio" Type="nchar" MaxLength="20" />
           <Property Name="estadodelServicio" Type="nchar" MaxLength="10" />
           <Property Name="compañiadelServicio" Type="nchar" MaxLength="20" />
+          <Property Name="voltajedelServicio" Type="int" />
         </EntityType>
         <EntityType Name="agregarUsuarioTabla">
           <Key>
@@ -54,18 +55,9 @@
         </EntityType>
         <EntityContainer Name="GISELEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="agregarUsuarioTabla" EntityType="Self.agregarUsuarioTabla" />
-          <EntitySet Name="agregarServicioEléctrico" EntityType="GISELModel.agregarServicioEléctrico" />
           <EntitySet Name="ingresarServicio" EntityType="GISELModel.ingresarServicio" />
+          <EntitySet Name="agregarServicioEléctrico" EntityType="GISELModel.agregarServicioEléctrico" />
         </EntityContainer>
-        <EntityType Name="agregarServicioEléctrico">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombredelServicio" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="estadodelServicio" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="compañiadelServicio" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-        </EntityType>
         <EntityType Name="ingresarServicio">
           <Key>
             <PropertyRef Name="id" />
@@ -74,6 +66,16 @@
           <Property Name="usuarioServicio" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="servicioAnexado" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="voltajeServicio" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="agregarServicioEléctrico">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombredelServicio" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="estadodelServicio" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="compañiadelServicio" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="voltajedelServicio" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -92,22 +94,23 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="agregarServicioEléctrico">
-            <EntityTypeMapping TypeName="GISELModel.agregarServicioEléctrico">
-              <MappingFragment StoreEntitySet="agregarServicioEléctrico">
-                <ScalarProperty Name="compañiadelServicio" ColumnName="compañiadelServicio" />
-                <ScalarProperty Name="estadodelServicio" ColumnName="estadodelServicio" />
-                <ScalarProperty Name="nombredelServicio" ColumnName="nombredelServicio" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ingresarServicio">
             <EntityTypeMapping TypeName="GISELModel.ingresarServicio">
               <MappingFragment StoreEntitySet="ingresarServicio">
                 <ScalarProperty Name="voltajeServicio" ColumnName="voltajeServicio" />
                 <ScalarProperty Name="servicioAnexado" ColumnName="servicioAnexado" />
                 <ScalarProperty Name="usuarioServicio" ColumnName="usuarioServicio" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="agregarServicioEléctrico">
+            <EntityTypeMapping TypeName="GISELModel.agregarServicioEléctrico">
+              <MappingFragment StoreEntitySet="agregarServicioEléctrico">
+                <ScalarProperty Name="voltajedelServicio" ColumnName="voltajedelServicio" />
+                <ScalarProperty Name="compañiadelServicio" ColumnName="compañiadelServicio" />
+                <ScalarProperty Name="estadodelServicio" ColumnName="estadodelServicio" />
+                <ScalarProperty Name="nombredelServicio" ColumnName="nombredelServicio" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

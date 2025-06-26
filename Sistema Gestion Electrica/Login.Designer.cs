@@ -39,19 +39,19 @@
             // lbTitulo
             // 
             this.lbTitulo.AutoSize = true;
-            this.lbTitulo.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.Location = new System.Drawing.Point(23, 26);
+            this.lbTitulo.Font = new System.Drawing.Font("Sitka Text", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitulo.Location = new System.Drawing.Point(83, -2);
             this.lbTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(297, 28);
+            this.lbTitulo.Size = new System.Drawing.Size(176, 69);
             this.lbTitulo.TabIndex = 0;
-            this.lbTitulo.Text = "SISTEMA GESTOR ELÉCTRICO";
+            this.lbTitulo.Text = "SIGEL";
             // 
             // lbUsuario
             // 
             this.lbUsuario.AutoSize = true;
             this.lbUsuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUsuario.Location = new System.Drawing.Point(121, 67);
+            this.lbUsuario.Location = new System.Drawing.Point(128, 67);
             this.lbUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbUsuario.Name = "lbUsuario";
             this.lbUsuario.Size = new System.Drawing.Size(77, 21);
@@ -63,11 +63,12 @@
             this.tbUsuario.BackColor = System.Drawing.Color.LightBlue;
             this.tbUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbUsuario.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUsuario.Location = new System.Drawing.Point(95, 92);
-            this.tbUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbUsuario.Location = new System.Drawing.Point(95, 90);
+            this.tbUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.tbUsuario.Name = "tbUsuario";
-            this.tbUsuario.Size = new System.Drawing.Size(129, 23);
+            this.tbUsuario.Size = new System.Drawing.Size(146, 23);
             this.tbUsuario.TabIndex = 2;
+            this.tbUsuario.Text = "admin";
             // 
             // tbContraseña
             // 
@@ -75,17 +76,18 @@
             this.tbContraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbContraseña.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbContraseña.Location = new System.Drawing.Point(95, 151);
-            this.tbContraseña.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbContraseña.Margin = new System.Windows.Forms.Padding(2);
             this.tbContraseña.Name = "tbContraseña";
-            this.tbContraseña.Size = new System.Drawing.Size(129, 23);
+            this.tbContraseña.Size = new System.Drawing.Size(146, 23);
             this.tbContraseña.TabIndex = 4;
+            this.tbContraseña.Text = "password";
             this.tbContraseña.TextChanged += new System.EventHandler(this.tbContraseña_TextChanged);
             // 
             // lbContraseña
             // 
             this.lbContraseña.AutoSize = true;
             this.lbContraseña.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbContraseña.Location = new System.Drawing.Point(104, 128);
+            this.lbContraseña.Location = new System.Drawing.Point(111, 128);
             this.lbContraseña.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbContraseña.Name = "lbContraseña";
             this.lbContraseña.Size = new System.Drawing.Size(111, 21);
@@ -96,10 +98,10 @@
             // 
             this.btnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnIniciarSesion.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIniciarSesion.Location = new System.Drawing.Point(103, 199);
-            this.btnIniciarSesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIniciarSesion.Location = new System.Drawing.Point(112, 179);
+            this.btnIniciarSesion.Margin = new System.Windows.Forms.Padding(2);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
-            this.btnIniciarSesion.Size = new System.Drawing.Size(105, 35);
+            this.btnIniciarSesion.Size = new System.Drawing.Size(116, 35);
             this.btnIniciarSesion.TabIndex = 5;
             this.btnIniciarSesion.Text = "ENTRAR";
             this.btnIniciarSesion.UseVisualStyleBackColor = true;
@@ -118,7 +120,7 @@
             this.Controls.Add(this.lbUsuario);
             this.Controls.Add(this.lbTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.Text = "SIGEL";
             this.ResumeLayout(false);
