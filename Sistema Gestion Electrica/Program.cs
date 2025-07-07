@@ -16,7 +16,7 @@ namespace Sistema_Gestion_Electrica
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new PaginaPrincipal());
         }
     }
 }

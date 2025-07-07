@@ -27,17 +27,15 @@ namespace Sistema_Gestion_Electrica
         {
             tbIngresarServicioEléctrico = ingresarServicioElectrico.tbCompañiaEléctrica; // Asignar valores a los campos de texto
             tbCompañiaEléctrica = ingresarServicioElectrico.tbCompañiaEléctrica;
-            gbEstadodelServicio = ingresarServicioElectrico.gbEstadodelServicio;
             tbVoltajeServicio = ingresarServicioElectrico.tbVoltajeServicio;
         }
 
         private void btnGuardarServicio_Click(object sender, EventArgs e)
         {
-            string estado = rbActivo.Checked ? "Activo" : "Inactivo";
             var ingresarServicioElectrico = new agregarServicioEléctrico
             {
                 nombredelServicio = tbIngresarServicioEléctrico.Text,
-                estadodelServicio = estado,
+                // estadodelServicio eliminado
                 compañiadelServicio = tbCompañiaEléctrica.Text,
                 voltajedelServicio = Convert.ToInt32(tbVoltajeServicio.Text)
             };
@@ -58,6 +56,16 @@ namespace Sistema_Gestion_Electrica
         }
 
         private void IngresarServicioElectrico_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gbEstadodelServicio_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbIngresarServicioEléctrico_TextChanged(object sender, EventArgs e)
         {
 
         }

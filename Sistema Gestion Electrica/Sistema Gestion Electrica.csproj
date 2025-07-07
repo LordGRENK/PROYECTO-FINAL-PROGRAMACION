@@ -54,7 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="agregarServicioEléctrico.cs">
-      <DependentUpon>GiselDB.tt</DependentUpon>
+      <DependentUpon>GiselBD.tt</DependentUpon>
     </Compile>
     <Compile Include="AgregarUsuario.cs">
       <SubType>Form</SubType>
@@ -63,13 +63,16 @@
       <DependentUpon>AgregarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="agregarUsuarioTabla.cs">
-      <DependentUpon>GiselDB.tt</DependentUpon>
+      <DependentUpon>GiselBD.tt</DependentUpon>
     </Compile>
     <Compile Include="CalcularCostos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CalcularCostos.Designer.cs">
       <DependentUpon>CalcularCostos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConteoConsumoTabla.cs">
+      <DependentUpon>GiselBD.tt</DependentUpon>
     </Compile>
     <Compile Include="ConteoConsumoUsuario.cs">
       <SubType>Form</SubType>
@@ -83,29 +86,38 @@
     <Compile Include="CostoKw_h.Designer.cs">
       <DependentUpon>CostoKw_h.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditarUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditarUsuario.Designer.cs">
-      <DependentUpon>EditarUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GiselDB.Context.cs">
+    <Compile Include="GiselBD.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GiselDB.Context.tt</DependentUpon>
+      <DependentUpon>GiselBD.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="GiselDB.cs">
+    <Compile Include="GiselBD.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GiselDB.tt</DependentUpon>
+      <DependentUpon>GiselBD.tt</DependentUpon>
     </Compile>
-    <Compile Include="GiselDB.Designer.cs">
+    <Compile Include="GiselBD.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GiselDB.edmx</DependentUpon>
+      <DependentUpon>GiselBD.edmx</DependentUpon>
     </Compile>
     <Compile Include="ingresarServicio.cs">
-      <DependentUpon>GiselDB.tt</DependentUpon>
+      <DependentUpon>GiselBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrecioKwhPorMes.cs">
+      <DependentUpon>GiselBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VerServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerServicios.Designer.cs">
+      <DependentUpon>VerServicios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerUsuarios.Designer.cs">
+      <DependentUpon>VerUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="IngresarServicioElectrico.cs">
       <SubType>Form</SubType>
@@ -118,12 +130,6 @@
     </Compile>
     <Compile Include="IngresarServicioUsuario.Designer.cs">
       <DependentUpon>IngresarServicioUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="PaginaPrincipal.cs">
       <SubType>Form</SubType>
@@ -145,17 +151,17 @@
     <EmbeddedResource Include="CostoKw_h.resx">
       <DependentUpon>CostoKw_h.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditarUsuario.resx">
-      <DependentUpon>EditarUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="VerServicios.resx">
+      <DependentUpon>VerServicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerUsuarios.resx">
+      <DependentUpon>VerUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IngresarServicioElectrico.resx">
       <DependentUpon>IngresarServicioElectrico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IngresarServicioUsuario.resx">
       <DependentUpon>IngresarServicioUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PaginaPrincipal.resx">
       <DependentUpon>PaginaPrincipal.cs</DependentUpon>
@@ -169,12 +175,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="GiselDB.edmx">
+    <EntityDeploy Include="GiselBD.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>GiselDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>GiselBD.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="GiselDB.edmx.diagram">
-      <DependentUpon>GiselDB.edmx</DependentUpon>
+    <None Include="GiselBD.edmx.diagram">
+      <DependentUpon>GiselBD.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -194,15 +200,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GiselDB.Context.tt">
+    <Content Include="GiselBD.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>GiselDB.Context.cs</LastGenOutput>
-      <DependentUpon>GiselDB.edmx</DependentUpon>
+      <DependentUpon>GiselBD.edmx</DependentUpon>
+      <LastGenOutput>GiselBD.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="GiselDB.tt">
+    <Content Include="GiselBD.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>GiselDB.edmx</DependentUpon>
-      <LastGenOutput>GiselDB.cs</LastGenOutput>
+      <DependentUpon>GiselBD.edmx</DependentUpon>
+      <LastGenOutput>GiselBD.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

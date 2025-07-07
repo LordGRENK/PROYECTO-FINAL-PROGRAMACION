@@ -12,11 +12,12 @@ namespace Sistema_Gestion_Electrica
     using System;
     using System.Collections.Generic;
     
-    public partial class agregarServicioEléctrico
+    public partial class ConteoConsumoTabla
     {
         public int id { get; set; }
-        public string nombredelServicio { get; set; }
-        public string compañiadelServicio { get; set; }
-        public Nullable<int> voltajedelServicio { get; set; }
+        public Nullable<int> NIS { get; set; }
+        public Nullable<int> Año { get; set; }
+        public Nullable<int> Mes { get; set; }
+        public Nullable<double> KilowattsHora { get; set; }
     }
 }

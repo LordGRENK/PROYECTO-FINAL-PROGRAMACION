@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Sistema_Gestion_Electrica
 {
-    public partial class EditarUsuario : Form
+    public partial class VerServicios : Form
     {
-        private readonly GISELEntities _bd;
-        public EditarUsuario()
+        private readonly GISELEntities _bd; // Instancia de la clase agregarUsuarioTabla
+        public VerServicios()
         {
             InitializeComponent();
             _bd = new GISELEntities();
@@ -26,13 +26,16 @@ namespace Sistema_Gestion_Electrica
 
         private void EditarUsuario_Load(object sender, EventArgs e)
         {
-            var usuarios = _bd.agregarUsuarioTabla.ToList();
+            var servicios = _bd.ingresarServicio.ToList(); // Obtiene la lista de servicios eléctricos
+            gvServiciosGisel.DataSource = servicios; // Asigna la lista de servicios al DataGridView
+
+            /*
             gvUsuariosGisel.DataSource = usuarios;
             gvUsuariosGisel.Columns["id"].HeaderText = "ID"; 
             gvUsuariosGisel.Columns["nombreUsuario"].HeaderText = "Nombre de Usuario";
             gvUsuariosGisel.Columns["direccionUsuario"].HeaderText = "Dirección";
             gvUsuariosGisel.Columns["telefonoUsuario"].HeaderText = "Teléfono";
-            gvUsuariosGisel.Columns["emailUsuario"].HeaderText = "Email";
+            gvUsuariosGisel.Columns["emailUsuario"].HeaderText = "Email";*/
         }
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
@@ -45,7 +48,7 @@ namespace Sistema_Gestion_Electrica
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var eliminarUsuario = gvUsuariosGisel.SelectedRows.Cast<DataGridViewRow>().FirstOrDefault();
+            var eliminarUsuario = gvServiciosGisel.SelectedRows.Cast<DataGridViewRow>().FirstOrDefault();
             if (eliminarUsuario != null)
             {
                 int idUsuario = Convert.ToInt32(eliminarUsuario.Cells["id"].Value);
@@ -55,7 +58,7 @@ namespace Sistema_Gestion_Electrica
                     _bd.agregarUsuarioTabla.Remove(usuario);
                     _bd.SaveChanges();
                     MessageBox.Show("Usuario eliminado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    gvUsuariosGisel.DataSource = _bd.agregarUsuarioTabla.ToList(); // Actualiza la lista de usuarios después de eliminar uno
+                    gvServiciosGisel.DataSource = _bd.agregarUsuarioTabla.ToList(); // Actualiza la lista de usuarios después de eliminar uno
                 }
                 else
                 {
@@ -70,7 +73,7 @@ namespace Sistema_Gestion_Electrica
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var editarUsuario = gvUsuariosGisel.SelectedRows.Cast<DataGridViewRow>().FirstOrDefault();
+            var editarUsuario = gvServiciosGisel.SelectedRows.Cast<DataGridViewRow>().FirstOrDefault();
             if (editarUsuario != null)
             {
                 int idUsuario = Convert.ToInt32(editarUsuario.Cells["id"].Value);

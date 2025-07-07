@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GISELModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="agregarServicioEléctrico">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombredelServicio" Type="nchar" MaxLength="20" />
+          <Property Name="compañiadelServicio" Type="nchar" MaxLength="20" />
+          <Property Name="voltajedelServicio" Type="int" />
+        </EntityType>
+        <EntityType Name="agregarUsuarioTabla">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombreUsuario" Type="nvarchar" MaxLength="200" />
+          <Property Name="direccionUsuario" Type="nvarchar" MaxLength="200" />
+          <Property Name="telefonoUsuario" Type="nvarchar" MaxLength="200" />
+          <Property Name="emailUsuario" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="ConteoConsumoTabla">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NIS" Type="int" />
+          <Property Name="Año" Type="int" />
+          <Property Name="Mes" Type="int" />
+          <Property Name="KilowattsHora" Type="float" />
+        </EntityType>
+        <EntityType Name="ingresarServicio">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usuarioServicio" Type="nchar" MaxLength="50" />
+          <Property Name="servicioAnexado" Type="nchar" MaxLength="50" />
+          <Property Name="voltajeServicio" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="PrecioKwhPorMes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Año" Type="int" />
+          <Property Name="Mes" Type="int" />
+          <Property Name="Primeros25kWh" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Siguientes25kWh" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Siguientes50kWh1" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Siguientes50kWh2" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Siguientes350kWh" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Siguientes500kWh" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Adicionalesa1000kWh" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Compañia" Type="char" MaxLength="25" />
+        </EntityType>
+        <EntityContainer Name="GISELModelStoreContainer">
+          <EntitySet Name="agregarServicioEléctrico" EntityType="Self.agregarServicioEléctrico" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="agregarUsuarioTabla" EntityType="Self.agregarUsuarioTabla" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ConteoConsumoTabla" EntityType="Self.ConteoConsumoTabla" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ingresarServicio" EntityType="Self.ingresarServicio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PrecioKwhPorMes" EntityType="Self.PrecioKwhPorMes" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GISELModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="agregarServicioEléctrico">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombredelServicio" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="compañiadelServicio" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="voltajedelServicio" Type="Int32" />
+        </EntityType>
+        <EntityType Name="agregarUsuarioTabla">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreUsuario" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="direccionUsuario" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="telefonoUsuario" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="emailUsuario" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ConteoConsumoTabla">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NIS" Type="Int32" />
+          <Property Name="Año" Type="Int32" />
+          <Property Name="Mes" Type="Int32" />
+          <Property Name="KilowattsHora" Type="Double" />
+        </EntityType>
+        <EntityType Name="ingresarServicio">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usuarioServicio" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="servicioAnexado" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="voltajeServicio" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PrecioKwhPorMes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Año" Type="Int32" />
+          <Property Name="Mes" Type="Int32" />
+          <Property Name="Primeros25kWh" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Siguientes25kWh" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Siguientes50kWh1" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Siguientes50kWh2" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Siguientes350kWh" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Siguientes500kWh" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Adicionalesa1000kWh" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Compañia" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="GISELEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="agregarServicioEléctrico" EntityType="Self.agregarServicioEléctrico" />
+          <EntitySet Name="agregarUsuarioTabla" EntityType="Self.agregarUsuarioTabla" />
+          <EntitySet Name="ConteoConsumoTabla" EntityType="Self.ConteoConsumoTabla" />
+          <EntitySet Name="ingresarServicio" EntityType="Self.ingresarServicio" />
+          <EntitySet Name="PrecioKwhPorMes" EntityType="Self.PrecioKwhPorMes" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GISELModelStoreContainer" CdmEntityContainer="GISELEntities">
+          <EntitySetMapping Name="agregarServicioEléctrico">
+            <EntityTypeMapping TypeName="GISELModel.agregarServicioEléctrico">
+              <MappingFragment StoreEntitySet="agregarServicioEléctrico">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombredelServicio" ColumnName="nombredelServicio" />
+                <ScalarProperty Name="compañiadelServicio" ColumnName="compañiadelServicio" />
+                <ScalarProperty Name="voltajedelServicio" ColumnName="voltajedelServicio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="agregarUsuarioTabla">
+            <EntityTypeMapping TypeName="GISELModel.agregarUsuarioTabla">
+              <MappingFragment StoreEntitySet="agregarUsuarioTabla">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
+                <ScalarProperty Name="direccionUsuario" ColumnName="direccionUsuario" />
+                <ScalarProperty Name="telefonoUsuario" ColumnName="telefonoUsuario" />
+                <ScalarProperty Name="emailUsuario" ColumnName="emailUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConteoConsumoTabla">
+            <EntityTypeMapping TypeName="GISELModel.ConteoConsumoTabla">
+              <MappingFragment StoreEntitySet="ConteoConsumoTabla">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="NIS" ColumnName="NIS" />
+                <ScalarProperty Name="Año" ColumnName="Año" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="KilowattsHora" ColumnName="KilowattsHora" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ingresarServicio">
+            <EntityTypeMapping TypeName="GISELModel.ingresarServicio">
+              <MappingFragment StoreEntitySet="ingresarServicio">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="usuarioServicio" ColumnName="usuarioServicio" />
+                <ScalarProperty Name="servicioAnexado" ColumnName="servicioAnexado" />
+                <ScalarProperty Name="voltajeServicio" ColumnName="voltajeServicio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrecioKwhPorMes">
+            <EntityTypeMapping TypeName="GISELModel.PrecioKwhPorMes">
+              <MappingFragment StoreEntitySet="PrecioKwhPorMes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Año" ColumnName="Año" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Primeros25kWh" ColumnName="Primeros25kWh" />
+                <ScalarProperty Name="Siguientes25kWh" ColumnName="Siguientes25kWh" />
+                <ScalarProperty Name="Siguientes50kWh1" ColumnName="Siguientes50kWh1" />
+                <ScalarProperty Name="Siguientes50kWh2" ColumnName="Siguientes50kWh2" />
+                <ScalarProperty Name="Siguientes350kWh" ColumnName="Siguientes350kWh" />
+                <ScalarProperty Name="Siguientes500kWh" ColumnName="Siguientes500kWh" />
+                <ScalarProperty Name="Adicionalesa1000kWh" ColumnName="Adicionalesa1000kWh" />
+                <ScalarProperty Name="Compañia" ColumnName="Compañia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

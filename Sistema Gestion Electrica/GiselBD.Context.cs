@@ -25,8 +25,10 @@ namespace Sistema_Gestion_Electrica
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<agregarUsuarioTabla> agregarUsuarioTabla { get; set; }
-        public DbSet<ingresarServicio> ingresarServicio { get; set; }
         public DbSet<agregarServicioEléctrico> agregarServicioEléctrico { get; set; }
+        public DbSet<agregarUsuarioTabla> agregarUsuarioTabla { get; set; }
+        public DbSet<ConteoConsumoTabla> ConteoConsumoTabla { get; set; }
+        public DbSet<ingresarServicio> ingresarServicio { get; set; }
+        public DbSet<PrecioKwhPorMes> PrecioKwhPorMes { get; set; }
     }
 }

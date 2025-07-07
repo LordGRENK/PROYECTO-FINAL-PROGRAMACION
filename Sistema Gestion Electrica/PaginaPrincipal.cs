@@ -16,20 +16,6 @@ namespace Sistema_Gestion_Electrica
         {
             InitializeComponent();
         }
-
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit(); // Cierra la aplicación
-            Environment.Exit(0); // Asegura que la aplicación se cierre completamente
-        }
-
-        private void cerrarCToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var login = new Login();
-            login.Show();
-            this.Hide(); // Oculta el formulario de la página principal
-        }
-
         private void agregarCostoKwhDelMesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var costoKw = new CostoKw_h();
@@ -69,7 +55,7 @@ namespace Sistema_Gestion_Electrica
 
         private void editarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var editarUsuario = new EditarUsuario();
+            var editarUsuario = new VerUsuarios();
             editarUsuario.MdiParent = this;
             editarUsuario.Show();
         }
@@ -82,6 +68,19 @@ namespace Sistema_Gestion_Electrica
         private void PaginaPrincipal_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void lOGINToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); // Cierra la aplicación
+            Environment.Exit(0); // Asegura que la aplicación se cierre completamente
+        }
+
+        private void verServiciosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var verServicios = new VerServicios();
+            verServicios.MdiParent = this;
+            verServicios.Show();
         }
     }
 }
