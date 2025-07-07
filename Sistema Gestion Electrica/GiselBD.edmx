@@ -50,13 +50,13 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Año" Type="int" />
           <Property Name="Mes" Type="int" />
-          <Property Name="Primeros25kWh" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="Siguientes25kWh" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="Siguientes50kWh1" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="Siguientes50kWh2" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="Siguientes350kWh" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="Siguientes500kWh" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="Adicionalesa1000kWh" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Primeros25kWh" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="Siguientes25kWh" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="Siguientes50kWh1" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="Siguientes50kWh2" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="Siguientes350kWh" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="Siguientes500kWh" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="Adicionalesa1000kWh" Type="decimal" Precision="18" Scale="4" />
           <Property Name="Compañia" Type="char" MaxLength="25" />
         </EntityType>
         <EntityContainer Name="GISELModelStoreContainer">
@@ -116,13 +116,13 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Año" Type="Int32" />
           <Property Name="Mes" Type="Int32" />
-          <Property Name="Primeros25kWh" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Siguientes25kWh" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Siguientes50kWh1" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Siguientes50kWh2" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Siguientes350kWh" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Siguientes500kWh" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="Adicionalesa1000kWh" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Primeros25kWh" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Siguientes25kWh" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Siguientes50kWh1" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Siguientes50kWh2" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Siguientes350kWh" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Siguientes500kWh" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Adicionalesa1000kWh" Type="Decimal" Precision="18" Scale="4" />
           <Property Name="Compañia" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
         </EntityType>
         <EntityContainer Name="GISELEntities" annotation:LazyLoadingEnabled="true">

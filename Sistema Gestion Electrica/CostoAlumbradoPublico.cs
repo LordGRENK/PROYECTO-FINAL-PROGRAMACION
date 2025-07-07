@@ -10,10 +10,10 @@ using System.Windows.Forms;
 using System.Globalization;
 namespace Sistema_Gestion_Electrica
 {
-    public partial class CostoKw_h : Form
+    public partial class CostoAlumbradoPublico : Form
     {
         private readonly GISELEntities _bd; // Instancia de la clase agregarUsuarioTabla
-        public CostoKw_h()
+        public CostoAlumbradoPublico()
         {
             InitializeComponent();
             _bd = new GISELEntities(); // Inicializa la instancia de agregarUsuarioTabla
@@ -27,17 +27,17 @@ namespace Sistema_Gestion_Electrica
                 cbEmpresa.DataSource = servicios;
             }
         }
-        public CostoKw_h(CostoKw_h costoKw_h)
+        public CostoAlumbradoPublico(CostoAlumbradoPublico costoAlumbradoPublico)
         {
             InitializeComponent();
-            llenarCampos(costoKw_h);
+            llenarCampos(costoAlumbradoPublico);
         }
-        private void llenarCampos(CostoKw_h costoKw_h)
+        private void llenarCampos(CostoAlumbradoPublico costoAlumbradoPublico)
         {
-            nudAño = costoKw_h.nudAño; // Asignar valores a los campos de texto
-            nudMes = costoKw_h.nudMes;
-            tbPrimeros25kWh = costoKw_h.tbPrimeros25kWh;
-            cbEmpresa = costoKw_h.cbEmpresa;
+            nudAño = costoAlumbradoPublico.nudAño; // Asignar valores a los campos de texto
+            nudMes = costoAlumbradoPublico.nudMes;
+            tb0a25kWh = costoAlumbradoPublico.tb0a25kWh;
+            cbEmpresa = costoAlumbradoPublico.cbEmpresa;
         }
         private void lbTitulo_Click(object sender, EventArgs e)
         {
@@ -65,13 +65,13 @@ namespace Sistema_Gestion_Electrica
             {
                 Año = (int)nudAño.Value,
                 Mes = (int)nudMes.Value,
-                Primeros25kWh = decimal.Parse(tbPrimeros25kWh.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
-                Siguientes25kWh = decimal.Parse(tbSig25kWh.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
-                Siguientes50kWh1 = decimal.Parse(tbSig50kWh1.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
-                Siguientes50kWh2 = decimal.Parse(tbSig50kWh2.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
-                Siguientes350kWh = decimal.Parse(tbSig350kWh.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
-                Siguientes500kWh = decimal.Parse(tb500kWh.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
-                Adicionalesa1000kWh = decimal.Parse(tbAdi1000kWh.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
+                Primeros25kWh = decimal.Parse(tb0a25kWh.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
+                Siguientes25kWh = decimal.Parse(tb26a60kWh.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
+                Siguientes50kWh1 = decimal.Parse(tb51s100kWh.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
+                Siguientes50kWh2 = decimal.Parse(tb101a150kWh.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
+                Siguientes350kWh = decimal.Parse(tb151a500kWh.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
+                Siguientes500kWh = decimal.Parse(tb501a1000kWh.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
+                Adicionalesa1000kWh = decimal.Parse(tbMayorde1000kWh.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
                 Compañia = cbEmpresa.SelectedItem.ToString()
             };
             _bd.PrecioKwhPorMes.Add(costoKw_h);
