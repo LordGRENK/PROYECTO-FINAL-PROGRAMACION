@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.lOGINToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uSUARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verServiciosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ingresarServicioAUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calcularCostoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gESTIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarCostoKwhDelMesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarConteoConsumoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarServicioElectricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gESTIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uSUARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.calcularCostoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ingresarServicioAUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verServiciosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lOGINToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarCostoAlumbradoPublicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,12 +56,56 @@
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // lOGINToolStripMenuItem
+            // uSUARIOToolStripMenuItem
             // 
-            this.lOGINToolStripMenuItem.Name = "lOGINToolStripMenuItem";
-            this.lOGINToolStripMenuItem.Size = new System.Drawing.Size(61, 24);
-            this.lOGINToolStripMenuItem.Text = "SALIR";
-            this.lOGINToolStripMenuItem.Click += new System.EventHandler(this.lOGINToolStripMenuItem_Click);
+            this.uSUARIOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editarUsuarioToolStripMenuItem,
+            this.verServiciosToolStripMenuItem1,
+            this.ingresarServicioAUsuarioToolStripMenuItem,
+            this.calcularCostoUsuarioToolStripMenuItem});
+            this.uSUARIOToolStripMenuItem.Name = "uSUARIOToolStripMenuItem";
+            this.uSUARIOToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
+            this.uSUARIOToolStripMenuItem.Text = "USUARIO";
+            // 
+            // editarUsuarioToolStripMenuItem
+            // 
+            this.editarUsuarioToolStripMenuItem.Name = "editarUsuarioToolStripMenuItem";
+            this.editarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
+            this.editarUsuarioToolStripMenuItem.Text = "Ver Usuarios";
+            this.editarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.editarUsuarioToolStripMenuItem_Click);
+            // 
+            // verServiciosToolStripMenuItem1
+            // 
+            this.verServiciosToolStripMenuItem1.Name = "verServiciosToolStripMenuItem1";
+            this.verServiciosToolStripMenuItem1.Size = new System.Drawing.Size(267, 26);
+            this.verServiciosToolStripMenuItem1.Text = "Ver Servicios de Usuarios";
+            this.verServiciosToolStripMenuItem1.Click += new System.EventHandler(this.verServiciosToolStripMenuItem1_Click);
+            // 
+            // ingresarServicioAUsuarioToolStripMenuItem
+            // 
+            this.ingresarServicioAUsuarioToolStripMenuItem.Name = "ingresarServicioAUsuarioToolStripMenuItem";
+            this.ingresarServicioAUsuarioToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
+            this.ingresarServicioAUsuarioToolStripMenuItem.Text = "Ingresar Servicio a Usuario";
+            this.ingresarServicioAUsuarioToolStripMenuItem.Click += new System.EventHandler(this.ingresarServicioAUsuarioToolStripMenuItem_Click);
+            // 
+            // calcularCostoUsuarioToolStripMenuItem
+            // 
+            this.calcularCostoUsuarioToolStripMenuItem.Name = "calcularCostoUsuarioToolStripMenuItem";
+            this.calcularCostoUsuarioToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
+            this.calcularCostoUsuarioToolStripMenuItem.Text = "Calcular Costo Usuario";
+            this.calcularCostoUsuarioToolStripMenuItem.Click += new System.EventHandler(this.calcularCostoUsuarioToolStripMenuItem_Click);
+            // 
+            // gESTIONToolStripMenuItem
+            // 
+            this.gESTIONToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarCostoKwhDelMesToolStripMenuItem,
+            this.agregarCostoAlumbradoPublicoToolStripMenuItem,
+            this.agregarConteoConsumoUsuarioToolStripMenuItem,
+            this.ingresarServicioElectricoToolStripMenuItem});
+            this.gESTIONToolStripMenuItem.Name = "gESTIONToolStripMenuItem";
+            this.gESTIONToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+            this.gESTIONToolStripMenuItem.Text = "GESTIÓN";
+            this.gESTIONToolStripMenuItem.Click += new System.EventHandler(this.gESTIONToolStripMenuItem_Click);
             // 
             // agregarCostoKwhDelMesToolStripMenuItem
             // 
@@ -83,55 +128,19 @@
             this.ingresarServicioElectricoToolStripMenuItem.Text = "Ingresar Servicio Eléctrico";
             this.ingresarServicioElectricoToolStripMenuItem.Click += new System.EventHandler(this.ingresarServicioElectricoToolStripMenuItem_Click);
             // 
-            // gESTIONToolStripMenuItem
+            // lOGINToolStripMenuItem
             // 
-            this.gESTIONToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarCostoKwhDelMesToolStripMenuItem,
-            this.agregarConteoConsumoUsuarioToolStripMenuItem,
-            this.ingresarServicioElectricoToolStripMenuItem});
-            this.gESTIONToolStripMenuItem.Name = "gESTIONToolStripMenuItem";
-            this.gESTIONToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
-            this.gESTIONToolStripMenuItem.Text = "GESTIÓN";
-            this.gESTIONToolStripMenuItem.Click += new System.EventHandler(this.gESTIONToolStripMenuItem_Click);
+            this.lOGINToolStripMenuItem.Name = "lOGINToolStripMenuItem";
+            this.lOGINToolStripMenuItem.Size = new System.Drawing.Size(61, 24);
+            this.lOGINToolStripMenuItem.Text = "SALIR";
+            this.lOGINToolStripMenuItem.Click += new System.EventHandler(this.lOGINToolStripMenuItem_Click);
             // 
-            // uSUARIOToolStripMenuItem
+            // agregarCostoAlumbradoPublicoToolStripMenuItem
             // 
-            this.uSUARIOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editarUsuarioToolStripMenuItem,
-            this.verServiciosToolStripMenuItem1,
-            this.ingresarServicioAUsuarioToolStripMenuItem,
-            this.calcularCostoUsuarioToolStripMenuItem});
-            this.uSUARIOToolStripMenuItem.Name = "uSUARIOToolStripMenuItem";
-            this.uSUARIOToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
-            this.uSUARIOToolStripMenuItem.Text = "USUARIO";
-            // 
-            // calcularCostoUsuarioToolStripMenuItem
-            // 
-            this.calcularCostoUsuarioToolStripMenuItem.Name = "calcularCostoUsuarioToolStripMenuItem";
-            this.calcularCostoUsuarioToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
-            this.calcularCostoUsuarioToolStripMenuItem.Text = "Calcular Costo Usuario";
-            this.calcularCostoUsuarioToolStripMenuItem.Click += new System.EventHandler(this.calcularCostoUsuarioToolStripMenuItem_Click);
-            // 
-            // ingresarServicioAUsuarioToolStripMenuItem
-            // 
-            this.ingresarServicioAUsuarioToolStripMenuItem.Name = "ingresarServicioAUsuarioToolStripMenuItem";
-            this.ingresarServicioAUsuarioToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
-            this.ingresarServicioAUsuarioToolStripMenuItem.Text = "Ingresar Servicio a Usuario";
-            this.ingresarServicioAUsuarioToolStripMenuItem.Click += new System.EventHandler(this.ingresarServicioAUsuarioToolStripMenuItem_Click);
-            // 
-            // verServiciosToolStripMenuItem1
-            // 
-            this.verServiciosToolStripMenuItem1.Name = "verServiciosToolStripMenuItem1";
-            this.verServiciosToolStripMenuItem1.Size = new System.Drawing.Size(267, 26);
-            this.verServiciosToolStripMenuItem1.Text = "Ver Servicios de Usuarios";
-            this.verServiciosToolStripMenuItem1.Click += new System.EventHandler(this.verServiciosToolStripMenuItem1_Click);
-            // 
-            // editarUsuarioToolStripMenuItem
-            // 
-            this.editarUsuarioToolStripMenuItem.Name = "editarUsuarioToolStripMenuItem";
-            this.editarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
-            this.editarUsuarioToolStripMenuItem.Text = "Ver Usuarios";
-            this.editarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.editarUsuarioToolStripMenuItem_Click);
+            this.agregarCostoAlumbradoPublicoToolStripMenuItem.Name = "agregarCostoAlumbradoPublicoToolStripMenuItem";
+            this.agregarCostoAlumbradoPublicoToolStripMenuItem.Size = new System.Drawing.Size(320, 26);
+            this.agregarCostoAlumbradoPublicoToolStripMenuItem.Text = "Agregar Costo Alumbrado Publico";
+            this.agregarCostoAlumbradoPublicoToolStripMenuItem.Click += new System.EventHandler(this.agregarCostoAlumbradoPublicoToolStripMenuItem_Click);
             // 
             // PaginaPrincipal
             // 
@@ -165,5 +174,6 @@
         private System.Windows.Forms.ToolStripMenuItem agregarConteoConsumoUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingresarServicioElectricoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lOGINToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agregarCostoAlumbradoPublicoToolStripMenuItem;
     }
 }

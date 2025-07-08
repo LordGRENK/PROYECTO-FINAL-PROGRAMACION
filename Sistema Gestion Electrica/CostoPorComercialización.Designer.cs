@@ -1,6 +1,6 @@
 ﻿namespace Sistema_Gestion_Electrica
 {
-    partial class CostoAlumbradoPublico
+    partial class CostoPorComercialización
     {
         /// <summary>
         /// Required designer variable.
@@ -48,7 +48,6 @@
             this.tb51s100kWh = new System.Windows.Forms.TextBox();
             this.lbl101a150 = new System.Windows.Forms.Label();
             this.tb101a150kWh = new System.Windows.Forms.TextBox();
-            this.lbl151a500 = new System.Windows.Forms.Label();
             this.tb151a500kWh = new System.Windows.Forms.TextBox();
             this.lbl501a1000 = new System.Windows.Forms.Label();
             this.tb501a1000kWh = new System.Windows.Forms.TextBox();
@@ -57,6 +56,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cbEmpresa = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.lbl151a500 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnAgregarServicio = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -68,11 +68,11 @@
             // 
             this.lbTitulo.AutoSize = true;
             this.lbTitulo.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.Location = new System.Drawing.Point(223, 20);
+            this.lbTitulo.Location = new System.Drawing.Point(174, 20);
             this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(305, 33);
+            this.lbTitulo.Size = new System.Drawing.Size(379, 33);
             this.lbTitulo.TabIndex = 1;
-            this.lbTitulo.Text = "Costo Alumbrado Público";
+            this.lbTitulo.Text = "Costo FIjo por Comercialización";
             this.lbTitulo.Click += new System.EventHandler(this.lbTitulo_Click);
             // 
             // tableLayoutPanel1
@@ -325,16 +325,6 @@
             this.tb101a150kWh.Size = new System.Drawing.Size(132, 22);
             this.tb101a150kWh.TabIndex = 18;
             // 
-            // lbl151a500
-            // 
-            this.lbl151a500.AutoSize = true;
-            this.lbl151a500.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl151a500.Location = new System.Drawing.Point(3, 330);
-            this.lbl151a500.Name = "lbl151a500";
-            this.lbl151a500.Size = new System.Drawing.Size(215, 33);
-            this.lbl151a500.TabIndex = 19;
-            this.lbl151a500.Text = "De 151 a 500 kWh";
-            // 
             // tb151a500kWh
             // 
             this.tb151a500kWh.Location = new System.Drawing.Point(312, 334);
@@ -411,6 +401,16 @@
             this.label5.TabIndex = 25;
             this.label5.Text = "C$";
             // 
+            // lbl151a500
+            // 
+            this.lbl151a500.AutoSize = true;
+            this.lbl151a500.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl151a500.Location = new System.Drawing.Point(3, 330);
+            this.lbl151a500.Name = "lbl151a500";
+            this.lbl151a500.Size = new System.Drawing.Size(215, 33);
+            this.lbl151a500.TabIndex = 19;
+            this.lbl151a500.Text = "De 151 a 500 kWh";
+            // 
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -436,7 +436,7 @@
             this.btnAgregarServicio.UseVisualStyleBackColor = true;
             this.btnAgregarServicio.Click += new System.EventHandler(this.btnAgregarServicio_Click);
             // 
-            // CostoAlumbradoPublico
+            // CostoPorComercialización
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -446,8 +446,8 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lbTitulo);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "CostoAlumbradoPublico";
-            this.Text = "Costo Alumbrado Publico";
+            this.Name = "CostoPorComercialización";
+            this.Text = "Costo FIjo por Comercialización";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMes)).EndInit();

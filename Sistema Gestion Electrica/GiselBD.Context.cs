@@ -29,6 +29,7 @@ namespace Sistema_Gestion_Electrica
         public DbSet<agregarUsuarioTabla> agregarUsuarioTabla { get; set; }
         public DbSet<ConteoConsumoTabla> ConteoConsumoTabla { get; set; }
         public DbSet<ingresarServicio> ingresarServicio { get; set; }
+        public DbSet<PrecioAlumbradoPublico> PrecioAlumbradoPublico { get; set; }
         public DbSet<PrecioKwhPorMes> PrecioKwhPorMes { get; set; }
     }
 }

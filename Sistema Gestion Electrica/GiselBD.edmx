@@ -43,6 +43,22 @@
           <Property Name="servicioAnexado" Type="nchar" MaxLength="50" />
           <Property Name="voltajeServicio" Type="nchar" MaxLength="10" />
         </EntityType>
+        <EntityType Name="PrecioAlumbradoPublico">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Año" Type="int" />
+          <Property Name="Mes" Type="int" />
+          <Property Name="De0a25kWh" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="De26a50kWh" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="De51a100kWh" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="De101a150kWh" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="De151a500kWh" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="De501a1000kWh" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="Mayorde1000kWh" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="Compañia" Type="char" MaxLength="25" />
+        </EntityType>
         <EntityType Name="PrecioKwhPorMes">
           <Key>
             <PropertyRef Name="Id" />
@@ -64,6 +80,7 @@
           <EntitySet Name="agregarUsuarioTabla" EntityType="Self.agregarUsuarioTabla" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ConteoConsumoTabla" EntityType="Self.ConteoConsumoTabla" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ingresarServicio" EntityType="Self.ingresarServicio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PrecioAlumbradoPublico" EntityType="Self.PrecioAlumbradoPublico" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PrecioKwhPorMes" EntityType="Self.PrecioKwhPorMes" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
@@ -109,6 +126,22 @@
           <Property Name="servicioAnexado" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="voltajeServicio" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
+        <EntityType Name="PrecioAlumbradoPublico">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Año" Type="Int32" />
+          <Property Name="Mes" Type="Int32" />
+          <Property Name="De0a25kWh" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="De26a50kWh" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="De51a100kWh" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="De101a150kWh" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="De151a500kWh" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="De501a1000kWh" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Mayorde1000kWh" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Compañia" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
+        </EntityType>
         <EntityType Name="PrecioKwhPorMes">
           <Key>
             <PropertyRef Name="Id" />
@@ -130,6 +163,7 @@
           <EntitySet Name="agregarUsuarioTabla" EntityType="Self.agregarUsuarioTabla" />
           <EntitySet Name="ConteoConsumoTabla" EntityType="Self.ConteoConsumoTabla" />
           <EntitySet Name="ingresarServicio" EntityType="Self.ingresarServicio" />
+          <EntitySet Name="PrecioAlumbradoPublico" EntityType="Self.PrecioAlumbradoPublico" />
           <EntitySet Name="PrecioKwhPorMes" EntityType="Self.PrecioKwhPorMes" />
         </EntityContainer>
       </Schema>
@@ -177,6 +211,23 @@
                 <ScalarProperty Name="usuarioServicio" ColumnName="usuarioServicio" />
                 <ScalarProperty Name="servicioAnexado" ColumnName="servicioAnexado" />
                 <ScalarProperty Name="voltajeServicio" ColumnName="voltajeServicio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrecioAlumbradoPublico">
+            <EntityTypeMapping TypeName="GISELModel.PrecioAlumbradoPublico">
+              <MappingFragment StoreEntitySet="PrecioAlumbradoPublico">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Año" ColumnName="Año" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="De0a25kWh" ColumnName="De0a25kWh" />
+                <ScalarProperty Name="De26a50kWh" ColumnName="De26a50kWh" />
+                <ScalarProperty Name="De51a100kWh" ColumnName="De51a100kWh" />
+                <ScalarProperty Name="De101a150kWh" ColumnName="De101a150kWh" />
+                <ScalarProperty Name="De151a500kWh" ColumnName="De151a500kWh" />
+                <ScalarProperty Name="De501a1000kWh" ColumnName="De501a1000kWh" />
+                <ScalarProperty Name="Mayorde1000kWh" ColumnName="Mayorde1000kWh" />
+                <ScalarProperty Name="Compañia" ColumnName="Compañia" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

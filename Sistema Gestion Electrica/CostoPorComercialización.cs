@@ -10,10 +10,10 @@ using System.Windows.Forms;
 using System.Globalization;
 namespace Sistema_Gestion_Electrica
 {
-    public partial class CostoAlumbradoPublico : Form
+    public partial class CostoPorComercialización : Form
     {
         private readonly GISELEntities _bd; // Instancia de la clase agregarUsuarioTabla
-        public CostoAlumbradoPublico()
+        public CostoPorComercialización()
         {
             InitializeComponent();
             _bd = new GISELEntities(); // Inicializa la instancia de agregarUsuarioTabla
@@ -27,12 +27,12 @@ namespace Sistema_Gestion_Electrica
                 cbEmpresa.DataSource = servicios;
             }
         }
-        public CostoAlumbradoPublico(CostoAlumbradoPublico costoAlumbradoPublico)
+        public CostoPorComercialización(CostoPorComercialización costoAlumbradoPublico)
         {
             InitializeComponent();
             llenarCampos(costoAlumbradoPublico);
         }
-        private void llenarCampos(CostoAlumbradoPublico costoAlumbradoPublico)
+        private void llenarCampos(CostoPorComercialización costoAlumbradoPublico)
         {
             nudAño = costoAlumbradoPublico.nudAño; 
             nudMes = costoAlumbradoPublico.nudMes;

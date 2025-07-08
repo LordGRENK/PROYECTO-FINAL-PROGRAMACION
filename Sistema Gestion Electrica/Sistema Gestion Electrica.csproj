@@ -80,6 +80,12 @@
     <Compile Include="ConteoConsumoUsuario.Designer.cs">
       <DependentUpon>ConteoConsumoUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="CostoPorComercialización.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CostoPorComercialización.Designer.cs">
+      <DependentUpon>CostoPorComercialización.cs</DependentUpon>
+    </Compile>
     <Compile Include="CostoAlumbradoPublico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,9 @@
       <DependentUpon>GiselBD.edmx</DependentUpon>
     </Compile>
     <Compile Include="ingresarServicio.cs">
+      <DependentUpon>GiselBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrecioAlumbradoPublico.cs">
       <DependentUpon>GiselBD.tt</DependentUpon>
     </Compile>
     <Compile Include="PrecioKwhPorMes.cs">
@@ -153,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConteoConsumoUsuario.resx">
       <DependentUpon>ConteoConsumoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CostoPorComercialización.resx">
+      <DependentUpon>CostoPorComercialización.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CostoAlumbradoPublico.resx">
       <DependentUpon>CostoAlumbradoPublico.cs</DependentUpon>

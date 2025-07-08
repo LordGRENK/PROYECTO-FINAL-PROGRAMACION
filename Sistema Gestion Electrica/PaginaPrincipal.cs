@@ -82,5 +82,12 @@ namespace Sistema_Gestion_Electrica
             verServicios.MdiParent = this;
             verServicios.Show();
         }
+
+        private void agregarCostoAlumbradoPublicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var costoAlumbrado = new CostoAlumbradoPublico();
+            costoAlumbrado.MdiParent = this;
+            costoAlumbrado.Show();
+        }
     }
 }
