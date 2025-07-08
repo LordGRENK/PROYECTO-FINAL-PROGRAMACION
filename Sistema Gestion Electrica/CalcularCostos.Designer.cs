@@ -201,7 +201,7 @@
             this.btnCalcularFacturacion.Name = "btnCalcularFacturacion";
             this.btnCalcularFacturacion.Size = new System.Drawing.Size(217, 43);
             this.btnCalcularFacturacion.TabIndex = 25;
-            this.btnCalcularFacturacion.Text = "Calcular e Imprimir";
+            this.btnCalcularFacturacion.Text = "Calcular y Guardar";
             this.btnCalcularFacturacion.UseVisualStyleBackColor = true;
             this.btnCalcularFacturacion.Click += new System.EventHandler(this.btnCalcularFacturacion_Click);
             // 

@@ -1,40 +1,94 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing.Imaging;
 using System.Windows.Forms;
 
 namespace Sistema_Gestion_Electrica
 {
     public partial class FacturaConsumo : Form
     {
-        public FacturaConsumo()
+        private readonly TablaFacturas _factura;
+
+        public FacturaConsumo(TablaFacturas factura)
         {
             InitializeComponent();
+            _factura = factura;
+            CargarDatosFactura();
         }
 
-        private void lblAlumbradoPublicoTotal_Click(object sender, EventArgs e)
+        private void CargarDatosFactura()
         {
+            if (_factura != null)
+            {
+                // --- 0. Obtener valores base de la factura ---
+                decimal kwhConsumidos = _factura.KwhTotalAPagar ?? 0;
+                decimal precioPorKwh = _factura.PrecioKwhPorMes ?? 0;
+                decimal costoAlumbrado = _factura.PrecioAlumbradoPublicoTotal ?? 0;
+                decimal costoComercializacion = _factura.PrecioFijoComercialicación ?? 0;
 
+                // --- Rellenar información básica de la factura ---
+                lblNumeroDeServicioAQUI.Text = _factura.NIS.ToString();
+                lblNombreDeUsuarioAQUI.Text = _factura.NombreUsuario;
+                lblCompañiaDelServicioAQUI.Text = _factura.Compañia;
+                lblkWhConsumidosAQUI.Text = kwhConsumidos.ToString("N2") + " kWh";
+                lblkWhMesAQUI.Text = precioPorKwh.ToString("N2");
+                lblAlumbradoPublicoAQUI.Text = costoAlumbrado.ToString("N2");
+                lblComercializaciónAQUI.Text = costoComercializacion.ToString("N2");
+                lblFechaAQUI.Text = DateTime.Now.ToString("dd/MM/yyyy");
+
+                // --- Inician los cálculos según tu fórmula ---
+
+                // 1. Total de kWh consumidos * precio del kWh del mes
+                decimal costoConsumoKwh = kwhConsumidos * precioPorKwh;
+
+                // 2. Sumatoria inicial
+                decimal subtotal_1 = costoConsumoKwh + costoAlumbrado + costoComercializacion;
+
+                // 3. Cálculo del subsidio
+                decimal subsidio = 0;
+                if (kwhConsumidos > 0 && kwhConsumidos <= 50)
+                {
+                    subsidio = costoConsumoKwh * 0.50m; // 50% de subsidio
+                }
+                else if (kwhConsumidos > 50 && kwhConsumidos <= 100)
+                {
+                    subsidio = costoConsumoKwh * 0.45m; // 45% de subsidio
+                }
+                else if (kwhConsumidos > 100 && kwhConsumidos <= 150)
+                {
+                    subsidio = costoConsumoKwh * 0.25m; // 25% de subsidio
+                }
+                lblSubsidioAQUI.Text = subsidio.ToString("N2");
+
+                // 4. Resta del subsidio
+                decimal subtotal_2 = subtotal_1 - subsidio;
+
+                // 5. Cálculo del Impuesto INE (0.00064%)
+                decimal impuestoINE = subtotal_2 * 0.00064m;
+                label4.Text = impuestoINE.ToString("N2"); // 'label4' es el valor del Impuesto INE
+
+                // 6. Suma del impuesto para obtener el total final
+                decimal totalAPagar = subtotal_2 + impuestoINE;
+                TotalAQUI.Text = totalAPagar.ToString("N2");
+            }
         }
-
-        private void lblNumeroDeServicioAQUI_Click(object sender, EventArgs e)
+        public void GuardarComoImagen(string rutaArchivo)
         {
+            // Crea una imagen (Bitmap) con las mismas dimensiones que el formulario.
+            using (Bitmap bmp = new Bitmap(this.Width, this.Height))
+            {
+                // "Dibuja" el contenido actual del formulario en la imagen.
+                this.DrawToBitmap(bmp, new Rectangle(0, 0, this.Width, this.Height));
 
+                // Guarda la imagen en el archivo y formato especificados.
+                bmp.Save(rutaArchivo, ImageFormat.Png);
+            }
         }
 
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        // --- Mantén los otros métodos de tu formulario aquí ---
+        private void lblAlumbradoPublicoTotal_Click(object sender, EventArgs e) { }
+        private void lblNumeroDeServicioAQUI_Click(object sender, EventArgs e) { }
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e) { }
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e) { }
     }
 }

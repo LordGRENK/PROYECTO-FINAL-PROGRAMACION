@@ -32,8 +32,53 @@ namespace Sistema_Gestion_Electrica
 
         private void btnCalcularFacturacion_Click(object sender, EventArgs e)
         {
-            var facturaconsumo = new FacturaConsumo();
-            facturaconsumo.Show();
+            // --- 1. Validaciones iniciales (se mantienen igual) ---
+            if (!int.TryParse(tbNIS.Text, out int nis))
+            {
+                MessageBox.Show("Por favor, ingrese un NIS válido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (cbAño.SelectedItem == null || cbMes.SelectedItem == null)
+            {
+                MessageBox.Show("Por favor, seleccione un año y un mes.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int año = Convert.ToInt32(cbAño.SelectedItem);
+            int mes = Convert.ToInt32(cbMes.SelectedItem);
+
+            using (var db = new GISELEntities())
+            {
+                // --- 2. Buscar la factura en la base de datos ---
+                var factura = db.TablaFacturas.FirstOrDefault(f => f.NIS == nis && f.Año == año && f.Mes == mes);
+
+                if (factura != null)
+                {
+                    // --- 3. Abrir el diálogo para guardar el archivo ---
+                    SaveFileDialog saveFileDialog = new SaveFileDialog();
+                    saveFileDialog.Filter = "PNG Image|*.png|JPeg Image|*.jpg"; // Filtros para guardar como imagen
+                    saveFileDialog.Title = "Guardar Factura como Imagen";
+                    saveFileDialog.FileName = $"Factura_{factura.NIS}_{año}_{mes}.png"; // Nombre de archivo sugerido
+
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        // --- 4. Crear la factura en segundo plano y guardarla ---
+                        // Se crea el formulario de la factura, pero nunca se muestra.
+                        using (var facturaForm = new FacturaConsumo(factura))
+                        {
+                            // Llamamos a un nuevo método para guardar la imagen del formulario.
+                            var handle = facturaForm.Handle;
+                            facturaForm.GuardarComoImagen(saveFileDialog.FileName);
+                        }
+                        MessageBox.Show("Factura guardada exitosamente en: " + saveFileDialog.FileName, "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró una factura para los datos seleccionados. Asegúrese de haber añadido el consumo primero.", "Factura no encontrada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
 
         private void lblCompañíaCAMBIA_Click(object sender, EventArgs e)
