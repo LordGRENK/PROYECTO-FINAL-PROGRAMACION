@@ -32,7 +32,8 @@ namespace Sistema_Gestion_Electrica
 
         private void btnCalcularFacturacion_Click(object sender, EventArgs e)
         {
-
+            var facturaconsumo = new FacturaConsumo();
+            facturaconsumo.Show();
         }
 
         private void lblCompañíaCAMBIA_Click(object sender, EventArgs e)
