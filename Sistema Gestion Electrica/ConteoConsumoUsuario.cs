@@ -95,7 +95,7 @@ namespace Sistema_Gestion_Electrica
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            this.Close(); // Cierra el formulario actual
         }
     }
 }

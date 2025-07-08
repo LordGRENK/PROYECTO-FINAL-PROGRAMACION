@@ -22,5 +22,7 @@ namespace Sistema_Gestion_Electrica
         public Nullable<decimal> PrecioAlumbradoPublicoTotal { get; set; }
         public Nullable<decimal> PrecioFijoComercialicación { get; set; }
         public Nullable<decimal> PrecioKwhPorMes { get; set; }
+        public Nullable<int> Año { get; set; }
+        public Nullable<int> Mes { get; set; }
     }
 }

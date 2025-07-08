@@ -104,14 +104,12 @@ namespace Sistema_Gestion_Electrica
 
         private void btnAñadirConsumo_Click(object sender, EventArgs e)
         {
-            // Validar NIS
+            // Validaciones iniciales
             if (!int.TryParse(tbNIS.Text, out int nis))
             {
                 MessageBox.Show("Ingrese un NIS válido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            // Validar selección de año y mes
             if (cbAño.SelectedItem == null || cbMes.SelectedItem == null)
             {
                 MessageBox.Show("Seleccione un año y un mes.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -123,7 +121,6 @@ namespace Sistema_Gestion_Electrica
 
             using (var db = new GISELEntities())
             {
-                // Buscar el consumo correspondiente
                 var consumo = db.ConteoConsumoTabla.FirstOrDefault(c => c.NIS == nis && c.Año == año && c.Mes == mes);
                 if (consumo == null)
                 {
@@ -131,121 +128,95 @@ namespace Sistema_Gestion_Electrica
                     return;
                 }
 
-                // Buscar si ya existe una factura para este NIS
-                var facturaExistente = db.TablaFacturas.FirstOrDefault(f => f.NIS == nis);
+                // --- Inician los cálculos de costos ---
                 decimal kwhTotal = Convert.ToDecimal(consumo.KilowattsHora);
+                var kwh = consumo.KilowattsHora ?? 0;
+
+                // **CÁLCULO REAL DE ALUMBRADO PÚBLICO**
+                decimal precioAlumbradoTotal = 0;
+                var precioAlumbrado = db.PrecioAlumbradoPublico.FirstOrDefault(p => p.Año == año && p.Mes == mes);
+                if (precioAlumbrado != null)
+                {
+                    if (kwh <= 25) precioAlumbradoTotal = precioAlumbrado.De0a25kWh ?? 0;
+                    else if (kwh <= 50) precioAlumbradoTotal = precioAlumbrado.De26a50kWh ?? 0;
+                    else if (kwh <= 100) precioAlumbradoTotal = precioAlumbrado.De51a100kWh ?? 0;
+                    else if (kwh <= 150) precioAlumbradoTotal = precioAlumbrado.De101a150kWh ?? 0;
+                    else if (kwh <= 500) precioAlumbradoTotal = precioAlumbrado.De151a500kWh ?? 0;
+                    else if (kwh <= 1000) precioAlumbradoTotal = precioAlumbrado.De501a1000kWh ?? 0;
+                    else precioAlumbradoTotal = precioAlumbrado.Mayorde1000kWh ?? 0;
+                }
+
+                // **CÁLCULO REAL DE COMERCIALIZACIÓN**
+                decimal precioFijoComercializacion = 0;
+                var precioFijo = db.PrecioFijoComercialización.FirstOrDefault(p => p.Año == año && p.Mes == mes);
+                if (precioFijo != null)
+                {
+                    if (kwh <= 25) precioFijoComercializacion = precioFijo.De0a25kWh ?? 0;
+                    else if (kwh <= 50) precioFijoComercializacion = precioFijo.De26a50kWh ?? 0;
+                    else if (kwh <= 100) precioFijoComercializacion = precioFijo.De51a100kWh ?? 0;
+                    else if (kwh <= 500) precioFijoComercializacion = precioFijo.De101a150kWh ?? 0;
+                    else if (kwh <= 1000) precioFijoComercializacion = precioFijo.De501a1000kWh ?? 0;
+                    else precioFijoComercializacion = precioFijo.Mayorde1000kWh ?? 0;
+                }
+
+                // **CÁLCULO REAL DE PRECIO POR KWH**
+                decimal precioFijokwh = 0;
+                var kwhPrecio = db.PrecioKwhPorMes.FirstOrDefault(p => p.Año == año && p.Mes == mes);
+                if (kwhPrecio != null)
+                {
+                    if (kwh <= 25) precioFijokwh = kwhPrecio.Primeros25kWh ?? 0;
+                    else if (kwh <= 50) precioFijokwh = kwhPrecio.Siguientes25kWh ?? 0;
+                    else if (kwh <= 100) precioFijokwh = kwhPrecio.Siguientes50kWh1 ?? 0;
+                    else if (kwh <= 150) precioFijokwh = kwhPrecio.Siguientes50kWh2 ?? 0;
+                    else if (kwh <= 500) precioFijokwh = kwhPrecio.Siguientes350kWh ?? 0;
+                    else if (kwh <= 1000) precioFijokwh = kwhPrecio.Siguientes500kWh ?? 0;
+                    else precioFijokwh = kwhPrecio.Adicionalesa1000kWh ?? 0;
+                }
+
+                // --- Búsqueda y guardado de la factura ---
+                var facturaExistente = db.TablaFacturas.FirstOrDefault(f => f.NIS == nis && f.Año == año && f.Mes == mes);
 
                 if (facturaExistente != null)
                 {
-                    // Sumar el consumo al total existente
-                    facturaExistente.KwhTotalAPagar += kwhTotal;
+                    DialogResult dialogResult = MessageBox.Show("Ya existe una factura para este NIS en el mes y año seleccionados. ¿Desea sobrescribirla?", "Factura Existente", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        facturaExistente.KwhTotalAPagar = kwhTotal;
+                        facturaExistente.PrecioAlumbradoPublicoTotal = precioAlumbradoTotal;
+                        facturaExistente.PrecioFijoComercialicación = precioFijoComercializacion;
+                        facturaExistente.PrecioKwhPorMes = precioFijokwh;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Operación cancelada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
                 }
                 else
                 {
-                    // Crear nueva factura
                     facturaExistente = new TablaFacturas
                     {
                         NIS = nis,
+                        Año = año,
+                        Mes = mes,
                         NombreUsuario = lblUsuarioCAMBIA.Text,
                         Compañia = lblCompañíaCAMBIA.Text,
-                        KwhTotalAPagar = kwhTotal
-                        // Los otros campos se agregan abajo
+                        KwhTotalAPagar = kwhTotal,
+                        PrecioAlumbradoPublicoTotal = precioAlumbradoTotal,
+                        PrecioFijoComercialicación = precioFijoComercializacion,
+                        PrecioKwhPorMes = precioFijokwh
                     };
                     db.TablaFacturas.Add(facturaExistente);
                 }
 
-                // Buscar el precio de alumbrado público solo por año y mes
-                var precioAlumbrado = db.PrecioAlumbradoPublico
-                    .FirstOrDefault(p => p.Año == año && p.Mes == mes);
-
-                decimal precioAlumbradoTotal = 0;
-
-                if (precioAlumbrado != null)
-                {
-                    var kwh = consumo.KilowattsHora ?? 0;
-                    if (kwh <= 25)
-                        precioAlumbradoTotal = precioAlumbrado.De0a25kWh ?? 0;
-                    else if (kwh <= 50)
-                        precioAlumbradoTotal = precioAlumbrado.De26a50kWh ?? 0;
-                    else if (kwh <= 100)
-                        precioAlumbradoTotal = precioAlumbrado.De51a100kWh ?? 0;
-                    else if (kwh <= 150)
-                        precioAlumbradoTotal = precioAlumbrado.De101a150kWh ?? 0;
-                    else if (kwh <= 500)
-                        precioAlumbradoTotal = precioAlumbrado.De151a500kWh ?? 0;
-                    else if (kwh <= 1000)
-                        precioAlumbradoTotal = precioAlumbrado.De501a1000kWh ?? 0;
-                    else
-                        precioAlumbradoTotal = precioAlumbrado.Mayorde1000kWh ?? 0;
-                }
-
-                facturaExistente.PrecioAlumbradoPublicoTotal = precioAlumbradoTotal;
-                // Buscar el precio fijo de comercialización solo por año y mes
-                var precioFijo = db.PrecioFijoComercialización
-                    .FirstOrDefault(p => p.Año == año && p.Mes == mes);
-
-                decimal precioFijoComercializacion = 0;
-
-                if (precioFijo != null)
-                {
-                    var kwh = consumo.KilowattsHora ?? 0;
-                    if (kwh <= 25)
-                        precioFijoComercializacion = precioFijo.De0a25kWh ?? 0;
-                    else if (kwh <= 50)
-                        precioFijoComercializacion = precioFijo.De26a50kWh ?? 0;
-                    else if (kwh <= 100)
-                        precioFijoComercializacion = precioFijo.De51a100kWh ?? 0;
-                    else if (kwh <= 500)
-                        precioFijoComercializacion = precioFijo.De101a150kWh ?? 0;
-                    else if (kwh <= 1000)
-                        precioFijoComercializacion = precioFijo.De501a1000kWh ?? 0;
-                    else
-                        precioFijoComercializacion = precioFijo.Mayorde1000kWh ?? 0;
-                }
-
-                facturaExistente.PrecioFijoComercialicación = precioFijoComercializacion;
-
-                // Buscar el precio fijo de kWh solo por año y mes
-                var precioFijokWh = db.PrecioKwhPorMes
-                    .FirstOrDefault(p => p.Año == año && p.Mes == mes);
-
-                decimal precioFijokwh = 0;
-
-                if (precioFijokWh != null)
-                {
-                    var kwh = consumo.KilowattsHora ?? 0;
-                    if (kwh <= 25)
-                        precioFijokwh = precioFijokWh.Primeros25kWh ?? 0;
-                    else if (kwh <= 50)
-                        precioFijokwh = precioFijokWh.Siguientes25kWh ?? 0;
-                    else if (kwh <= 100)
-                        precioFijokwh = precioFijokWh.Siguientes50kWh1 ?? 0;
-                    else if (kwh <= 150)
-                        precioFijokwh = precioFijokWh.Siguientes50kWh2 ?? 0;
-                    else if (kwh <= 500)
-                        precioFijokwh = precioFijokWh.Siguientes350kWh ?? 0;
-                    else if (kwh <= 1000)
-                        precioFijokwh = precioFijokWh.Siguientes500kWh ?? 0;
-                    else
-                        precioFijokwh = precioFijokWh.Adicionalesa1000kWh ?? 0;
-                }
-
-                facturaExistente.PrecioKwhPorMes = precioFijokwh;
                 try
                 {
                     db.SaveChanges();
-                    MessageBox.Show("Consumo añadido a la tabla de facturas.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Factura guardada correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch (DbEntityValidationException ex)
+                catch (Exception ex)
                 {
-                    foreach (var validationErrors in ex.EntityValidationErrors)
-                    {
-                        foreach (var validationError in validationErrors.ValidationErrors)
-                        {
-                            MessageBox.Show($"Error en la propiedad: {validationError.PropertyName}\nMensaje: {validationError.ErrorMessage}",
-                                            "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
+                    MessageBox.Show($"Ocurrió un error al guardar: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

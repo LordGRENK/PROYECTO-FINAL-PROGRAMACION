@@ -105,5 +105,11 @@ namespace Sistema_Gestion_Electrica
                 MessageBox.Show("Por favor, ingrese un NIS válido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            var conteoConsumo = new ConteoConsumoUsuario();
+            conteoConsumo.Show();
+        }
     }
 }

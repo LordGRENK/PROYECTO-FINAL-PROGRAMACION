@@ -54,6 +54,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.lblComercialización = new System.Windows.Forms.Label();
+            this.lblComercializaciónAQUI = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -65,9 +69,9 @@
             // 
             this.lblIdentificadorServicio.AutoSize = true;
             this.lblIdentificadorServicio.Font = new System.Drawing.Font("Sitka Text", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdentificadorServicio.Location = new System.Drawing.Point(3, 38);
+            this.lblIdentificadorServicio.Location = new System.Drawing.Point(3, 28);
             this.lblIdentificadorServicio.Name = "lblIdentificadorServicio";
-            this.lblIdentificadorServicio.Size = new System.Drawing.Size(56, 29);
+            this.lblIdentificadorServicio.Size = new System.Drawing.Size(56, 23);
             this.lblIdentificadorServicio.TabIndex = 15;
             this.lblIdentificadorServicio.Text = "NIS:";
             // 
@@ -75,9 +79,9 @@
             // 
             this.lblNumeroDeServicioAQUI.AutoSize = true;
             this.lblNumeroDeServicioAQUI.Font = new System.Drawing.Font("Sitka Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroDeServicioAQUI.Location = new System.Drawing.Point(133, 38);
+            this.lblNumeroDeServicioAQUI.Location = new System.Drawing.Point(133, 51);
             this.lblNumeroDeServicioAQUI.Name = "lblNumeroDeServicioAQUI";
-            this.lblNumeroDeServicioAQUI.Size = new System.Drawing.Size(198, 29);
+            this.lblNumeroDeServicioAQUI.Size = new System.Drawing.Size(198, 26);
             this.lblNumeroDeServicioAQUI.TabIndex = 16;
             this.lblNumeroDeServicioAQUI.Text = "Numero De Servicio";
             this.lblNumeroDeServicioAQUI.Click += new System.EventHandler(this.lblNumeroDeServicioAQUI_Click);
@@ -86,9 +90,9 @@
             // 
             this.lblNombreDeUsuario.AutoSize = true;
             this.lblNombreDeUsuario.Font = new System.Drawing.Font("Sitka Text", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblNombreDeUsuario.Location = new System.Drawing.Point(3, 0);
+            this.lblNombreDeUsuario.Location = new System.Drawing.Point(3, 51);
             this.lblNombreDeUsuario.Name = "lblNombreDeUsuario";
-            this.lblNombreDeUsuario.Size = new System.Drawing.Size(98, 29);
+            this.lblNombreDeUsuario.Size = new System.Drawing.Size(98, 26);
             this.lblNombreDeUsuario.TabIndex = 17;
             this.lblNombreDeUsuario.Text = "Nombre:";
             // 
@@ -96,9 +100,9 @@
             // 
             this.lblNombreDeUsuarioAQUI.AutoSize = true;
             this.lblNombreDeUsuarioAQUI.Font = new System.Drawing.Font("Sitka Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreDeUsuarioAQUI.Location = new System.Drawing.Point(133, 0);
+            this.lblNombreDeUsuarioAQUI.Location = new System.Drawing.Point(133, 28);
             this.lblNombreDeUsuarioAQUI.Name = "lblNombreDeUsuarioAQUI";
-            this.lblNombreDeUsuarioAQUI.Size = new System.Drawing.Size(215, 29);
+            this.lblNombreDeUsuarioAQUI.Size = new System.Drawing.Size(215, 23);
             this.lblNombreDeUsuarioAQUI.TabIndex = 18;
             this.lblNombreDeUsuarioAQUI.Text = "Nombre UsuarioAQUI";
             // 
@@ -106,9 +110,9 @@
             // 
             this.lblCompañiaDelServicio.AutoSize = true;
             this.lblCompañiaDelServicio.Font = new System.Drawing.Font("Sitka Text", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblCompañiaDelServicio.Location = new System.Drawing.Point(3, 76);
+            this.lblCompañiaDelServicio.Location = new System.Drawing.Point(3, 77);
             this.lblCompañiaDelServicio.Name = "lblCompañiaDelServicio";
-            this.lblCompañiaDelServicio.Size = new System.Drawing.Size(118, 29);
+            this.lblCompañiaDelServicio.Size = new System.Drawing.Size(118, 26);
             this.lblCompañiaDelServicio.TabIndex = 19;
             this.lblCompañiaDelServicio.Text = "Compañía:";
             // 
@@ -116,9 +120,9 @@
             // 
             this.lblCompañiaDelServicioAQUI.AutoSize = true;
             this.lblCompañiaDelServicioAQUI.Font = new System.Drawing.Font("Sitka Text", 12F);
-            this.lblCompañiaDelServicioAQUI.Location = new System.Drawing.Point(133, 76);
+            this.lblCompañiaDelServicioAQUI.Location = new System.Drawing.Point(133, 77);
             this.lblCompañiaDelServicioAQUI.Name = "lblCompañiaDelServicioAQUI";
-            this.lblCompañiaDelServicioAQUI.Size = new System.Drawing.Size(278, 29);
+            this.lblCompañiaDelServicioAQUI.Size = new System.Drawing.Size(278, 26);
             this.lblCompañiaDelServicioAQUI.TabIndex = 20;
             this.lblCompañiaDelServicioAQUI.Text = "Compañía Del Servicio AQUI";
             // 
@@ -126,7 +130,7 @@
             // 
             this.lblKiloWattsConsumidosTotal.AutoSize = true;
             this.lblKiloWattsConsumidosTotal.Font = new System.Drawing.Font("Sitka Text", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblKiloWattsConsumidosTotal.Location = new System.Drawing.Point(3, 0);
+            this.lblKiloWattsConsumidosTotal.Location = new System.Drawing.Point(3, 35);
             this.lblKiloWattsConsumidosTotal.Name = "lblKiloWattsConsumidosTotal";
             this.lblKiloWattsConsumidosTotal.Size = new System.Drawing.Size(299, 29);
             this.lblKiloWattsConsumidosTotal.TabIndex = 23;
@@ -136,7 +140,7 @@
             // 
             this.lblAlumbradoPublicoTotal.AutoSize = true;
             this.lblAlumbradoPublicoTotal.Font = new System.Drawing.Font("Sitka Text", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblAlumbradoPublicoTotal.Location = new System.Drawing.Point(3, 106);
+            this.lblAlumbradoPublicoTotal.Location = new System.Drawing.Point(3, 105);
             this.lblAlumbradoPublicoTotal.Name = "lblAlumbradoPublicoTotal";
             this.lblAlumbradoPublicoTotal.Size = new System.Drawing.Size(266, 29);
             this.lblAlumbradoPublicoTotal.TabIndex = 24;
@@ -146,18 +150,19 @@
             // lblKwhPorMes
             // 
             this.lblKwhPorMes.AutoSize = true;
+            this.lblKwhPorMes.BackColor = System.Drawing.SystemColors.Control;
             this.lblKwhPorMes.Font = new System.Drawing.Font("Sitka Text", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblKwhPorMes.Location = new System.Drawing.Point(3, 53);
+            this.lblKwhPorMes.Location = new System.Drawing.Point(3, 70);
             this.lblKwhPorMes.Name = "lblKwhPorMes";
-            this.lblKwhPorMes.Size = new System.Drawing.Size(349, 29);
+            this.lblKwhPorMes.Size = new System.Drawing.Size(248, 29);
             this.lblKwhPorMes.TabIndex = 25;
-            this.lblKwhPorMes.Text = "Precio del KiloWatt/Hora del Mes:";
+            this.lblKwhPorMes.Text = "Precio del kWh del Mes:";
             // 
             // lblkWhMesAQUI
             // 
             this.lblkWhMesAQUI.AutoSize = true;
             this.lblkWhMesAQUI.Font = new System.Drawing.Font("Sitka Text", 12F);
-            this.lblkWhMesAQUI.Location = new System.Drawing.Point(365, 53);
+            this.lblkWhMesAQUI.Location = new System.Drawing.Point(321, 70);
             this.lblkWhMesAQUI.Name = "lblkWhMesAQUI";
             this.lblkWhMesAQUI.Size = new System.Drawing.Size(120, 29);
             this.lblkWhMesAQUI.TabIndex = 27;
@@ -167,7 +172,7 @@
             // 
             this.lblAlumbradoPublicoAQUI.AutoSize = true;
             this.lblAlumbradoPublicoAQUI.Font = new System.Drawing.Font("Sitka Text", 12F);
-            this.lblAlumbradoPublicoAQUI.Location = new System.Drawing.Point(365, 106);
+            this.lblAlumbradoPublicoAQUI.Location = new System.Drawing.Point(321, 105);
             this.lblAlumbradoPublicoAQUI.Name = "lblAlumbradoPublicoAQUI";
             this.lblAlumbradoPublicoAQUI.Size = new System.Drawing.Size(164, 29);
             this.lblAlumbradoPublicoAQUI.TabIndex = 28;
@@ -175,62 +180,69 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 397F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.lblFechaAQUI, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lblFecha, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lblCompañiaDelServicioAQUI, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblFechaAQUI, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lblFecha, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lblCompañiaDelServicio, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lblNombreDeUsuario, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblIdentificadorServicio, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblCompañiaDelServicio, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblNombreDeUsuario, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblNumeroDeServicioAQUI, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblNombreDeUsuarioAQUI, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblCompañiaDelServicioAQUI, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lblNumeroDeServicioAQUI, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblNombreDeUsuarioAQUI, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.65605F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.83439F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0008F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.9988F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.9988F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(580, 152);
             this.tableLayoutPanel1.TabIndex = 29;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // tableLayoutPanel3
             // 
+            this.tableLayoutPanel3.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 362F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
-            this.tableLayoutPanel3.Controls.Add(this.lblkWhConsumidosAQUI, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.lblSubsidioAQUI, 1, 3);
-            this.tableLayoutPanel3.Controls.Add(this.lblMenorSubsidio, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.lblKiloWattsConsumidosTotal, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.lblKwhPorMes, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.lblAlumbradoPublicoAQUI, 1, 2);
-            this.tableLayoutPanel3.Controls.Add(this.lblkWhMesAQUI, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.lblAlumbradoPublicoTotal, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.label5, 0, 4);
-            this.tableLayoutPanel3.Controls.Add(this.label4, 1, 4);
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 318F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 209F));
+            this.tableLayoutPanel3.Controls.Add(this.label4, 1, 6);
+            this.tableLayoutPanel3.Controls.Add(this.label5, 0, 6);
+            this.tableLayoutPanel3.Controls.Add(this.lblMenorSubsidio, 0, 5);
+            this.tableLayoutPanel3.Controls.Add(this.lblSubsidioAQUI, 1, 5);
+            this.tableLayoutPanel3.Controls.Add(this.lblComercializaciónAQUI, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.lblComercialización, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.lblAlumbradoPublicoTotal, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.lblAlumbradoPublicoAQUI, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.lblKwhPorMes, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.lblkWhMesAQUI, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.lblKiloWattsConsumidosTotal, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.lblkWhConsumidosAQUI, 1, 1);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 181);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 5;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(580, 268);
+            this.tableLayoutPanel3.RowCount = 7;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28483F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28483F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28483F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28483F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28483F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28769F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28816F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(580, 249);
             this.tableLayoutPanel3.TabIndex = 31;
             // 
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Sitka Text", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblFecha.Location = new System.Drawing.Point(3, 114);
+            this.lblFecha.Location = new System.Drawing.Point(3, 103);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(75, 29);
+            this.lblFecha.Size = new System.Drawing.Size(75, 26);
             this.lblFecha.TabIndex = 21;
             this.lblFecha.Text = "Fecha:";
             // 
@@ -238,9 +250,9 @@
             // 
             this.lblFechaAQUI.AutoSize = true;
             this.lblFechaAQUI.Font = new System.Drawing.Font("Sitka Text", 12F);
-            this.lblFechaAQUI.Location = new System.Drawing.Point(133, 114);
+            this.lblFechaAQUI.Location = new System.Drawing.Point(133, 103);
             this.lblFechaAQUI.Name = "lblFechaAQUI";
-            this.lblFechaAQUI.Size = new System.Drawing.Size(122, 29);
+            this.lblFechaAQUI.Size = new System.Drawing.Size(122, 26);
             this.lblFechaAQUI.TabIndex = 22;
             this.lblFechaAQUI.Text = "Fecha AQUI";
             // 
@@ -248,7 +260,7 @@
             // 
             this.lblMenorSubsidio.AutoSize = true;
             this.lblMenorSubsidio.Font = new System.Drawing.Font("Sitka Text", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblMenorSubsidio.Location = new System.Drawing.Point(3, 159);
+            this.lblMenorSubsidio.Location = new System.Drawing.Point(3, 175);
             this.lblMenorSubsidio.Name = "lblMenorSubsidio";
             this.lblMenorSubsidio.Size = new System.Drawing.Size(283, 29);
             this.lblMenorSubsidio.TabIndex = 29;
@@ -258,7 +270,7 @@
             // 
             this.lblSubsidioAQUI.AutoSize = true;
             this.lblSubsidioAQUI.Font = new System.Drawing.Font("Sitka Text", 12F);
-            this.lblSubsidioAQUI.Location = new System.Drawing.Point(365, 159);
+            this.lblSubsidioAQUI.Location = new System.Drawing.Point(321, 175);
             this.lblSubsidioAQUI.Name = "lblSubsidioAQUI";
             this.lblSubsidioAQUI.Size = new System.Drawing.Size(139, 29);
             this.lblSubsidioAQUI.TabIndex = 30;
@@ -266,14 +278,15 @@
             // 
             // tableLayoutPanel4
             // 
+            this.tableLayoutPanel4.BackColor = System.Drawing.SystemColors.Control;
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.43468F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.56531F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel3, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel1, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel2, 1, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(12, -3);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel1, 0, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(71, 23);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.83366F));
@@ -283,9 +296,10 @@
             // 
             // tableLayoutPanel5
             // 
+            this.tableLayoutPanel5.BackColor = System.Drawing.SystemColors.Control;
             this.tableLayoutPanel5.ColumnCount = 3;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.93877F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.06123F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.37415F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.62585F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 157F));
             this.tableLayoutPanel5.Controls.Add(this.TotalAQUI, 2, 1);
             this.tableLayoutPanel5.Controls.Add(this.lblTotal, 1, 1);
@@ -302,7 +316,7 @@
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Sitka Text", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblTotal.Location = new System.Drawing.Point(72, 123);
+            this.lblTotal.Location = new System.Drawing.Point(55, 123);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(71, 29);
             this.lblTotal.TabIndex = 18;
@@ -322,7 +336,7 @@
             // 
             this.lblkWhConsumidosAQUI.AutoSize = true;
             this.lblkWhConsumidosAQUI.Font = new System.Drawing.Font("Sitka Text", 12F);
-            this.lblkWhConsumidosAQUI.Location = new System.Drawing.Point(365, 0);
+            this.lblkWhConsumidosAQUI.Location = new System.Drawing.Point(321, 35);
             this.lblkWhConsumidosAQUI.Name = "lblkWhConsumidosAQUI";
             this.lblkWhConsumidosAQUI.Size = new System.Drawing.Size(102, 29);
             this.lblkWhConsumidosAQUI.TabIndex = 33;
@@ -332,7 +346,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Sitka Text", 12F);
-            this.label4.Location = new System.Drawing.Point(365, 212);
+            this.label4.Location = new System.Drawing.Point(321, 210);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 29);
             this.label4.TabIndex = 34;
@@ -342,7 +356,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Sitka Text", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label5.Location = new System.Drawing.Point(3, 212);
+            this.label5.Location = new System.Drawing.Point(3, 210);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(146, 29);
             this.label5.TabIndex = 35;
@@ -350,6 +364,7 @@
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.Control;
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86F));
@@ -366,6 +381,7 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblTitulo.Font = new System.Drawing.Font("Sitka Text", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(45, 37);
             this.lblTitulo.Name = "lblTitulo";
@@ -373,11 +389,50 @@
             this.lblTitulo.TabIndex = 14;
             this.lblTitulo.Text = "SIGEL";
             // 
+            // lblComercialización
+            // 
+            this.lblComercialización.AutoSize = true;
+            this.lblComercialización.Font = new System.Drawing.Font("Sitka Text", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.lblComercialización.Location = new System.Drawing.Point(3, 140);
+            this.lblComercialización.Name = "lblComercialización";
+            this.lblComercialización.Size = new System.Drawing.Size(290, 29);
+            this.lblComercialización.TabIndex = 36;
+            this.lblComercialización.Text = "Coste Por Comercialización:";
+            // 
+            // lblComercializaciónAQUI
+            // 
+            this.lblComercializaciónAQUI.AutoSize = true;
+            this.lblComercializaciónAQUI.Font = new System.Drawing.Font("Sitka Text", 12F);
+            this.lblComercializaciónAQUI.Location = new System.Drawing.Point(321, 140);
+            this.lblComercializaciónAQUI.Name = "lblComercializaciónAQUI";
+            this.lblComercializaciónAQUI.Size = new System.Drawing.Size(222, 29);
+            this.lblComercializaciónAQUI.TabIndex = 37;
+            this.lblComercializaciónAQUI.Text = "ComercializaciónAQUI";
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label1.Location = new System.Drawing.Point(71, 181);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(911, 2);
+            this.label1.TabIndex = 33;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label2.Location = new System.Drawing.Point(644, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(2, 511);
+            this.label2.TabIndex = 34;
+            // 
             // FacturaConsumo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(926, 512);
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.ClientSize = new System.Drawing.Size(1049, 546);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Name = "FacturaConsumo";
             this.Text = "Factura Consumo SIGEL";
@@ -421,5 +476,9 @@
         private System.Windows.Forms.Label lblkWhConsumidosAQUI;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lblComercializaciónAQUI;
+        private System.Windows.Forms.Label lblComercialización;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

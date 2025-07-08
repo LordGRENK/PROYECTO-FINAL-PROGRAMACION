@@ -103,6 +103,8 @@
           <Property Name="PrecioAlumbradoPublicoTotal" Type="decimal" Precision="18" Scale="4" />
           <Property Name="PrecioFijoComercialicación" Type="decimal" Precision="18" Scale="4" />
           <Property Name="PrecioKwhPorMes" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="Año" Type="int" />
+          <Property Name="Mes" Type="int" />
         </EntityType>
         <EntityContainer Name="GISELModelStoreContainer">
           <EntitySet Name="agregarServicioEléctrico" EntityType="Self.agregarServicioEléctrico" Schema="dbo" store:Type="Tables" />
@@ -217,6 +219,8 @@
           <Property Name="PrecioAlumbradoPublicoTotal" Type="Decimal" Precision="18" Scale="4" />
           <Property Name="PrecioFijoComercialicación" Type="Decimal" Precision="18" Scale="4" />
           <Property Name="PrecioKwhPorMes" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Año" Type="Int32" />
+          <Property Name="Mes" Type="Int32" />
         </EntityType>
         <EntityContainer Name="GISELEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="agregarServicioEléctrico" EntityType="Self.agregarServicioEléctrico" />
@@ -338,6 +342,8 @@
                 <ScalarProperty Name="PrecioAlumbradoPublicoTotal" ColumnName="PrecioAlumbradoPublicoTotal" />
                 <ScalarProperty Name="PrecioFijoComercialicación" ColumnName="PrecioFijoComercialicación" />
                 <ScalarProperty Name="PrecioKwhPorMes" ColumnName="PrecioKwhPorMes" />
+                <ScalarProperty Name="Año" ColumnName="Año" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
