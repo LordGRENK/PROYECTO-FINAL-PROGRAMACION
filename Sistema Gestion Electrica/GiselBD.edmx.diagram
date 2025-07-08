@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="873025b199f545a2a7332ab2a39a04d6" Name="Diagram1">
+      <Diagram DiagramId="dbe3a4a3daf24b2abb188fc4da8fd998" Name="Diagram1">
         <EntityTypeShape EntityType="GISELModel.agregarServicioEléctrico" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GISELModel.agregarUsuarioTabla" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GISELModel.ConteoConsumoTabla" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
@@ -12,7 +12,7 @@
         <EntityTypeShape EntityType="GISELModel.PrecioAlumbradoPublico" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GISELModel.PrecioFijoComercialización" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GISELModel.PrecioKwhPorMes" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GISELModel.TablaFacturas" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GISELModel.TablaFacturas" Width="1.5" PointX="8.75" PointY="1" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

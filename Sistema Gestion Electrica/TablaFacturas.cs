@@ -18,7 +18,6 @@ namespace Sistema_Gestion_Electrica
         public Nullable<int> NIS { get; set; }
         public string NombreUsuario { get; set; }
         public string Compañia { get; set; }
-        public Nullable<int> CantMesesPendientes { get; set; }
         public Nullable<decimal> KwhTotalAPagar { get; set; }
         public Nullable<decimal> PrecioAlumbradoPublicoTotal { get; set; }
         public Nullable<decimal> PrecioFijoComercialicación { get; set; }

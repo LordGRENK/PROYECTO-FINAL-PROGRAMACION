@@ -99,7 +99,6 @@
           <Property Name="NIS" Type="int" />
           <Property Name="NombreUsuario" Type="varchar" MaxLength="50" />
           <Property Name="Compañia" Type="varchar" MaxLength="50" />
-          <Property Name="CantMesesPendientes" Type="int" />
           <Property Name="KwhTotalAPagar" Type="decimal" Precision="18" Scale="4" />
           <Property Name="PrecioAlumbradoPublicoTotal" Type="decimal" Precision="18" Scale="4" />
           <Property Name="PrecioFijoComercialicación" Type="decimal" Precision="18" Scale="4" />
@@ -214,7 +213,6 @@
           <Property Name="NIS" Type="Int32" />
           <Property Name="NombreUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Compañia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CantMesesPendientes" Type="Int32" />
           <Property Name="KwhTotalAPagar" Type="Decimal" Precision="18" Scale="4" />
           <Property Name="PrecioAlumbradoPublicoTotal" Type="Decimal" Precision="18" Scale="4" />
           <Property Name="PrecioFijoComercialicación" Type="Decimal" Precision="18" Scale="4" />
@@ -336,7 +334,6 @@
                 <ScalarProperty Name="NIS" ColumnName="NIS" />
                 <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
                 <ScalarProperty Name="Compañia" ColumnName="Compañia" />
-                <ScalarProperty Name="CantMesesPendientes" ColumnName="CantMesesPendientes" />
                 <ScalarProperty Name="KwhTotalAPagar" ColumnName="KwhTotalAPagar" />
                 <ScalarProperty Name="PrecioAlumbradoPublicoTotal" ColumnName="PrecioAlumbradoPublicoTotal" />
                 <ScalarProperty Name="PrecioFijoComercialicación" ColumnName="PrecioFijoComercialicación" />

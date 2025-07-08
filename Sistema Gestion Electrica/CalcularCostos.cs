@@ -14,7 +14,6 @@ namespace Sistema_Gestion_Electrica
 {
     public partial class CalcularCostos : Form
     {
-        private int cantMesesPendientes = 0;
 
         public CalcularCostos()
         {
@@ -121,9 +120,6 @@ namespace Sistema_Gestion_Electrica
             int año = Convert.ToInt32(cbAño.SelectedItem);
             int mes = Convert.ToInt32(cbMes.SelectedItem);
 
-            // Incrementar el contador de meses pendientes
-            cantMesesPendientes++;
-
             using (var db = new GISELEntities())
             {
                 // Buscar el consumo correspondiente
@@ -142,7 +138,6 @@ namespace Sistema_Gestion_Electrica
                 {
                     // Sumar el consumo al total existente
                     facturaExistente.KwhTotalAPagar += kwhTotal;
-                    facturaExistente.CantMesesPendientes = cantMesesPendientes;
                 }
                 else
                 {
@@ -152,7 +147,6 @@ namespace Sistema_Gestion_Electrica
                         NIS = nis,
                         NombreUsuario = lblUsuarioCAMBIA.Text,
                         Compañia = lblCompañíaCAMBIA.Text,
-                        CantMesesPendientes = cantMesesPendientes,
                         KwhTotalAPagar = kwhTotal
                         // Los otros campos se agregan abajo
                     };
@@ -209,27 +203,30 @@ namespace Sistema_Gestion_Electrica
                 }
 
                 facturaExistente.PrecioFijoComercialicación = precioFijoComercializacion;
+
                 // Buscar el precio fijo de kWh solo por año y mes
                 var precioFijokWh = db.PrecioKwhPorMes
                     .FirstOrDefault(p => p.Año == año && p.Mes == mes);
 
                 decimal precioFijokwh = 0;
 
-                if (precioFijo != null)
+                if (precioFijokWh != null)
                 {
                     var kwh = consumo.KilowattsHora ?? 0;
                     if (kwh <= 25)
-                        precioFijokwh = precioFijo.De0a25kWh ?? 0;
+                        precioFijokwh = precioFijokWh.Primeros25kWh ?? 0;
                     else if (kwh <= 50)
-                        precioFijokwh = precioFijo.De26a50kWh ?? 0;
+                        precioFijokwh = precioFijokWh.Siguientes25kWh ?? 0;
                     else if (kwh <= 100)
-                        precioFijokwh = precioFijo.De51a100kWh ?? 0;
+                        precioFijokwh = precioFijokWh.Siguientes50kWh1 ?? 0;
+                    else if (kwh <= 150)
+                        precioFijokwh = precioFijokWh.Siguientes50kWh2 ?? 0;
                     else if (kwh <= 500)
-                        precioFijokwh = precioFijo.De101a150kWh ?? 0;
+                        precioFijokwh = precioFijokWh.Siguientes350kWh ?? 0;
                     else if (kwh <= 1000)
-                        precioFijokwh = precioFijo.De501a1000kWh ?? 0;
+                        precioFijokwh = precioFijokWh.Siguientes500kWh ?? 0;
                     else
-                        precioFijokwh = precioFijo.Mayorde1000kWh ?? 0;
+                        precioFijokwh = precioFijokWh.Adicionalesa1000kWh ?? 0;
                 }
 
                 facturaExistente.PrecioKwhPorMes = precioFijokwh;
@@ -249,10 +246,7 @@ namespace Sistema_Gestion_Electrica
                         }
                     }
                 }
-
             }
-
-            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
