@@ -89,5 +89,12 @@ namespace Sistema_Gestion_Electrica
             costoAlumbrado.MdiParent = this;
             costoAlumbrado.Show();
         }
+
+        private void agregarCostoComercializaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var costoComercializacion = new CostoPorComercialización();
+            costoComercializacion.MdiParent = this;
+            costoComercializacion.Show();
+        }
     }
 }

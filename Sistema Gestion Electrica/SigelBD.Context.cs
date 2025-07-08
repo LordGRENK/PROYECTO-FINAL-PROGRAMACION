@@ -31,5 +31,6 @@ namespace Sistema_Gestion_Electrica
         public DbSet<ingresarServicio> ingresarServicio { get; set; }
         public DbSet<PrecioAlumbradoPublico> PrecioAlumbradoPublico { get; set; }
         public DbSet<PrecioKwhPorMes> PrecioKwhPorMes { get; set; }
+        public DbSet<PrecioFijoComercialización> PrecioFijoComercialización { get; set; }
     }
 }

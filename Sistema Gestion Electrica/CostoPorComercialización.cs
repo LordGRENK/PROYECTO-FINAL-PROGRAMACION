@@ -65,26 +65,26 @@ namespace Sistema_Gestion_Electrica
 
         }
 
-        private void btnAgregarServicio_Click(object sender, EventArgs e)
-        {
-            var precioAlumbradoPublico = new PrecioAlumbradoPublico
-            {
-                Año = (int)nudAño.Value,
-                Mes = (int)nudMes.Value,
-                De0a25kWh = decimal.Parse(tb0a25kWh.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
-                De101a150kWh = decimal.Parse(tb26a60kWh.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
-                De151a500kWh = decimal.Parse(tb51s100kWh.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
-                De26a50kWh = decimal.Parse(tb101a150kWh.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
-                De501a1000kWh = decimal.Parse(tb151a500kWh.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
-                De51a100kWh = decimal.Parse(tb501a1000kWh.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
-                Mayorde1000kWh = decimal.Parse(tbMayorde1000kWh.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
-                Compañia = cbEmpresa.SelectedItem.ToString()
-            };
-            _bd.PrecioAlumbradoPublico.Add(precioAlumbradoPublico);
-            _bd.SaveChanges();
-            MessageBox.Show("Costo por kWh agregado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
-        }
+private void btnAgregarServicio_Click(object sender, EventArgs e)
+{
+    var precioFijoComercialización = new PrecioFijoComercialización
+    {
+        Año = (int)nudAño.Value,
+        Mes = (int)nudMes.Value,
+        De0a25kWh = decimal.Parse(tb0a25kWh.Text, CultureInfo.InvariantCulture),
+        De26a50kWh = decimal.Parse(tb26a60kWh.Text, CultureInfo.InvariantCulture),
+        De51a100kWh = decimal.Parse(tb51s100kWh.Text, CultureInfo.InvariantCulture),
+        De101a150kWh = decimal.Parse(tb101a150kWh.Text, CultureInfo.InvariantCulture),
+        De151a500kWh = decimal.Parse(tb151a500kWh.Text, CultureInfo.InvariantCulture),
+        De501a1000kWh = decimal.Parse(tb501a1000kWh.Text, CultureInfo.InvariantCulture),
+        Mayorde1000kWh = decimal.Parse(tbMayorde1000kWh.Text, CultureInfo.InvariantCulture),
+        Compañia = cbEmpresa.SelectedItem.ToString()
+    };
+    _bd.PrecioFijoComercialización.Add(precioFijoComercialización);
+    _bd.SaveChanges();
+    MessageBox.Show("Costo por kWh agregado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+    this.Close();
+}
 
         private void tbPrimeros25kWh_TextChanged(object sender, EventArgs e)
         {
