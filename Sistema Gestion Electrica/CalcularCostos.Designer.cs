@@ -28,133 +28,92 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnIniciarSesion = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.lblNIS = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.lblCompañía = new System.Windows.Forms.Label();
+            this.lblMes = new System.Windows.Forms.Label();
+            this.tbNIS = new System.Windows.Forms.TextBox();
+            this.btnCalcularFacturacion = new System.Windows.Forms.Button();
             this.lblUsuarioCAMBIA = new System.Windows.Forms.Label();
             this.lblCompañíaCAMBIA = new System.Windows.Forms.Label();
+            this.lblAño = new System.Windows.Forms.Label();
+            this.cbAño = new System.Windows.Forms.ComboBox();
+            this.cbMes = new System.Windows.Forms.ComboBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label5
+            // lblTitulo
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(59, 11);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(403, 33);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Calculadora de Consumo Eléctrico";
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(59, 11);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(401, 33);
+            this.lblTitulo.TabIndex = 13;
+            this.lblTitulo.Text = "Facturación de Consumo Eléctrico";
             // 
-            // label1
+            // lblNIS
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(155, 70);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 33);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "NIS:";
+            this.lblNIS.AutoSize = true;
+            this.lblNIS.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNIS.Location = new System.Drawing.Point(99, 70);
+            this.lblNIS.Name = "lblNIS";
+            this.lblNIS.Size = new System.Drawing.Size(65, 33);
+            this.lblNIS.TabIndex = 14;
+            this.lblNIS.Text = "NIS:";
             // 
-            // label2
+            // lblUsuario
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(101, 111);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 33);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Usuario:";
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(99, 111);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(114, 33);
+            this.lblUsuario.TabIndex = 15;
+            this.lblUsuario.Text = "Usuario:";
             // 
-            // label3
+            // lblCompañía
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(75, 154);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 33);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Compañía:";
+            this.lblCompañía.AutoSize = true;
+            this.lblCompañía.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompañía.Location = new System.Drawing.Point(75, 154);
+            this.lblCompañía.Name = "lblCompañía";
+            this.lblCompañía.Size = new System.Drawing.Size(138, 33);
+            this.lblCompañía.TabIndex = 16;
+            this.lblCompañía.Text = "Compañía:";
             // 
-            // label4
+            // lblMes
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(15, 192);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(194, 33);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Seleccione Mes:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.lblMes.AutoSize = true;
+            this.lblMes.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMes.Location = new System.Drawing.Point(19, 253);
+            this.lblMes.Name = "lblMes";
+            this.lblMes.Size = new System.Drawing.Size(194, 33);
+            this.lblMes.TabIndex = 17;
+            this.lblMes.Text = "Seleccione Mes:";
+            this.lblMes.Click += new System.EventHandler(this.label4_Click);
             // 
-            // textBox1
+            // tbNIS
             // 
-            this.textBox1.Location = new System.Drawing.Point(236, 79);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 22);
-            this.textBox1.TabIndex = 20;
+            this.tbNIS.Location = new System.Drawing.Point(202, 80);
+            this.tbNIS.Margin = new System.Windows.Forms.Padding(4);
+            this.tbNIS.Name = "tbNIS";
+            this.tbNIS.Size = new System.Drawing.Size(132, 22);
+            this.tbNIS.TabIndex = 20;
             // 
-            // btnIniciarSesion
+            // btnCalcularFacturacion
             // 
-            this.btnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnIniciarSesion.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIniciarSesion.Location = new System.Drawing.Point(177, 266);
-            this.btnIniciarSesion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnIniciarSesion.Name = "btnIniciarSesion";
-            this.btnIniciarSesion.Size = new System.Drawing.Size(167, 43);
-            this.btnIniciarSesion.TabIndex = 25;
-            this.btnIniciarSesion.Text = "Calcular";
-            this.btnIniciarSesion.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Enero",
-            "",
-            "",
-            "Febrero",
-            "",
-            "",
-            "Marzo",
-            "",
-            "",
-            "Abril",
-            "",
-            "",
-            "Mayo",
-            "",
-            "",
-            "Junio",
-            "",
-            "",
-            "Julio",
-            "",
-            "",
-            "Agosto",
-            "",
-            "",
-            "Septiembre",
-            "",
-            "",
-            "Octubre",
-            "",
-            "",
-            "Noviembre",
-            "",
-            "",
-            "Diciembre"});
-            this.comboBox1.Location = new System.Drawing.Point(232, 201);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 24);
-            this.comboBox1.TabIndex = 27;
+            this.btnCalcularFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCalcularFacturacion.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalcularFacturacion.Location = new System.Drawing.Point(167, 319);
+            this.btnCalcularFacturacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCalcularFacturacion.Name = "btnCalcularFacturacion";
+            this.btnCalcularFacturacion.Size = new System.Drawing.Size(167, 43);
+            this.btnCalcularFacturacion.TabIndex = 25;
+            this.btnCalcularFacturacion.Text = "Calcular";
+            this.btnCalcularFacturacion.UseVisualStyleBackColor = true;
+            this.btnCalcularFacturacion.Click += new System.EventHandler(this.btnCalcularFacturacion_Click);
             // 
             // lblUsuarioCAMBIA
             // 
@@ -175,25 +134,68 @@
             this.lblCompañíaCAMBIA.Size = new System.Drawing.Size(129, 33);
             this.lblCompañíaCAMBIA.TabIndex = 29;
             this.lblCompañíaCAMBIA.Text = "Compañía";
+            this.lblCompañíaCAMBIA.Click += new System.EventHandler(this.lblCompañíaCAMBIA_Click);
+            // 
+            // lblAño
+            // 
+            this.lblAño.AutoSize = true;
+            this.lblAño.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAño.Location = new System.Drawing.Point(20, 203);
+            this.lblAño.Name = "lblAño";
+            this.lblAño.Size = new System.Drawing.Size(193, 33);
+            this.lblAño.TabIndex = 31;
+            this.lblAño.Text = "Seleccione Año:";
+            // 
+            // cbAño
+            // 
+            this.cbAño.FormattingEnabled = true;
+            this.cbAño.Location = new System.Drawing.Point(236, 213);
+            this.cbAño.Name = "cbAño";
+            this.cbAño.Size = new System.Drawing.Size(132, 24);
+            this.cbAño.TabIndex = 32;
+            // 
+            // cbMes
+            // 
+            this.cbMes.FormattingEnabled = true;
+            this.cbMes.Location = new System.Drawing.Point(236, 263);
+            this.cbMes.Name = "cbMes";
+            this.cbMes.Size = new System.Drawing.Size(132, 24);
+            this.cbMes.TabIndex = 33;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(353, 70);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(107, 37);
+            this.btnBuscar.TabIndex = 34;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // CalcularCostos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 428);
+            this.ClientSize = new System.Drawing.Size(521, 374);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.cbMes);
+            this.Controls.Add(this.cbAño);
+            this.Controls.Add(this.lblAño);
             this.Controls.Add(this.lblCompañíaCAMBIA);
             this.Controls.Add(this.lblUsuarioCAMBIA);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.btnIniciarSesion);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label5);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Controls.Add(this.btnCalcularFacturacion);
+            this.Controls.Add(this.tbNIS);
+            this.Controls.Add(this.lblMes);
+            this.Controls.Add(this.lblCompañía);
+            this.Controls.Add(this.lblUsuario);
+            this.Controls.Add(this.lblNIS);
+            this.Controls.Add(this.lblTitulo);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CalcularCostos";
-            this.Text = "CalcularCostos";
+            this.Text = "Facturación de Consumo Eléctrico";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,15 +203,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btnIniciarSesion;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label lblNIS;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label lblCompañía;
+        private System.Windows.Forms.Label lblMes;
+        private System.Windows.Forms.TextBox tbNIS;
+        private System.Windows.Forms.Button btnCalcularFacturacion;
         private System.Windows.Forms.Label lblUsuarioCAMBIA;
         private System.Windows.Forms.Label lblCompañíaCAMBIA;
+        private System.Windows.Forms.Label lblAño;
+        private System.Windows.Forms.ComboBox cbAño;
+        private System.Windows.Forms.ComboBox cbMes;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
