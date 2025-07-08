@@ -59,13 +59,11 @@
           <Property Name="Mayorde1000kWh" Type="decimal" Precision="18" Scale="4" />
           <Property Name="Compañia" Type="char" MaxLength="25" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'GISEL.dbo.PrecioFijoComercialización' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="PrecioFijoComercialización">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Año" Type="int" />
           <Property Name="Mes" Type="int" />
           <Property Name="De0a25kWh" Type="decimal" Precision="18" Scale="4" />
@@ -99,22 +97,8 @@ advertencia 6002: La tabla o vista 'GISEL.dbo.PrecioFijoComercialización' no ti
           <EntitySet Name="ConteoConsumoTabla" EntityType="Self.ConteoConsumoTabla" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ingresarServicio" EntityType="Self.ingresarServicio" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PrecioAlumbradoPublico" EntityType="Self.PrecioAlumbradoPublico" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PrecioFijoComercialización" EntityType="Self.PrecioFijoComercialización" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PrecioKwhPorMes" EntityType="Self.PrecioKwhPorMes" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PrecioFijoComercialización" EntityType="Self.PrecioFijoComercialización" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-[PrecioFijoComercialización].[Id] AS [Id], 
-[PrecioFijoComercialización].[Año] AS [Año], 
-[PrecioFijoComercialización].[Mes] AS [Mes], 
-[PrecioFijoComercialización].[De0a25kWh] AS [De0a25kWh], 
-[PrecioFijoComercialización].[De26a50kWh] AS [De26a50kWh], 
-[PrecioFijoComercialización].[De51a100kWh] AS [De51a100kWh], 
-[PrecioFijoComercialización].[De101a150kWh] AS [De101a150kWh], 
-[PrecioFijoComercialización].[De151a500kWh] AS [De151a500kWh], 
-[PrecioFijoComercialización].[De501a1000kWh] AS [De501a1000kWh], 
-[PrecioFijoComercialización].[Mayorde1000kWh] AS [Mayorde1000kWh], 
-[PrecioFijoComercialización].[Compañia] AS [Compañia]
-FROM [dbo].[PrecioFijoComercialización] AS [PrecioFijoComercialización]</DefiningQuery>
-          </EntitySet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -175,6 +159,22 @@ FROM [dbo].[PrecioFijoComercialización] AS [PrecioFijoComercialización]</Defin
           <Property Name="Mayorde1000kWh" Type="Decimal" Precision="18" Scale="4" />
           <Property Name="Compañia" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
         </EntityType>
+        <EntityType Name="PrecioFijoComercialización">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Año" Type="Int32" />
+          <Property Name="Mes" Type="Int32" />
+          <Property Name="De0a25kWh" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="De26a50kWh" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="De51a100kWh" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="De101a150kWh" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="De151a500kWh" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="De501a1000kWh" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Mayorde1000kWh" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Compañia" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
+        </EntityType>
         <EntityType Name="PrecioKwhPorMes">
           <Key>
             <PropertyRef Name="Id" />
@@ -191,30 +191,14 @@ FROM [dbo].[PrecioFijoComercialización] AS [PrecioFijoComercialización]</Defin
           <Property Name="Adicionalesa1000kWh" Type="Decimal" Precision="18" Scale="4" />
           <Property Name="Compañia" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
         </EntityType>
-        <EntityType Name="PrecioFijoComercialización">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Año" Type="Int32" />
-          <Property Name="Mes" Type="Int32" />
-          <Property Name="De0a25kWh" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="De26a50kWh" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="De51a100kWh" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="De101a150kWh" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="De151a500kWh" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="De501a1000kWh" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="Mayorde1000kWh" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="Compañia" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
-        </EntityType>
         <EntityContainer Name="GISELEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="agregarServicioEléctrico" EntityType="Self.agregarServicioEléctrico" />
           <EntitySet Name="agregarUsuarioTabla" EntityType="Self.agregarUsuarioTabla" />
           <EntitySet Name="ConteoConsumoTabla" EntityType="Self.ConteoConsumoTabla" />
           <EntitySet Name="ingresarServicio" EntityType="Self.ingresarServicio" />
           <EntitySet Name="PrecioAlumbradoPublico" EntityType="Self.PrecioAlumbradoPublico" />
-          <EntitySet Name="PrecioKwhPorMes" EntityType="Self.PrecioKwhPorMes" />
           <EntitySet Name="PrecioFijoComercialización" EntityType="Self.PrecioFijoComercialización" />
+          <EntitySet Name="PrecioKwhPorMes" EntityType="Self.PrecioKwhPorMes" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -281,23 +265,6 @@ FROM [dbo].[PrecioFijoComercialización] AS [PrecioFijoComercialización]</Defin
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PrecioKwhPorMes">
-            <EntityTypeMapping TypeName="GISELModel.PrecioKwhPorMes">
-              <MappingFragment StoreEntitySet="PrecioKwhPorMes">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Año" ColumnName="Año" />
-                <ScalarProperty Name="Mes" ColumnName="Mes" />
-                <ScalarProperty Name="Primeros25kWh" ColumnName="Primeros25kWh" />
-                <ScalarProperty Name="Siguientes25kWh" ColumnName="Siguientes25kWh" />
-                <ScalarProperty Name="Siguientes50kWh1" ColumnName="Siguientes50kWh1" />
-                <ScalarProperty Name="Siguientes50kWh2" ColumnName="Siguientes50kWh2" />
-                <ScalarProperty Name="Siguientes350kWh" ColumnName="Siguientes350kWh" />
-                <ScalarProperty Name="Siguientes500kWh" ColumnName="Siguientes500kWh" />
-                <ScalarProperty Name="Adicionalesa1000kWh" ColumnName="Adicionalesa1000kWh" />
-                <ScalarProperty Name="Compañia" ColumnName="Compañia" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="PrecioFijoComercialización">
             <EntityTypeMapping TypeName="GISELModel.PrecioFijoComercialización">
               <MappingFragment StoreEntitySet="PrecioFijoComercialización">
@@ -311,6 +278,23 @@ FROM [dbo].[PrecioFijoComercialización] AS [PrecioFijoComercialización]</Defin
                 <ScalarProperty Name="De151a500kWh" ColumnName="De151a500kWh" />
                 <ScalarProperty Name="De501a1000kWh" ColumnName="De501a1000kWh" />
                 <ScalarProperty Name="Mayorde1000kWh" ColumnName="Mayorde1000kWh" />
+                <ScalarProperty Name="Compañia" ColumnName="Compañia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrecioKwhPorMes">
+            <EntityTypeMapping TypeName="GISELModel.PrecioKwhPorMes">
+              <MappingFragment StoreEntitySet="PrecioKwhPorMes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Año" ColumnName="Año" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Primeros25kWh" ColumnName="Primeros25kWh" />
+                <ScalarProperty Name="Siguientes25kWh" ColumnName="Siguientes25kWh" />
+                <ScalarProperty Name="Siguientes50kWh1" ColumnName="Siguientes50kWh1" />
+                <ScalarProperty Name="Siguientes50kWh2" ColumnName="Siguientes50kWh2" />
+                <ScalarProperty Name="Siguientes350kWh" ColumnName="Siguientes350kWh" />
+                <ScalarProperty Name="Siguientes500kWh" ColumnName="Siguientes500kWh" />
+                <ScalarProperty Name="Adicionalesa1000kWh" ColumnName="Adicionalesa1000kWh" />
                 <ScalarProperty Name="Compañia" ColumnName="Compañia" />
               </MappingFragment>
             </EntityTypeMapping>
