@@ -104,11 +104,6 @@
           <Property Name="PrecioAlumbradoPublicoTotal" Type="decimal" Precision="18" Scale="4" />
           <Property Name="PrecioFijoComercialicación" Type="decimal" Precision="18" Scale="4" />
           <Property Name="PrecioKwhPorMes" Type="decimal" Precision="18" Scale="4" />
-          <Property Name="FechaDeEmision" Type="datetime" />
-          <Property Name="FechaDeExpiracion" Type="datetime" />
-          <Property Name="SubsidioMenorA150kWh" Type="decimal" Precision="18" Scale="4" />
-          <Property Name="RegulacionNIS" Type="decimal" Precision="18" Scale="4" />
-          <Property Name="TotalAPagar" Type="decimal" Precision="18" Scale="4" />
         </EntityType>
         <EntityContainer Name="GISELModelStoreContainer">
           <EntitySet Name="agregarServicioEléctrico" EntityType="Self.agregarServicioEléctrico" Schema="dbo" store:Type="Tables" />
@@ -224,11 +219,6 @@
           <Property Name="PrecioAlumbradoPublicoTotal" Type="Decimal" Precision="18" Scale="4" />
           <Property Name="PrecioFijoComercialicación" Type="Decimal" Precision="18" Scale="4" />
           <Property Name="PrecioKwhPorMes" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="FechaDeEmision" Type="DateTime" Precision="3" />
-          <Property Name="FechaDeExpiracion" Type="DateTime" Precision="3" />
-          <Property Name="SubsidioMenorA150kWh" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="RegulacionNIS" Type="Decimal" Precision="18" Scale="4" />
-          <Property Name="TotalAPagar" Type="Decimal" Precision="18" Scale="4" />
         </EntityType>
         <EntityContainer Name="GISELEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="agregarServicioEléctrico" EntityType="Self.agregarServicioEléctrico" />
@@ -351,11 +341,6 @@
                 <ScalarProperty Name="PrecioAlumbradoPublicoTotal" ColumnName="PrecioAlumbradoPublicoTotal" />
                 <ScalarProperty Name="PrecioFijoComercialicación" ColumnName="PrecioFijoComercialicación" />
                 <ScalarProperty Name="PrecioKwhPorMes" ColumnName="PrecioKwhPorMes" />
-                <ScalarProperty Name="FechaDeEmision" ColumnName="FechaDeEmision" />
-                <ScalarProperty Name="FechaDeExpiracion" ColumnName="FechaDeExpiracion" />
-                <ScalarProperty Name="SubsidioMenorA150kWh" ColumnName="SubsidioMenorA150kWh" />
-                <ScalarProperty Name="RegulacionNIS" ColumnName="RegulacionNIS" />
-                <ScalarProperty Name="TotalAPagar" ColumnName="TotalAPagar" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

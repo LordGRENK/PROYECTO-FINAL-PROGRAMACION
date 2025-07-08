@@ -23,10 +23,5 @@ namespace Sistema_Gestion_Electrica
         public Nullable<decimal> PrecioAlumbradoPublicoTotal { get; set; }
         public Nullable<decimal> PrecioFijoComercialicación { get; set; }
         public Nullable<decimal> PrecioKwhPorMes { get; set; }
-        public Nullable<System.DateTime> FechaDeEmision { get; set; }
-        public Nullable<System.DateTime> FechaDeExpiracion { get; set; }
-        public Nullable<decimal> SubsidioMenorA150kWh { get; set; }
-        public Nullable<decimal> RegulacionNIS { get; set; }
-        public Nullable<decimal> TotalAPagar { get; set; }
     }
 }

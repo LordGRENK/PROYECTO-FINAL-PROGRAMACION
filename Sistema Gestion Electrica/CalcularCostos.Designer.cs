@@ -34,7 +34,6 @@
             this.lblCompañía = new System.Windows.Forms.Label();
             this.lblMes = new System.Windows.Forms.Label();
             this.tbNIS = new System.Windows.Forms.TextBox();
-            this.btnCalcularFacturacion = new System.Windows.Forms.Button();
             this.lblUsuarioCAMBIA = new System.Windows.Forms.Label();
             this.lblCompañíaCAMBIA = new System.Windows.Forms.Label();
             this.lblAño = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnAñadirConsumo = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnCalcularFacturacion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -103,19 +103,6 @@
             this.tbNIS.Name = "tbNIS";
             this.tbNIS.Size = new System.Drawing.Size(132, 22);
             this.tbNIS.TabIndex = 20;
-            // 
-            // btnCalcularFacturacion
-            // 
-            this.btnCalcularFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCalcularFacturacion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalcularFacturacion.Location = new System.Drawing.Point(81, 311);
-            this.btnCalcularFacturacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCalcularFacturacion.Name = "btnCalcularFacturacion";
-            this.btnCalcularFacturacion.Size = new System.Drawing.Size(162, 43);
-            this.btnCalcularFacturacion.TabIndex = 25;
-            this.btnCalcularFacturacion.Text = "Calcular";
-            this.btnCalcularFacturacion.UseVisualStyleBackColor = true;
-            this.btnCalcularFacturacion.Click += new System.EventHandler(this.btnCalcularFacturacion_Click);
             // 
             // lblUsuarioCAMBIA
             // 
@@ -201,6 +188,20 @@
             this.btnCancelar.TabIndex = 36;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnCalcularFacturacion
+            // 
+            this.btnCalcularFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCalcularFacturacion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalcularFacturacion.Location = new System.Drawing.Point(25, 311);
+            this.btnCalcularFacturacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCalcularFacturacion.Name = "btnCalcularFacturacion";
+            this.btnCalcularFacturacion.Size = new System.Drawing.Size(217, 43);
+            this.btnCalcularFacturacion.TabIndex = 25;
+            this.btnCalcularFacturacion.Text = "Calcular e Imprimir";
+            this.btnCalcularFacturacion.UseVisualStyleBackColor = true;
+            this.btnCalcularFacturacion.Click += new System.EventHandler(this.btnCalcularFacturacion_Click);
             // 
             // CalcularCostos
             // 
@@ -238,7 +239,6 @@
         private System.Windows.Forms.Label lblCompañía;
         private System.Windows.Forms.Label lblMes;
         private System.Windows.Forms.TextBox tbNIS;
-        private System.Windows.Forms.Button btnCalcularFacturacion;
         private System.Windows.Forms.Label lblUsuarioCAMBIA;
         private System.Windows.Forms.Label lblCompañíaCAMBIA;
         private System.Windows.Forms.Label lblAño;
@@ -247,5 +247,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnAñadirConsumo;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnCalcularFacturacion;
     }
 }

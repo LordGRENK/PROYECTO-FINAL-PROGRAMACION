@@ -190,6 +190,9 @@
     <EmbeddedResource Include="CostoKw_h.resx">
       <DependentUpon>CostoKw_h.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FacturaConsumo.resx">
+      <DependentUpon>FacturaConsumo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VerConsumos.resx">
       <DependentUpon>VerConsumos.cs</DependentUpon>
     </EmbeddedResource>

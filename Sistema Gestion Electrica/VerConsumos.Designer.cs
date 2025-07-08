@@ -44,7 +44,7 @@
             this.lblHistorialConsumos.Name = "lblHistorialConsumos";
             this.lblHistorialConsumos.Size = new System.Drawing.Size(533, 63);
             this.lblHistorialConsumos.TabIndex = 12;
-            this.lblHistorialConsumos.Text = "VER CONSUMOS GISEL";
+            this.lblHistorialConsumos.Text = "VER CONSUMOS SIGEL";
             this.lblHistorialConsumos.Click += new System.EventHandler(this.lblVerUsuario_Click);
             // 
             // gvConsumosGisel
@@ -107,7 +107,7 @@
             this.Controls.Add(this.lblHistorialConsumos);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "VerConsumos";
-            this.Text = "VER CONSUMO GISEL";
+            this.Text = "VER CONSUMO SIGEL";
             this.Load += new System.EventHandler(this.EditarUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvConsumosGisel)).EndInit();
             this.ResumeLayout(false);
