@@ -13,6 +13,7 @@ namespace Sistema_Gestion_Electrica
     public partial class CostoKw_h : Form
     {
         private readonly GISELEntities _bd; // Instancia de la clase agregarUsuarioTabla
+
         public CostoKw_h()
         {
             InitializeComponent();

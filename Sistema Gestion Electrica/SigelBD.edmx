@@ -39,9 +39,9 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="usuarioServicio" Type="nchar" MaxLength="50" />
+          <Property Name="usuarioServicio" Type="nchar" MaxLength="10" />
           <Property Name="servicioAnexado" Type="nchar" MaxLength="50" />
-          <Property Name="voltajeServicio" Type="nchar" MaxLength="10" />
+          <Property Name="voltajeServicio" Type="int" />
         </EntityType>
         <EntityType Name="PrecioAlumbradoPublico">
           <Key>
@@ -91,6 +91,24 @@
           <Property Name="Adicionalesa1000kWh" Type="decimal" Precision="18" Scale="4" />
           <Property Name="Compañia" Type="char" MaxLength="25" />
         </EntityType>
+        <EntityType Name="TablaFacturas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NIS" Type="int" />
+          <Property Name="NombreUsuario" Type="char" MaxLength="20" />
+          <Property Name="Compañia" Type="char" MaxLength="15" />
+          <Property Name="CantMesesPendientes" Type="int" />
+          <Property Name="KwhTotalAPagar" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="PrecioAlumbradoPublicoTotal" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="PrecioFijoComercialicación" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="PrecioKwhPorMes" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="FechaDeEmision" Type="datetime" />
+          <Property Name="FechaDeExpiracion" Type="datetime" />
+          <Property Name="SubsidioMenorA150kWh" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="RegulacionNIS" Type="decimal" Precision="18" Scale="4" />
+        </EntityType>
         <EntityContainer Name="GISELModelStoreContainer">
           <EntitySet Name="agregarServicioEléctrico" EntityType="Self.agregarServicioEléctrico" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="agregarUsuarioTabla" EntityType="Self.agregarUsuarioTabla" Schema="dbo" store:Type="Tables" />
@@ -99,6 +117,7 @@
           <EntitySet Name="PrecioAlumbradoPublico" EntityType="Self.PrecioAlumbradoPublico" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PrecioFijoComercialización" EntityType="Self.PrecioFijoComercialización" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PrecioKwhPorMes" EntityType="Self.PrecioKwhPorMes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TablaFacturas" EntityType="Self.TablaFacturas" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -139,9 +158,9 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="usuarioServicio" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="usuarioServicio" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="servicioAnexado" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="voltajeServicio" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="voltajeServicio" Type="Int32" />
         </EntityType>
         <EntityType Name="PrecioAlumbradoPublico">
           <Key>
@@ -191,6 +210,24 @@
           <Property Name="Adicionalesa1000kWh" Type="Decimal" Precision="18" Scale="4" />
           <Property Name="Compañia" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
         </EntityType>
+        <EntityType Name="TablaFacturas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NIS" Type="Int32" />
+          <Property Name="NombreUsuario" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="Compañia" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="CantMesesPendientes" Type="Int32" />
+          <Property Name="KwhTotalAPagar" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="PrecioAlumbradoPublicoTotal" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="PrecioFijoComercialicación" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="PrecioKwhPorMes" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="FechaDeEmision" Type="DateTime" Precision="3" />
+          <Property Name="FechaDeExpiracion" Type="DateTime" Precision="3" />
+          <Property Name="SubsidioMenorA150kWh" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="RegulacionNIS" Type="Decimal" Precision="18" Scale="4" />
+        </EntityType>
         <EntityContainer Name="GISELEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="agregarServicioEléctrico" EntityType="Self.agregarServicioEléctrico" />
           <EntitySet Name="agregarUsuarioTabla" EntityType="Self.agregarUsuarioTabla" />
@@ -199,6 +236,7 @@
           <EntitySet Name="PrecioAlumbradoPublico" EntityType="Self.PrecioAlumbradoPublico" />
           <EntitySet Name="PrecioFijoComercialización" EntityType="Self.PrecioFijoComercialización" />
           <EntitySet Name="PrecioKwhPorMes" EntityType="Self.PrecioKwhPorMes" />
+          <EntitySet Name="TablaFacturas" EntityType="Self.TablaFacturas" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -296,6 +334,25 @@
                 <ScalarProperty Name="Siguientes500kWh" ColumnName="Siguientes500kWh" />
                 <ScalarProperty Name="Adicionalesa1000kWh" ColumnName="Adicionalesa1000kWh" />
                 <ScalarProperty Name="Compañia" ColumnName="Compañia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TablaFacturas">
+            <EntityTypeMapping TypeName="GISELModel.TablaFacturas">
+              <MappingFragment StoreEntitySet="TablaFacturas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NIS" ColumnName="NIS" />
+                <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
+                <ScalarProperty Name="Compañia" ColumnName="Compañia" />
+                <ScalarProperty Name="CantMesesPendientes" ColumnName="CantMesesPendientes" />
+                <ScalarProperty Name="KwhTotalAPagar" ColumnName="KwhTotalAPagar" />
+                <ScalarProperty Name="PrecioAlumbradoPublicoTotal" ColumnName="PrecioAlumbradoPublicoTotal" />
+                <ScalarProperty Name="PrecioFijoComercialicación" ColumnName="PrecioFijoComercialicación" />
+                <ScalarProperty Name="PrecioKwhPorMes" ColumnName="PrecioKwhPorMes" />
+                <ScalarProperty Name="FechaDeEmision" ColumnName="FechaDeEmision" />
+                <ScalarProperty Name="FechaDeExpiracion" ColumnName="FechaDeExpiracion" />
+                <ScalarProperty Name="SubsidioMenorA150kWh" ColumnName="SubsidioMenorA150kWh" />
+                <ScalarProperty Name="RegulacionNIS" ColumnName="RegulacionNIS" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

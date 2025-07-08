@@ -32,15 +32,16 @@
             this.uSUARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verServiciosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.verHistorialDeConsumosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarServicioAUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calcularCostoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gESTIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarCostoKwhDelMesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarCostoAlumbradoPublicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarConteoConsumoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarCostoComercializaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarServicioElectricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lOGINToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarCostoComercializaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +63,7 @@
             this.uSUARIOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editarUsuarioToolStripMenuItem,
             this.verServiciosToolStripMenuItem1,
+            this.verHistorialDeConsumosToolStripMenuItem,
             this.ingresarServicioAUsuarioToolStripMenuItem,
             this.calcularCostoUsuarioToolStripMenuItem});
             this.uSUARIOToolStripMenuItem.Name = "uSUARIOToolStripMenuItem";
@@ -81,6 +83,13 @@
             this.verServiciosToolStripMenuItem1.Size = new System.Drawing.Size(267, 26);
             this.verServiciosToolStripMenuItem1.Text = "Ver Servicios de Usuarios";
             this.verServiciosToolStripMenuItem1.Click += new System.EventHandler(this.verServiciosToolStripMenuItem1_Click);
+            // 
+            // verHistorialDeConsumosToolStripMenuItem
+            // 
+            this.verHistorialDeConsumosToolStripMenuItem.Name = "verHistorialDeConsumosToolStripMenuItem";
+            this.verHistorialDeConsumosToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
+            this.verHistorialDeConsumosToolStripMenuItem.Text = "Ver Historial de Consumos";
+            this.verHistorialDeConsumosToolStripMenuItem.Click += new System.EventHandler(this.verHistorialDeConsumosToolStripMenuItem_Click);
             // 
             // ingresarServicioAUsuarioToolStripMenuItem
             // 
@@ -130,6 +139,13 @@
             this.agregarConteoConsumoUsuarioToolStripMenuItem.Text = "Agregar Conteo Consumo Usuario";
             this.agregarConteoConsumoUsuarioToolStripMenuItem.Click += new System.EventHandler(this.agregarConteoConsumoUsuarioToolStripMenuItem_Click);
             // 
+            // agregarCostoComercializaciónToolStripMenuItem
+            // 
+            this.agregarCostoComercializaciónToolStripMenuItem.Name = "agregarCostoComercializaciónToolStripMenuItem";
+            this.agregarCostoComercializaciónToolStripMenuItem.Size = new System.Drawing.Size(320, 26);
+            this.agregarCostoComercializaciónToolStripMenuItem.Text = "Agregar Costo Comercialización";
+            this.agregarCostoComercializaciónToolStripMenuItem.Click += new System.EventHandler(this.agregarCostoComercializaciónToolStripMenuItem_Click);
+            // 
             // ingresarServicioElectricoToolStripMenuItem
             // 
             this.ingresarServicioElectricoToolStripMenuItem.Name = "ingresarServicioElectricoToolStripMenuItem";
@@ -144,13 +160,6 @@
             this.lOGINToolStripMenuItem.Text = "SALIR";
             this.lOGINToolStripMenuItem.Click += new System.EventHandler(this.lOGINToolStripMenuItem_Click);
             // 
-            // agregarCostoComercializaciónToolStripMenuItem
-            // 
-            this.agregarCostoComercializaciónToolStripMenuItem.Name = "agregarCostoComercializaciónToolStripMenuItem";
-            this.agregarCostoComercializaciónToolStripMenuItem.Size = new System.Drawing.Size(320, 26);
-            this.agregarCostoComercializaciónToolStripMenuItem.Text = "Agregar Costo Comercialización";
-            this.agregarCostoComercializaciónToolStripMenuItem.Click += new System.EventHandler(this.agregarCostoComercializaciónToolStripMenuItem_Click);
-            // 
             // PaginaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -162,6 +171,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PaginaPrincipal";
             this.Text = "SIGEL";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.PaginaPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -185,5 +195,6 @@
         private System.Windows.Forms.ToolStripMenuItem lOGINToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarCostoAlumbradoPublicoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarCostoComercializaciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verHistorialDeConsumosToolStripMenuItem;
     }
 }

@@ -54,7 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="agregarServicioEléctrico.cs">
-      <DependentUpon>GiselBD.tt</DependentUpon>
+      <DependentUpon>SigelBD.tt</DependentUpon>
     </Compile>
     <Compile Include="AgregarUsuario.cs">
       <SubType>Form</SubType>
@@ -63,7 +63,7 @@
       <DependentUpon>AgregarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="agregarUsuarioTabla.cs">
-      <DependentUpon>GiselBD.tt</DependentUpon>
+      <DependentUpon>SigelBD.tt</DependentUpon>
     </Compile>
     <Compile Include="CalcularCostos.cs">
       <SubType>Form</SubType>
@@ -72,7 +72,7 @@
       <DependentUpon>CalcularCostos.cs</DependentUpon>
     </Compile>
     <Compile Include="ConteoConsumoTabla.cs">
-      <DependentUpon>GiselBD.tt</DependentUpon>
+      <DependentUpon>SigelBD.tt</DependentUpon>
     </Compile>
     <Compile Include="ConteoConsumoUsuario.cs">
       <SubType>Form</SubType>
@@ -98,32 +98,47 @@
     <Compile Include="CostoKw_h.Designer.cs">
       <DependentUpon>CostoKw_h.cs</DependentUpon>
     </Compile>
-    <Compile Include="GiselBD.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GiselBD.Context.tt</DependentUpon>
+    <Compile Include="FacturaConsumo.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GiselBD.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GiselBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GiselBD.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GiselBD.edmx</DependentUpon>
+    <Compile Include="FacturaConsumo.Designer.cs">
+      <DependentUpon>FacturaConsumo.cs</DependentUpon>
     </Compile>
     <Compile Include="ingresarServicio.cs">
-      <DependentUpon>GiselBD.tt</DependentUpon>
+      <DependentUpon>SigelBD.tt</DependentUpon>
     </Compile>
     <Compile Include="PrecioAlumbradoPublico.cs">
-      <DependentUpon>GiselBD.tt</DependentUpon>
+      <DependentUpon>SigelBD.tt</DependentUpon>
     </Compile>
     <Compile Include="PrecioFijoComercialización.cs">
-      <DependentUpon>GiselBD.tt</DependentUpon>
+      <DependentUpon>SigelBD.tt</DependentUpon>
     </Compile>
     <Compile Include="PrecioKwhPorMes.cs">
-      <DependentUpon>GiselBD.tt</DependentUpon>
+      <DependentUpon>SigelBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SigelBD.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SigelBD.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SigelBD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SigelBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SigelBD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SigelBD.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="TablaFacturas.cs">
+      <DependentUpon>SigelBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VerConsumos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerConsumos.Designer.cs">
+      <DependentUpon>VerConsumos.cs</DependentUpon>
     </Compile>
     <Compile Include="VerServicios.cs">
       <SubType>Form</SubType>
@@ -175,6 +190,9 @@
     <EmbeddedResource Include="CostoKw_h.resx">
       <DependentUpon>CostoKw_h.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VerConsumos.resx">
+      <DependentUpon>VerConsumos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VerServicios.resx">
       <DependentUpon>VerServicios.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,13 +217,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="GiselBD.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>GiselBD.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="GiselBD.edmx.diagram">
-      <DependentUpon>GiselBD.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -216,6 +227,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="SigelBD.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SigelBD.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SigelBD.edmx.diagram">
+      <DependentUpon>SigelBD.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -224,15 +242,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GiselBD.Context.tt">
+    <Content Include="SigelBD.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>GiselBD.edmx</DependentUpon>
-      <LastGenOutput>GiselBD.Context.cs</LastGenOutput>
+      <DependentUpon>SigelBD.edmx</DependentUpon>
+      <LastGenOutput>SigelBD.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="GiselBD.tt">
+    <Content Include="SigelBD.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>GiselBD.edmx</DependentUpon>
-      <LastGenOutput>GiselBD.cs</LastGenOutput>
+      <DependentUpon>SigelBD.edmx</DependentUpon>
+      <LastGenOutput>SigelBD.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

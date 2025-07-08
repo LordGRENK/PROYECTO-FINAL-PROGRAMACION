@@ -59,7 +59,7 @@ namespace Sistema_Gestion_Electrica
 
                 usuarioServicio = lblNombreUsuario.Text,
                 servicioAnexado = cbServicios.SelectedItem.ToString(), 
-                voltajeServicio = lblEscrituraVoltaje.Text
+                voltajeServicio = Convert.ToInt32(lblEscrituraVoltaje.Text)
             }; 
             _bd.ingresarServicio.Add(agregarServicio); // Agrega el nuevo servicio a la base de datos
             _bd.SaveChanges();

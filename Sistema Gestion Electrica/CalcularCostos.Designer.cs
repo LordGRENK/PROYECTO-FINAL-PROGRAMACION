@@ -41,6 +41,8 @@
             this.cbAño = new System.Windows.Forms.ComboBox();
             this.cbMes = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnAñadirConsumo = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -105,11 +107,11 @@
             // btnCalcularFacturacion
             // 
             this.btnCalcularFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCalcularFacturacion.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalcularFacturacion.Location = new System.Drawing.Point(167, 319);
+            this.btnCalcularFacturacion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalcularFacturacion.Location = new System.Drawing.Point(81, 311);
             this.btnCalcularFacturacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCalcularFacturacion.Name = "btnCalcularFacturacion";
-            this.btnCalcularFacturacion.Size = new System.Drawing.Size(167, 43);
+            this.btnCalcularFacturacion.Size = new System.Drawing.Size(162, 43);
             this.btnCalcularFacturacion.TabIndex = 25;
             this.btnCalcularFacturacion.Text = "Calcular";
             this.btnCalcularFacturacion.UseVisualStyleBackColor = true;
@@ -175,11 +177,38 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // btnAñadirConsumo
+            // 
+            this.btnAñadirConsumo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAñadirConsumo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAñadirConsumo.Location = new System.Drawing.Point(379, 203);
+            this.btnAñadirConsumo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAñadirConsumo.Name = "btnAñadirConsumo";
+            this.btnAñadirConsumo.Size = new System.Drawing.Size(130, 81);
+            this.btnAñadirConsumo.TabIndex = 35;
+            this.btnAñadirConsumo.Text = "Añadir Consumo";
+            this.btnAñadirConsumo.UseVisualStyleBackColor = true;
+            this.btnAñadirConsumo.Click += new System.EventHandler(this.btnAñadirConsumo_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(300, 311);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(179, 43);
+            this.btnCancelar.TabIndex = 36;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
             // CalcularCostos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 374);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAñadirConsumo);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.cbMes);
             this.Controls.Add(this.cbAño);
@@ -216,5 +245,7 @@
         private System.Windows.Forms.ComboBox cbAño;
         private System.Windows.Forms.ComboBox cbMes;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnAñadirConsumo;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

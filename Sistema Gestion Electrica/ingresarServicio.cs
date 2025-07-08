@@ -17,6 +17,6 @@ namespace Sistema_Gestion_Electrica
         public int id { get; set; }
         public string usuarioServicio { get; set; }
         public string servicioAnexado { get; set; }
-        public string voltajeServicio { get; set; }
+        public Nullable<int> voltajeServicio { get; set; }
     }
 }

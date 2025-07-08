@@ -96,5 +96,12 @@ namespace Sistema_Gestion_Electrica
             costoComercializacion.MdiParent = this;
             costoComercializacion.Show();
         }
+
+        private void verHistorialDeConsumosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var verHistorialConsumos = new VerConsumos();
+            verHistorialConsumos.MdiParent = this;
+            verHistorialConsumos.Show();
+        }
     }
 }
