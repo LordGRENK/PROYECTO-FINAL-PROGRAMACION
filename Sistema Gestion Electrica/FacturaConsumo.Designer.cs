@@ -37,6 +37,12 @@
             this.lblCompañiaDelServicioAQUI = new System.Windows.Forms.Label();
             this.lblCantidadDeMeses = new System.Windows.Forms.Label();
             this.lblMesesAqui = new System.Windows.Forms.Label();
+            this.lblKiloWattsConsumidosTotal = new System.Windows.Forms.Label();
+            this.lblAlumbradoPublicoTotal = new System.Windows.Forms.Label();
+            this.lblKwhPorMes = new System.Windows.Forms.Label();
+            this.lblKillowattsconsumidosAQUI = new System.Windows.Forms.Label();
+            this.lblkWhMesAQUI = new System.Windows.Forms.Label();
+            this.lblAlumbradoPublicoAQUI = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -129,11 +135,78 @@
             this.lblMesesAqui.TabIndex = 22;
             this.lblMesesAqui.Text = "MesesAqui";
             // 
+            // lblKiloWattsConsumidosTotal
+            // 
+            this.lblKiloWattsConsumidosTotal.AutoSize = true;
+            this.lblKiloWattsConsumidosTotal.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKiloWattsConsumidosTotal.Location = new System.Drawing.Point(109, 332);
+            this.lblKiloWattsConsumidosTotal.Name = "lblKiloWattsConsumidosTotal";
+            this.lblKiloWattsConsumidosTotal.Size = new System.Drawing.Size(348, 33);
+            this.lblKiloWattsConsumidosTotal.TabIndex = 23;
+            this.lblKiloWattsConsumidosTotal.Text = "KiloWatts Consumidos Total:";
+            // 
+            // lblAlumbradoPublicoTotal
+            // 
+            this.lblAlumbradoPublicoTotal.AutoSize = true;
+            this.lblAlumbradoPublicoTotal.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlumbradoPublicoTotal.Location = new System.Drawing.Point(150, 418);
+            this.lblAlumbradoPublicoTotal.Name = "lblAlumbradoPublicoTotal";
+            this.lblAlumbradoPublicoTotal.Size = new System.Drawing.Size(307, 33);
+            this.lblAlumbradoPublicoTotal.TabIndex = 24;
+            this.lblAlumbradoPublicoTotal.Text = "Alumbrado Publico Total:";
+            this.lblAlumbradoPublicoTotal.Click += new System.EventHandler(this.lblAlumbradoPublicoTotal_Click);
+            // 
+            // lblKwhPorMes
+            // 
+            this.lblKwhPorMes.AutoSize = true;
+            this.lblKwhPorMes.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKwhPorMes.Location = new System.Drawing.Point(52, 375);
+            this.lblKwhPorMes.Name = "lblKwhPorMes";
+            this.lblKwhPorMes.Size = new System.Drawing.Size(405, 33);
+            this.lblKwhPorMes.TabIndex = 25;
+            this.lblKwhPorMes.Text = "Precio del KiloWatt/Hora del Mes:";
+            // 
+            // lblKillowattsconsumidosAQUI
+            // 
+            this.lblKillowattsconsumidosAQUI.AutoSize = true;
+            this.lblKillowattsconsumidosAQUI.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKillowattsconsumidosAQUI.Location = new System.Drawing.Point(481, 332);
+            this.lblKillowattsconsumidosAQUI.Name = "lblKillowattsconsumidosAQUI";
+            this.lblKillowattsconsumidosAQUI.Size = new System.Drawing.Size(193, 33);
+            this.lblKillowattsconsumidosAQUI.TabIndex = 26;
+            this.lblKillowattsconsumidosAQUI.Text = "KiloWatts AQUI";
+            // 
+            // lblkWhMesAQUI
+            // 
+            this.lblkWhMesAQUI.AutoSize = true;
+            this.lblkWhMesAQUI.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblkWhMesAQUI.Location = new System.Drawing.Point(481, 375);
+            this.lblkWhMesAQUI.Name = "lblkWhMesAQUI";
+            this.lblkWhMesAQUI.Size = new System.Drawing.Size(300, 33);
+            this.lblkWhMesAQUI.TabIndex = 27;
+            this.lblkWhMesAQUI.Text = "Precio del KiloWatt AQUI";
+            // 
+            // lblAlumbradoPublicoAQUI
+            // 
+            this.lblAlumbradoPublicoAQUI.AutoSize = true;
+            this.lblAlumbradoPublicoAQUI.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlumbradoPublicoAQUI.Location = new System.Drawing.Point(481, 418);
+            this.lblAlumbradoPublicoAQUI.Name = "lblAlumbradoPublicoAQUI";
+            this.lblAlumbradoPublicoAQUI.Size = new System.Drawing.Size(324, 33);
+            this.lblAlumbradoPublicoAQUI.TabIndex = 28;
+            this.lblAlumbradoPublicoAQUI.Text = "Precio del alumbrado AQUI";
+            // 
             // FacturaConsumo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1077, 594);
+            this.Controls.Add(this.lblAlumbradoPublicoAQUI);
+            this.Controls.Add(this.lblkWhMesAQUI);
+            this.Controls.Add(this.lblKillowattsconsumidosAQUI);
+            this.Controls.Add(this.lblKwhPorMes);
+            this.Controls.Add(this.lblAlumbradoPublicoTotal);
+            this.Controls.Add(this.lblKiloWattsConsumidosTotal);
             this.Controls.Add(this.lblMesesAqui);
             this.Controls.Add(this.lblCantidadDeMeses);
             this.Controls.Add(this.lblCompañiaDelServicioAQUI);
@@ -161,5 +234,11 @@
         private System.Windows.Forms.Label lblCompañiaDelServicioAQUI;
         private System.Windows.Forms.Label lblCantidadDeMeses;
         private System.Windows.Forms.Label lblMesesAqui;
+        private System.Windows.Forms.Label lblKiloWattsConsumidosTotal;
+        private System.Windows.Forms.Label lblAlumbradoPublicoTotal;
+        private System.Windows.Forms.Label lblKwhPorMes;
+        private System.Windows.Forms.Label lblKillowattsconsumidosAQUI;
+        private System.Windows.Forms.Label lblkWhMesAQUI;
+        private System.Windows.Forms.Label lblAlumbradoPublicoAQUI;
     }
 }

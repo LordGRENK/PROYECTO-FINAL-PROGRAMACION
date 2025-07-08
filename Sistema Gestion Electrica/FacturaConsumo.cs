@@ -16,5 +16,10 @@ namespace Sistema_Gestion_Electrica
         {
             InitializeComponent();
         }
+
+        private void lblAlumbradoPublicoTotal_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
