@@ -97,8 +97,8 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NIS" Type="int" />
-          <Property Name="NombreUsuario" Type="char" MaxLength="20" />
-          <Property Name="Compañia" Type="char" MaxLength="15" />
+          <Property Name="NombreUsuario" Type="varchar" MaxLength="50" />
+          <Property Name="Compañia" Type="varchar" MaxLength="50" />
           <Property Name="CantMesesPendientes" Type="int" />
           <Property Name="KwhTotalAPagar" Type="decimal" Precision="18" Scale="4" />
           <Property Name="PrecioAlumbradoPublicoTotal" Type="decimal" Precision="18" Scale="4" />
@@ -108,6 +108,7 @@
           <Property Name="FechaDeExpiracion" Type="datetime" />
           <Property Name="SubsidioMenorA150kWh" Type="decimal" Precision="18" Scale="4" />
           <Property Name="RegulacionNIS" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="TotalAPagar" Type="decimal" Precision="18" Scale="4" />
         </EntityType>
         <EntityContainer Name="GISELModelStoreContainer">
           <EntitySet Name="agregarServicioEléctrico" EntityType="Self.agregarServicioEléctrico" Schema="dbo" store:Type="Tables" />
@@ -216,8 +217,8 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NIS" Type="Int32" />
-          <Property Name="NombreUsuario" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-          <Property Name="Compañia" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="NombreUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Compañia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CantMesesPendientes" Type="Int32" />
           <Property Name="KwhTotalAPagar" Type="Decimal" Precision="18" Scale="4" />
           <Property Name="PrecioAlumbradoPublicoTotal" Type="Decimal" Precision="18" Scale="4" />
@@ -227,6 +228,7 @@
           <Property Name="FechaDeExpiracion" Type="DateTime" Precision="3" />
           <Property Name="SubsidioMenorA150kWh" Type="Decimal" Precision="18" Scale="4" />
           <Property Name="RegulacionNIS" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="TotalAPagar" Type="Decimal" Precision="18" Scale="4" />
         </EntityType>
         <EntityContainer Name="GISELEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="agregarServicioEléctrico" EntityType="Self.agregarServicioEléctrico" />
@@ -353,6 +355,7 @@
                 <ScalarProperty Name="FechaDeExpiracion" ColumnName="FechaDeExpiracion" />
                 <ScalarProperty Name="SubsidioMenorA150kWh" ColumnName="SubsidioMenorA150kWh" />
                 <ScalarProperty Name="RegulacionNIS" ColumnName="RegulacionNIS" />
+                <ScalarProperty Name="TotalAPagar" ColumnName="TotalAPagar" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

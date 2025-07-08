@@ -27,5 +27,6 @@ namespace Sistema_Gestion_Electrica
         public Nullable<System.DateTime> FechaDeExpiracion { get; set; }
         public Nullable<decimal> SubsidioMenorA150kWh { get; set; }
         public Nullable<decimal> RegulacionNIS { get; set; }
+        public Nullable<decimal> TotalAPagar { get; set; }
     }
 }
