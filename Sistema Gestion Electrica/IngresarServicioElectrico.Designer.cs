@@ -29,65 +29,47 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblVoltaje = new System.Windows.Forms.Label();
             this.tbIngresarServicioEléctrico = new System.Windows.Forms.TextBox();
-            this.tbCompañiaEléctrica = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblCompañiaEléctrica = new System.Windows.Forms.Label();
+            this.tbCompañiaEléctrica = new System.Windows.Forms.TextBox();
+            this.lblVoltaje = new System.Windows.Forms.Label();
+            this.tbVoltajeServicio = new System.Windows.Forms.TextBox();
             this.lbTitulo = new System.Windows.Forms.Label();
             this.btnGuardarServicio = new System.Windows.Forms.Button();
-            this.tbVoltajeServicio = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Controls.Add(this.tbIngresarServicioEléctrico, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblCompañiaEléctrica, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tbCompañiaEléctrica, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblVoltaje, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.tbVoltajeServicio, 1, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(45, 58);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(35, 58);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(505, 258);
             this.tableLayoutPanel1.TabIndex = 3;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
-            // 
-            // lblVoltaje
-            // 
-            this.lblVoltaje.AutoSize = true;
-            this.lblVoltaje.Font = new System.Drawing.Font("Sitka Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVoltaje.Location = new System.Drawing.Point(3, 172);
-            this.lblVoltaje.Name = "lblVoltaje";
-            this.lblVoltaje.Size = new System.Drawing.Size(90, 29);
-            this.lblVoltaje.TabIndex = 12;
-            this.lblVoltaje.Text = "Voltaje:";
             // 
             // tbIngresarServicioEléctrico
             // 
             this.tbIngresarServicioEléctrico.Location = new System.Drawing.Point(256, 4);
             this.tbIngresarServicioEléctrico.Margin = new System.Windows.Forms.Padding(4);
             this.tbIngresarServicioEléctrico.Name = "tbIngresarServicioEléctrico";
-            this.tbIngresarServicioEléctrico.Size = new System.Drawing.Size(132, 22);
+            this.tbIngresarServicioEléctrico.Size = new System.Drawing.Size(245, 22);
             this.tbIngresarServicioEléctrico.TabIndex = 10;
             this.tbIngresarServicioEléctrico.TextChanged += new System.EventHandler(this.tbIngresarServicioEléctrico_TextChanged);
-            // 
-            // tbCompañiaEléctrica
-            // 
-            this.tbCompañiaEléctrica.Location = new System.Drawing.Point(256, 90);
-            this.tbCompañiaEléctrica.Margin = new System.Windows.Forms.Padding(4);
-            this.tbCompañiaEléctrica.Name = "tbCompañiaEléctrica";
-            this.tbCompañiaEléctrica.Size = new System.Drawing.Size(132, 22);
-            this.tbCompañiaEléctrica.TabIndex = 9;
             // 
             // label1
             // 
@@ -109,11 +91,39 @@
             this.lblCompañiaEléctrica.TabIndex = 7;
             this.lblCompañiaEléctrica.Text = "Compañía Eléctrica:";
             // 
+            // tbCompañiaEléctrica
+            // 
+            this.tbCompañiaEléctrica.Location = new System.Drawing.Point(256, 90);
+            this.tbCompañiaEléctrica.Margin = new System.Windows.Forms.Padding(4);
+            this.tbCompañiaEléctrica.Name = "tbCompañiaEléctrica";
+            this.tbCompañiaEléctrica.Size = new System.Drawing.Size(245, 22);
+            this.tbCompañiaEléctrica.TabIndex = 9;
+            // 
+            // lblVoltaje
+            // 
+            this.lblVoltaje.AutoSize = true;
+            this.lblVoltaje.Font = new System.Drawing.Font("Sitka Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVoltaje.Location = new System.Drawing.Point(3, 172);
+            this.lblVoltaje.Name = "lblVoltaje";
+            this.lblVoltaje.Size = new System.Drawing.Size(90, 29);
+            this.lblVoltaje.TabIndex = 12;
+            this.lblVoltaje.Text = "Voltaje:";
+            // 
+            // tbVoltajeServicio
+            // 
+            this.tbVoltajeServicio.CausesValidation = false;
+            this.tbVoltajeServicio.Location = new System.Drawing.Point(256, 176);
+            this.tbVoltajeServicio.Margin = new System.Windows.Forms.Padding(4);
+            this.tbVoltajeServicio.Name = "tbVoltajeServicio";
+            this.tbVoltajeServicio.Size = new System.Drawing.Size(245, 22);
+            this.tbVoltajeServicio.TabIndex = 13;
+            this.tbVoltajeServicio.Text = "*";
+            // 
             // lbTitulo
             // 
             this.lbTitulo.AutoSize = true;
             this.lbTitulo.Font = new System.Drawing.Font("Sitka Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.Location = new System.Drawing.Point(76, 11);
+            this.lbTitulo.Location = new System.Drawing.Point(104, 11);
             this.lbTitulo.Name = "lbTitulo";
             this.lbTitulo.Size = new System.Drawing.Size(388, 43);
             this.lbTitulo.TabIndex = 13;
@@ -131,15 +141,6 @@
             this.btnGuardarServicio.Text = "Aceptar y Guardar";
             this.btnGuardarServicio.UseVisualStyleBackColor = true;
             this.btnGuardarServicio.Click += new System.EventHandler(this.btnGuardarServicio_Click);
-            // 
-            // tbVoltajeServicio
-            // 
-            this.tbVoltajeServicio.CausesValidation = false;
-            this.tbVoltajeServicio.Location = new System.Drawing.Point(256, 176);
-            this.tbVoltajeServicio.Margin = new System.Windows.Forms.Padding(4);
-            this.tbVoltajeServicio.Name = "tbVoltajeServicio";
-            this.tbVoltajeServicio.Size = new System.Drawing.Size(132, 22);
-            this.tbVoltajeServicio.TabIndex = 13;
             // 
             // IngresarServicioElectrico
             // 

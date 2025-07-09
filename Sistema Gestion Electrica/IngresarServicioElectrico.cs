@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,26 +13,50 @@ namespace Sistema_Gestion_Electrica
 {
     public partial class IngresarServicioElectrico : Form
     {
-        private readonly GISELEntities _bd; // Instancia de la clase agregarUsuarioTabla
+        private readonly GISELEntities _bd;
         public IngresarServicioElectrico()
         {
             InitializeComponent();
-            _bd = new GISELEntities(); // Inicializa la instancia de agregarUsuarioTabla
+            _bd = new GISELEntities();
         }
-        public IngresarServicioElectrico( IngresarServicioElectrico ingresarServicioElectrico)
+        public IngresarServicioElectrico(IngresarServicioElectrico ingresarServicioElectrico)
         {
             InitializeComponent();
             llenarCampos(ingresarServicioElectrico);
         }
         private void llenarCampos(IngresarServicioElectrico ingresarServicioElectrico)
         {
-            tbIngresarServicioEléctrico = ingresarServicioElectrico.tbCompañiaEléctrica; // Asignar valores a los campos de texto
+            tbIngresarServicioEléctrico = ingresarServicioElectrico.tbCompañiaEléctrica;
             tbCompañiaEléctrica = ingresarServicioElectrico.tbCompañiaEléctrica;
             tbVoltajeServicio = ingresarServicioElectrico.tbVoltajeServicio;
         }
 
         private void btnGuardarServicio_Click(object sender, EventArgs e)
         {
+            // Expresiones regulares para validación
+            var soloLetras = new Regex(@"^[a-zA-ZáéíóúÁÉÍÓÚ\s]+$");
+
+            // --- INICIO DE VALIDACIONES ---
+            if (!soloLetras.IsMatch(tbIngresarServicioEléctrico.Text))
+            {
+                MessageBox.Show("El nombre del servicio solo puede contener letras y acentos.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!soloLetras.IsMatch(tbCompañiaEléctrica.Text))
+            {
+                MessageBox.Show("El nombre de la compañía solo puede contener letras y acentos.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string voltaje = tbVoltajeServicio.Text;
+            if (voltaje != "110" && voltaje != "120" && voltaje != "240")
+            {
+                MessageBox.Show("El voltaje del servicio debe ser 110, 120 o 240.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // --- FIN DE VALIDACIONES ---
+
             var ingresarServicioElectrico = new agregarServicioEléctrico
             {
                 nombredelServicio = tbIngresarServicioEléctrico.Text,

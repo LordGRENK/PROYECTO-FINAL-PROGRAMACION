@@ -73,7 +73,7 @@ namespace Sistema_Gestion_Electrica
 
         private void verServiciosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var verServicios = new VerServicios();
+            var verServicios = new VerServiciosDelUsuario();
             verServicios.MdiParent = this;
             verServicios.Show();
         }
@@ -110,5 +110,7 @@ namespace Sistema_Gestion_Electrica
             conteoConsumo.MdiParent = this;
             conteoConsumo.Show();
         }
+
+
     }
 }

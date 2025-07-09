@@ -1,6 +1,6 @@
 ﻿namespace Sistema_Gestion_Electrica
 {
-    partial class VerServicios
+    partial class VerServiciosDelUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -40,11 +40,11 @@
             // 
             this.lblVerUsuario.AutoSize = true;
             this.lblVerUsuario.Font = new System.Drawing.Font("Sitka Text", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVerUsuario.Location = new System.Drawing.Point(115, 14);
+            this.lblVerUsuario.Location = new System.Drawing.Point(126, 9);
             this.lblVerUsuario.Name = "lblVerUsuario";
-            this.lblVerUsuario.Size = new System.Drawing.Size(518, 63);
+            this.lblVerUsuario.Size = new System.Drawing.Size(497, 63);
             this.lblVerUsuario.TabIndex = 12;
-            this.lblVerUsuario.Text = "VER SERVICIOS GISEL";
+            this.lblVerUsuario.Text = "Servicios de Usuarios";
             this.lblVerUsuario.Click += new System.EventHandler(this.lblVerUsuario_Click);
             // 
             // gvServiciosGisel
@@ -96,7 +96,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // VerServicios
+            // VerServiciosDelUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -107,8 +107,8 @@
             this.Controls.Add(this.gvServiciosGisel);
             this.Controls.Add(this.lblVerUsuario);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "VerServicios";
-            this.Text = "VER SERVICIOS GISEL";
+            this.Name = "VerServiciosDelUsuario";
+            this.Text = "Servicios de Usuarios";
             this.Load += new System.EventHandler(this.EditarUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvServiciosGisel)).EndInit();
             this.ResumeLayout(false);

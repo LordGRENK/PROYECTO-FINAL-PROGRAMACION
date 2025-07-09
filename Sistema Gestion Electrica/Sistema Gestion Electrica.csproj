@@ -140,11 +140,17 @@
     <Compile Include="VerConsumos.Designer.cs">
       <DependentUpon>VerConsumos.cs</DependentUpon>
     </Compile>
-    <Compile Include="VerServicios.cs">
+    <Compile Include="VerServiciosDeEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VerServicios.Designer.cs">
-      <DependentUpon>VerServicios.cs</DependentUpon>
+    <Compile Include="VerServiciosDeEmpresa.Designer.cs">
+      <DependentUpon>VerServiciosDeEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerServiciosDeUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerServiciosDeUsuarios.Designer.cs">
+      <DependentUpon>VerServiciosDeUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="VerUsuarios.cs">
       <SubType>Form</SubType>
@@ -196,8 +202,11 @@
     <EmbeddedResource Include="VerConsumos.resx">
       <DependentUpon>VerConsumos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VerServicios.resx">
-      <DependentUpon>VerServicios.cs</DependentUpon>
+    <EmbeddedResource Include="VerServiciosDeEmpresa.resx">
+      <DependentUpon>VerServiciosDeEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerServiciosDeUsuarios.resx">
+      <DependentUpon>VerServiciosDeUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VerUsuarios.resx">
       <DependentUpon>VerUsuarios.cs</DependentUpon>

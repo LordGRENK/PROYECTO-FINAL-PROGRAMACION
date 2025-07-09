@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Sistema_Gestion_Electrica
 {
-    public partial class VerServicios : Form
+    public partial class VerServiciosDelUsuario : Form
     {
         private readonly GISELEntities _bd; // Instancia de la clase agregarUsuarioTabla
-        public VerServicios()
+        public VerServiciosDelUsuario()
         {
             InitializeComponent();
             _bd = new GISELEntities();

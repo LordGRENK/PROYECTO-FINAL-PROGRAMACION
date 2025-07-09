@@ -107,10 +107,10 @@
             // gESTIONToolStripMenuItem
             // 
             this.gESTIONToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ingresarServicioElectricoToolStripMenuItem,
             this.agregarCostoKwhDelMesToolStripMenuItem,
             this.agregarCostoAlumbradoPublicoToolStripMenuItem,
-            this.agregarCostoComercializaciónToolStripMenuItem,
-            this.ingresarServicioElectricoToolStripMenuItem});
+            this.agregarCostoComercializaciónToolStripMenuItem});
             this.gESTIONToolStripMenuItem.Name = "gESTIONToolStripMenuItem";
             this.gESTIONToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.gESTIONToolStripMenuItem.Text = "GESTIÓN";
