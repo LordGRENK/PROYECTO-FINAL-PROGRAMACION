@@ -12,24 +12,21 @@ namespace Sistema_Gestion_Electrica
 {
     public partial class IngresarServicioUsuario : Form
     {
-        private readonly GISELEntities _bd; // Instancia de la clase GISELEntities para acceder a la base de datos
+        private readonly GISELEntities _bd; // Instancia para acceder a la base de datos
+
         public IngresarServicioUsuario()
         {
             InitializeComponent();
             _bd = new GISELEntities(); // Inicializa la instancia de GISELEntities
 
-            // Llenar ComboBox de servicios
+            // Llenar ComboBox de servicios desde la base de datos
             var servicios = _bd.agregarServicioEléctrico
                 .Select(s => s.nombredelServicio)
                 .ToList();
             cbServicios.DataSource = servicios;
 
+            // Asignar el evento para actualizar el voltaje cuando cambia la selección
             cbServicios.SelectedIndexChanged += cbServicios_SelectedIndexChanged;
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnBuscarId_Click(object sender, EventArgs e)
@@ -39,7 +36,7 @@ namespace Sistema_Gestion_Electrica
                 var usuario = _bd.agregarUsuarioTabla.FirstOrDefault(u => u.id == idUsuario);
                 if (usuario != null)
                 {
-                    lblNombreUsuario.Text = usuario.nombreUsuario; // Muestra el nombre del usuario en el label
+                    lblNombreUsuario.Text = usuario.nombreUsuario; // Muestra el nombre del usuario
                 }
                 else
                 {
@@ -54,29 +51,53 @@ namespace Sistema_Gestion_Electrica
 
         private void btnSubiryGuardar_Click(object sender, EventArgs e)
         {
-            // Validamos que el NIS no esté vacío y sea un número.
-            if (!int.TryParse(tbIdUsuario.Text.Trim(), out int nis))
+            // 1. Validar que el ID del usuario sea un número válido.
+            if (!int.TryParse(tbIdUsuario.Text.Trim(), out int idUsuario))
             {
-                MessageBox.Show("Por favor, ingrese un NIS válido.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, ingrese un ID de usuario válido y numérico.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            string voltajeSinV = lblEscrituraVoltaje.Text.Replace("V", "").Trim();
+            // 2. Verificar que el usuario exista en la base de datos.
+            var usuarioExistente = _bd.agregarUsuarioTabla.FirstOrDefault(u => u.id == idUsuario);
+            if (usuarioExistente == null)
+            {
+                MessageBox.Show("El usuario con el ID proporcionado no existe. Por favor, verifique el ID.", "Usuario no Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblNombreUsuario.Text = "Usuario no encontrado"; // Actualiza la UI
+                return; // Detiene la ejecución para no guardar.
+            }
 
+            // 3. Validar que se haya seleccionado un servicio.
+            if (cbServicios.SelectedItem == null)
+            {
+                MessageBox.Show("Por favor, seleccione un servicio eléctrico.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // 4. Validar y convertir el voltaje.
+            string voltajeTexto = lblEscrituraVoltaje.Text.Replace("V", "").Trim();
+            if (!int.TryParse(voltajeTexto, out int voltaje))
+            {
+                MessageBox.Show("No se pudo obtener un voltaje válido para el servicio seleccionado.", "Error de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // 5. Si todo es correcto, crear y guardar el nuevo servicio.
             var agregarServicio = new ingresarServicio
             {
-                // ¡AQUÍ ESTÁ EL CAMBIO! Asignamos el NIS al campo id.
-                id = nis,
-
-                usuarioServicio = lblNombreUsuario.Text,
+                id = idUsuario, // Se asigna el ID del usuario como NIS.
+                usuarioServicio = usuarioExistente.nombreUsuario,
                 servicioAnexado = cbServicios.SelectedItem.ToString(),
-                voltajeServicio = Convert.ToInt32(voltajeSinV)
+                voltajeServicio = voltaje
             };
 
             _bd.ingresarServicio.Add(agregarServicio);
             _bd.SaveChanges();
-            MessageBox.Show("Servicio con NIS " + nis + " asignado al usuario correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Servicio con NIS " + idUsuario + " asignado al usuario '" + usuarioExistente.nombreUsuario + "' correctamente.", "Operación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.Close(); // Cierra el formulario tras guardar.
         }
+
         private void cbServicios_SelectedIndexChanged(object sender, EventArgs e)
         {
             var nombreServicio = cbServicios.SelectedItem?.ToString();
@@ -100,9 +121,8 @@ namespace Sistema_Gestion_Electrica
             }
         }
 
-        private void IngresarServicioUsuario_Load(object sender, EventArgs e)
-        {
-
-        }
+        // --- Métodos de eventos no utilizados ---
+        private void label7_Click(object sender, EventArgs e) { }
+        private void IngresarServicioUsuario_Load(object sender, EventArgs e) { }
     }
 }
