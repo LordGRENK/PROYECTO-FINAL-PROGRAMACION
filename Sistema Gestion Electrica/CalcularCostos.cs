@@ -61,7 +61,7 @@ namespace Sistema_Gestion_Electrica
                     SaveFileDialog saveFileDialog = new SaveFileDialog();
                     saveFileDialog.Filter = "PNG Image|*.png";
                     saveFileDialog.Title = "Guardar Factura como Imagen";
-                    saveFileDialog.FileName = $"Factura_{factura.NIS}_{año}_{mes}.png";
+                    saveFileDialog.FileName = $"{factura.NombreUsuario}_{año}_{mes}.png";
 
                     if (saveFileDialog.ShowDialog() == DialogResult.OK)
                     {

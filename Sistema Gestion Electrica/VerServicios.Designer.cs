@@ -30,10 +30,9 @@
         {
             this.lblVerUsuario = new System.Windows.Forms.Label();
             this.gvServiciosGisel = new System.Windows.Forms.DataGridView();
-            this.btnAgregarUsuario = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnAgregarServicio = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvServiciosGisel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,77 +51,62 @@
             // 
             this.gvServiciosGisel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvServiciosGisel.Location = new System.Drawing.Point(44, 76);
-            this.gvServiciosGisel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gvServiciosGisel.Margin = new System.Windows.Forms.Padding(4);
             this.gvServiciosGisel.Name = "gvServiciosGisel";
             this.gvServiciosGisel.RowHeadersWidth = 51;
             this.gvServiciosGisel.Size = new System.Drawing.Size(663, 185);
             this.gvServiciosGisel.TabIndex = 13;
             this.gvServiciosGisel.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuariosGisel_CellContentClick);
             // 
-            // btnAgregarUsuario
+            // btnEliminar
             // 
-            this.btnAgregarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAgregarUsuario.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarUsuario.Location = new System.Drawing.Point(87, 267);
-            this.btnAgregarUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAgregarUsuario.Name = "btnAgregarUsuario";
-            this.btnAgregarUsuario.Size = new System.Drawing.Size(188, 43);
-            this.btnAgregarUsuario.TabIndex = 14;
-            this.btnAgregarUsuario.Text = "AGREGAR";
-            this.btnAgregarUsuario.UseVisualStyleBackColor = true;
-            this.btnAgregarUsuario.Click += new System.EventHandler(this.btnIniciarSesion_Click);
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminar.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(285, 267);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(188, 43);
+            this.btnEliminar.TabIndex = 16;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button2
+            // btnAgregarServicio
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(473, 267);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(188, 43);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "ELIMINAR";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnAgregarServicio.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAgregarServicio.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarServicio.Location = new System.Drawing.Point(86, 267);
+            this.btnAgregarServicio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAgregarServicio.Name = "btnAgregarServicio";
+            this.btnAgregarServicio.Size = new System.Drawing.Size(188, 43);
+            this.btnAgregarServicio.TabIndex = 18;
+            this.btnAgregarServicio.Text = "Agregar";
+            this.btnAgregarServicio.UseVisualStyleBackColor = true;
+            this.btnAgregarServicio.Click += new System.EventHandler(this.btnAgregarServicio_Click);
             // 
-            // button1
+            // btnCancelar
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(280, 267);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(188, 43);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "EDITAR";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button3
-            // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(273, 315);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 43);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "CANCELAR";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelar.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(479, 267);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(188, 43);
+            this.btnCancelar.TabIndex = 19;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // VerServicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(751, 391);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnAgregarUsuario);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAgregarServicio);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.gvServiciosGisel);
             this.Controls.Add(this.lblVerUsuario);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "VerServicios";
             this.Text = "VER SERVICIOS GISEL";
             this.Load += new System.EventHandler(this.EditarUsuario_Load);
@@ -136,9 +120,8 @@
 
         private System.Windows.Forms.Label lblVerUsuario;
         private System.Windows.Forms.DataGridView gvServiciosGisel;
-        private System.Windows.Forms.Button btnAgregarUsuario;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnAgregarServicio;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

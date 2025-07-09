@@ -38,71 +38,54 @@ namespace Sistema_Gestion_Electrica
             gvUsuariosGisel.Columns["emailUsuario"].HeaderText = "Email";*/
         }
 
-        private void btnIniciarSesion_Click(object sender, EventArgs e)
-        {
-            var agregarUsuario = new AgregarUsuario();
-            agregarUsuario.MdiParent = PaginaPrincipal.ActiveForm; // Establece el formulario padre como la página principal
-            agregarUsuario.Show();
-           
-        }
+        
 
+        // Reemplaza este método en tu archivo VerServicios.cs
         private void button2_Click(object sender, EventArgs e)
         {
-            var eliminarUsuario = gvServiciosGisel.SelectedRows.Cast<DataGridViewRow>().FirstOrDefault();
-            if (eliminarUsuario != null)
+            // ELIMINAR SERVICIO
+            var filaSeleccionada = gvServiciosGisel.SelectedRows.Cast<DataGridViewRow>().FirstOrDefault();
+            if (filaSeleccionada != null)
             {
-                int idUsuario = Convert.ToInt32(eliminarUsuario.Cells["id"].Value);
-                var usuario = _bd.agregarUsuarioTabla.Find(idUsuario);
-                if (usuario != null)
+                // Se obtiene el ID del servicio (NIS) de la fila seleccionada.
+                int idServicio = Convert.ToInt32(filaSeleccionada.Cells["id"].Value);
+
+                // Se busca el servicio en la tabla 'ingresarServicio'.
+                var servicio = _bd.ingresarServicio.Find(idServicio);
+
+                if (servicio != null)
                 {
-                    _bd.agregarUsuarioTabla.Remove(usuario);
+                    _bd.ingresarServicio.Remove(servicio);
                     _bd.SaveChanges();
-                    MessageBox.Show("Usuario eliminado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    gvServiciosGisel.DataSource = _bd.agregarUsuarioTabla.ToList(); // Actualiza la lista de usuarios después de eliminar uno
+                    MessageBox.Show("Servicio eliminado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Refrescar la tabla para mostrar los cambios
+                    gvServiciosGisel.DataSource = _bd.ingresarServicio.ToList();
                 }
                 else
                 {
-                    MessageBox.Show("Usuario no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Este mensaje ya no debería aparecer, pero es una buena práctica mantenerlo.
+                    MessageBox.Show("Servicio no encontrado en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Por favor, seleccione un usuario para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, seleccione un servicio para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var editarUsuario = gvServiciosGisel.SelectedRows.Cast<DataGridViewRow>().FirstOrDefault();
-            if (editarUsuario != null)
-            {
-                int idUsuario = Convert.ToInt32(editarUsuario.Cells["id"].Value);
-                var usuario = _bd.agregarUsuarioTabla.Find(idUsuario);
-                if (usuario != null)
-                {
-                    var agregarUsuario = new AgregarUsuario(usuario); // Pasa el usuario seleccionado al formulario de agregar/editar
-                    agregarUsuario.MdiParent = PaginaPrincipal.ActiveForm; // Establece el formulario padre como la página principal
-                    agregarUsuario.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Usuario no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Por favor, seleccione un usuario para editar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
+        // Reemplaza este método también.
         private void lblVerUsuario_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+
+
+        private void btnAgregarServicio_Click(object sender, EventArgs e)
         {
-            this.Close(); // Cierra el formulario actual
+            var ingresarServicio = new IngresarServicioUsuario();
+            ingresarServicio.Show();
         }
     }
 }

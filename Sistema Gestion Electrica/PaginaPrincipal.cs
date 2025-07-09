@@ -39,12 +39,7 @@ namespace Sistema_Gestion_Electrica
 
 
 
-        private void ingresarServicioAUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var ingresarServicio = new IngresarServicioUsuario();
-            ingresarServicio.MdiParent = this;
-            ingresarServicio.Show();
-        }
+
 
         private void calcularCostoUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
