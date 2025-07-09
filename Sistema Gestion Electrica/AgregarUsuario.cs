@@ -6,14 +6,14 @@ namespace Sistema_Gestion_Electrica
 {
     public partial class AgregarUsuario : Form
     {
-        private readonly GISELEntities _bd; // Instancia de la clase agregarUsuarioTabla
-        private agregarUsuarioTabla _usuarioExistente; // Campo para almacenar el usuario a editar
+        private readonly GISELEntities _bd; 
+        private agregarUsuarioTabla _usuarioExistente; 
 
         public AgregarUsuario()
         {
             InitializeComponent();
             lbTitulo.Text = "AGREGAR USUARIO GISEL";
-            _bd = new GISELEntities(); // Inicializa la instancia de agregarUsuarioTabla
+            _bd = new GISELEntities();
         }
 
         public AgregarUsuario(agregarUsuarioTabla agregarUsuario)
@@ -39,7 +39,7 @@ namespace Sistema_Gestion_Electrica
 
         private void btnGuardarUsuario_Click(object sender, EventArgs e)
         {
-            // Validaciones con Regex
+         
             if (!Regex.IsMatch(tbNombreUsuario.Text, @"^[a-zA-ZáéíóúÁÉÍÓÚ\s]+$"))
             {
                 MessageBox.Show("El nombre de usuario solo puede contener letras y acentos.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -81,7 +81,7 @@ namespace Sistema_Gestion_Electrica
             }
             else
             {
-                // Agregar nuevo usuario
+               
                 var agregarUsuario = new agregarUsuarioTabla
                 {
                     nombreUsuario = tbNombreUsuario.Text,
@@ -98,7 +98,7 @@ namespace Sistema_Gestion_Electrica
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close(); // Cierra el formulario actual
+            this.Close(); 
         }
 
         private void tbNombreUsuario_TextChanged(object sender, EventArgs e)

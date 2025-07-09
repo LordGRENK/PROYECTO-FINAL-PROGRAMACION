@@ -1,18 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema_Gestion_Electrica
 {
     public partial class VerUsuarios : Form
     {
-        private readonly GISELEntities _bd; // Instancia de la clase agregarUsuarioTabla
+        private readonly GISELEntities _bd; 
         public VerUsuarios()
         {
             InitializeComponent();
@@ -38,7 +33,7 @@ namespace Sistema_Gestion_Electrica
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
             var agregarUsuario = new AgregarUsuario();
-            agregarUsuario.MdiParent = PaginaPrincipal.ActiveForm; // Establece el formulario padre como la página principal
+            agregarUsuario.MdiParent = PaginaPrincipal.ActiveForm; 
             agregarUsuario.Show();
            
         }
@@ -55,7 +50,7 @@ namespace Sistema_Gestion_Electrica
                     _bd.agregarUsuarioTabla.Remove(usuario);
                     _bd.SaveChanges();
                     MessageBox.Show("Usuario eliminado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    gvUsuariosGisel.DataSource = _bd.agregarUsuarioTabla.ToList(); // Actualiza la lista de usuarios después de eliminar uno
+                    gvUsuariosGisel.DataSource = _bd.agregarUsuarioTabla.ToList();
                 }
                 else
                 {
@@ -77,8 +72,8 @@ namespace Sistema_Gestion_Electrica
                 var usuario = _bd.agregarUsuarioTabla.Find(idUsuario);
                 if (usuario != null)
                 {
-                    var agregarUsuario = new AgregarUsuario(usuario); // Pasa el usuario seleccionado al formulario de agregar/editar
-                    agregarUsuario.MdiParent = PaginaPrincipal.ActiveForm; // Establece el formulario padre como la página principal
+                    var agregarUsuario = new AgregarUsuario(usuario); 
+                    agregarUsuario.MdiParent = PaginaPrincipal.ActiveForm; 
                     agregarUsuario.Show();
                 }
                 else
@@ -99,7 +94,7 @@ namespace Sistema_Gestion_Electrica
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Close(); // Cierra el formulario actual
+            this.Close(); 
         }
     }
 }

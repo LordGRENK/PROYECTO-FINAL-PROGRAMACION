@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema_Gestion_Electrica
@@ -33,10 +26,8 @@ namespace Sistema_Gestion_Electrica
 
         private void btnGuardarServicio_Click(object sender, EventArgs e)
         {
-            // Expresiones regulares para validación
             var soloLetras = new Regex(@"^[a-zA-ZáéíóúÁÉÍÓÚ\s]+$");
 
-            // --- INICIO DE VALIDACIONES ---
             if (!soloLetras.IsMatch(tbIngresarServicioEléctrico.Text))
             {
                 MessageBox.Show("El nombre del servicio solo puede contener letras y acentos.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -55,7 +46,6 @@ namespace Sistema_Gestion_Electrica
                 MessageBox.Show("El voltaje del servicio debe ser 110, 120 o 240.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            // --- FIN DE VALIDACIONES ---
 
             var ingresarServicioElectrico = new agregarServicioEléctrico
             {

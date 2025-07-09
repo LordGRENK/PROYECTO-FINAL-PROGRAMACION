@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.Entity.Validation;
 using System.Drawing;
-using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema_Gestion_Electrica
@@ -32,7 +26,7 @@ namespace Sistema_Gestion_Electrica
 
         private void btnCalcularFacturacion_Click(object sender, EventArgs e)
         {
-            // --- Validaciones iniciales ---
+         
             if (!int.TryParse(tbNIS.Text, out int nis))
             {
                 MessageBox.Show("Por favor, ingrese un NIS válido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -48,13 +42,13 @@ namespace Sistema_Gestion_Electrica
 
             using (var db = new GISELEntities())
             {
-                // Esta línea es CRUCIAL: Busca la factura en la base de datos.
+                
                 var factura = db.TablaFacturas.FirstOrDefault(f => f.NIS == nis && f.Año == año && f.Mes == mes);
 
-                // Esta comprobación es NECESARIA para continuar.
+                
                 if (factura != null)
                 {
-                    // Esta sección busca la dirección del usuario correspondiente.
+                
                     var usuario = db.agregarUsuarioTabla.FirstOrDefault(u => u.nombreUsuario == factura.NombreUsuario);
                     string direccion = usuario?.direccionUsuario ?? "Dirección no encontrada";
 
@@ -65,7 +59,7 @@ namespace Sistema_Gestion_Electrica
 
                     if (saveFileDialog.ShowDialog() == DialogResult.OK)
                     {
-                        // Pasamos la factura y la dirección para crear el formulario.
+                
                         using (var facturaForm = new FacturaConsumo(factura, direccion))
                         {
                             facturaForm.StartPosition = FormStartPosition.Manual;
@@ -107,7 +101,7 @@ namespace Sistema_Gestion_Electrica
 
             using (var db = new GISELEntities())
             {
-                // 1. Llenar cbAño y cbMes desde ConteoConsumoTabla
+                
                 var consumos = db.ConteoConsumoTabla
                     .Where(c => c.NIS == nisInt)
                     .ToList();
@@ -134,9 +128,9 @@ namespace Sistema_Gestion_Electrica
                     .OrderBy(m => m)
                     .ToList();
 
-                // 2. Buscar usuario y compañía en ingresarServicio
+                
                 var servicio = db.ingresarServicio
-                    .FirstOrDefault(s => s.id == nisInt); // Cambiado de "NIS" a "id"
+                    .FirstOrDefault(s => s.id == nisInt); 
 
                 if (servicio != null)
                 {
@@ -153,7 +147,7 @@ namespace Sistema_Gestion_Electrica
 
         private void btnAñadirConsumo_Click(object sender, EventArgs e)
         {
-            // Validaciones iniciales
+            
             if (!int.TryParse(tbNIS.Text, out int nis))
             {
                 MessageBox.Show("Ingrese un NIS válido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -177,11 +171,10 @@ namespace Sistema_Gestion_Electrica
                     return;
                 }
 
-                // --- Inician los cálculos de costos ---
-                decimal kwhTotal = Convert.ToDecimal(consumo.KilowattsHora);
+                           decimal kwhTotal = Convert.ToDecimal(consumo.KilowattsHora);
                 var kwh = consumo.KilowattsHora ?? 0;
 
-                // **CÁLCULO REAL DE ALUMBRADO PÚBLICO**
+            
                 decimal precioAlumbradoTotal = 0;
                 var precioAlumbrado = db.PrecioAlumbradoPublico.FirstOrDefault(p => p.Año == año && p.Mes == mes);
                 if (precioAlumbrado != null)
@@ -195,7 +188,7 @@ namespace Sistema_Gestion_Electrica
                     else precioAlumbradoTotal = precioAlumbrado.Mayorde1000kWh ?? 0;
                 }
 
-                // **CÁLCULO REAL DE COMERCIALIZACIÓN**
+            
                 decimal precioFijoComercializacion = 0;
                 var precioFijo = db.PrecioFijoComercialización.FirstOrDefault(p => p.Año == año && p.Mes == mes);
                 if (precioFijo != null)
@@ -208,7 +201,7 @@ namespace Sistema_Gestion_Electrica
                     else precioFijoComercializacion = precioFijo.Mayorde1000kWh ?? 0;
                 }
 
-                // **CÁLCULO REAL DE PRECIO POR KWH**
+            
                 decimal precioFijokwh = 0;
                 var kwhPrecio = db.PrecioKwhPorMes.FirstOrDefault(p => p.Año == año && p.Mes == mes);
                 if (kwhPrecio != null)
@@ -222,7 +215,7 @@ namespace Sistema_Gestion_Electrica
                     else precioFijokwh = kwhPrecio.Adicionalesa1000kWh ?? 0;
                 }
 
-                // --- Búsqueda y guardado de la factura ---
+            
                 var facturaExistente = db.TablaFacturas.FirstOrDefault(f => f.NIS == nis && f.Año == año && f.Mes == mes);
 
                 if (facturaExistente != null)

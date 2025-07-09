@@ -1,23 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema_Gestion_Electrica
 {
     public partial class ConteoConsumoUsuario : Form
     {
-        private readonly GISELEntities _bd; // Instancia de la clase agregarUsuarioTabla
+        private readonly GISELEntities _bd; 
 
         public ConteoConsumoUsuario()
         {
             InitializeComponent();
-            _bd = new GISELEntities(); // Inicializa la instancia de agregarUsuarioTabla
+            _bd = new GISELEntities(); 
         }
         public ConteoConsumoUsuario(ConteoConsumoUsuario conteoConsumoUsuario)
         {
@@ -26,7 +20,7 @@ namespace Sistema_Gestion_Electrica
         }
         private void llenarCampos(ConteoConsumoUsuario conteoConsumoUsuario)
         {
-            tbNIS = conteoConsumoUsuario.tbNIS; // Asignar valores a los campos de texto
+            tbNIS = conteoConsumoUsuario.tbNIS; 
             nudAño.Text = conteoConsumoUsuario.nudAño.Text;
             nudMes.Text = conteoConsumoUsuario.nudMes.Text;
             tbKiloWattsConsumidos.Text = conteoConsumoUsuario.tbKiloWattsConsumidos.Text;
@@ -42,14 +36,14 @@ namespace Sistema_Gestion_Electrica
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            // Validar que el campo NIS no esté vacío y sea un número válido
+           
             if (string.IsNullOrWhiteSpace(tbNIS.Text) || !int.TryParse(tbNIS.Text, out int nis))
             {
                 MessageBox.Show("Por favor, ingrese un NIS válido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Buscar si existe el NIS en la tabla ingresarServicio para obtener el nombre del usuario
+           
             var servicio = _bd.ingresarServicio.FirstOrDefault(s => s.id == nis);
 
             if (servicio != null)
@@ -72,7 +66,7 @@ namespace Sistema_Gestion_Electrica
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            // Validaciones de campos vacíos
+           
             if (string.IsNullOrWhiteSpace(tbNIS.Text) || string.IsNullOrWhiteSpace(tbKiloWattsConsumidos.Text))
             {
                 MessageBox.Show("Los campos NIS y KiloWatts Consumidos no pueden estar vacíos.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -89,17 +83,17 @@ namespace Sistema_Gestion_Electrica
             var año = Convert.ToInt32(nudAño.Text);
             var mes = Convert.ToInt32(nudMes.Text);
 
-            // Verificar si ya existe un registro para el mismo NIS, año y mes
+           
             var conteoExistente = _bd.ConteoConsumoTabla.FirstOrDefault(c => c.NIS == nis && c.Año == año && c.Mes == mes);
 
             if (conteoExistente != null)
             {
-                // Si existe, preguntar si se desea reemplazar
+           
                 var resultado = MessageBox.Show("Ya existe un registro para este NIS, año y mes. ¿Desea reemplazarlo?", "Registro Duplicado", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resultado == DialogResult.Yes)
                 {
-                    // Actualizar el registro existente
+           
                     conteoExistente.KilowattsHora = kilowatts;
                     _bd.SaveChanges();
                     MessageBox.Show("Conteo de consumo actualizado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -108,13 +102,13 @@ namespace Sistema_Gestion_Electrica
             }
             else
             {
-                // Si no existe, crear uno nuevo
+           
                 var conteoConsumo = new ConteoConsumoTabla()
                 {
                     NIS = nis,
                     Año = año,
                     Mes = mes,
-                    KilowattsHora = kilowatts // Asegúrate de que el nombre esté correcto
+                    KilowattsHora = kilowatts 
                 };
 
                 _bd.ConteoConsumoTabla.Add(conteoConsumo);
@@ -133,7 +127,7 @@ namespace Sistema_Gestion_Electrica
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close(); // Cierra el formulario actual
+            this.Close(); 
         }
     }
 }

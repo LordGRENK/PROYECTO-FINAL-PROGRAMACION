@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
 
@@ -20,7 +15,7 @@ namespace Sistema_Gestion_Electrica
             InitializeComponent();
             _bd = new GISELEntities();
 
-            // Llenar cbEmpresa con los nombres de servicio eléctrico
+
             using (var db = new GISELEntities())
             {
                 var servicios = db.agregarServicioEléctrico
@@ -29,7 +24,7 @@ namespace Sistema_Gestion_Electrica
                 cbEmpresa.DataSource = servicios;
             }
 
-            // Asignar el evento KeyPress a todos los campos de texto de costos
+
             tb0a25kWh.KeyPress += new KeyPressEventHandler(textBox_KeyPress_Decimal);
             tb26a60kWh.KeyPress += new KeyPressEventHandler(textBox_KeyPress_Decimal);
             tb51s100kWh.KeyPress += new KeyPressEventHandler(textBox_KeyPress_Decimal);
@@ -41,13 +36,13 @@ namespace Sistema_Gestion_Electrica
 
         private void textBox_KeyPress_Decimal(object sender, KeyPressEventArgs e)
         {
-            // Permitir números, el punto decimal y la tecla de retroceso
+
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
 
-            // Asegurarse de que solo haya un punto decimal
+
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
@@ -56,7 +51,7 @@ namespace Sistema_Gestion_Electrica
 
         private void btnAgregarServicio_Click(object sender, EventArgs e)
         {
-            // --- VALIDACIONES ---
+
             var campos = new[] { tb0a25kWh, tb26a60kWh, tb51s100kWh, tb101a150kWh, tb151a500kWh, tb501a1000kWh, tbMayorde1000kWh };
             foreach (var campo in campos)
             {
@@ -71,16 +66,16 @@ namespace Sistema_Gestion_Electrica
             var mes = (int)nudMes.Value;
             var compañia = cbEmpresa.SelectedItem.ToString();
 
-            // --- VERIFICACIÓN DE REGISTRO EXISTENTE ---
+
             var costoExistente = _bd.PrecioAlumbradoPublico.FirstOrDefault(p => p.Año == año && p.Mes == mes && p.Compañia == compañia);
 
             if (costoExistente != null)
             {
-                // Si existe, preguntar si se desea reemplazar
+
                 var result = MessageBox.Show("Ya existe un registro de alumbrado para este mes, año y compañía. ¿Desea reemplazarlo?", "Registro Duplicado", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    // Actualizar el registro existente
+
                     costoExistente.De0a25kWh = decimal.Parse(tb0a25kWh.Text, CultureInfo.InvariantCulture);
                     costoExistente.De26a50kWh = decimal.Parse(tb26a60kWh.Text, CultureInfo.InvariantCulture);
                     costoExistente.De51a100kWh = decimal.Parse(tb51s100kWh.Text, CultureInfo.InvariantCulture);
@@ -96,7 +91,7 @@ namespace Sistema_Gestion_Electrica
             }
             else
             {
-                // Si no existe, agregar un nuevo registro
+
                 var precioAlumbradoPublico = new PrecioAlumbradoPublico
                 {
                     Año = año,
@@ -117,7 +112,7 @@ namespace Sistema_Gestion_Electrica
             }
         }
 
-        // --- MÉTODOS DE EVENTOS SIN CAMBIOS ---
+
         public CostoAlumbradoPublico(CostoAlumbradoPublico costoAlumbradoPublico)
         {
             InitializeComponent();
@@ -146,7 +141,7 @@ namespace Sistema_Gestion_Electrica
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            this.Close(); // Cierra el formulario sin realizar ninguna acción adicional
+            this.Close(); 
         }
     }
 }

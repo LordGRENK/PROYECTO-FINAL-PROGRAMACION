@@ -1,18 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema_Gestion_Electrica
 {
     public partial class VerServiciosDelUsuario : Form
     {
-        private readonly GISELEntities _bd; // Instancia de la clase agregarUsuarioTabla
+        private readonly GISELEntities _bd; 
         public VerServiciosDelUsuario()
         {
             InitializeComponent();
@@ -26,8 +21,8 @@ namespace Sistema_Gestion_Electrica
 
         private void EditarUsuario_Load(object sender, EventArgs e)
         {
-            var servicios = _bd.ingresarServicio.ToList(); // Obtiene la lista de servicios eléctricos
-            gvServiciosGisel.DataSource = servicios; // Asigna la lista de servicios al DataGridView
+            var servicios = _bd.ingresarServicio.ToList(); 
+            gvServiciosGisel.DataSource = servicios; 
             gvServiciosGisel.Columns["id"].HeaderText = "NIS";
             gvServiciosGisel.Columns["usuarioServicio"].HeaderText = "Usuario";
             gvServiciosGisel.Columns["servicioAnexado"].HeaderText = "Servicio";
@@ -36,17 +31,13 @@ namespace Sistema_Gestion_Electrica
 
         
 
-        // Reemplaza este método en tu archivo VerServicios.cs
         private void button2_Click(object sender, EventArgs e)
         {
-            // ELIMINAR SERVICIO
             var filaSeleccionada = gvServiciosGisel.SelectedRows.Cast<DataGridViewRow>().FirstOrDefault();
             if (filaSeleccionada != null)
             {
-                // Se obtiene el ID del servicio (NIS) de la fila seleccionada.
                 int idServicio = Convert.ToInt32(filaSeleccionada.Cells["id"].Value);
 
-                // Se busca el servicio en la tabla 'ingresarServicio'.
                 var servicio = _bd.ingresarServicio.Find(idServicio);
 
                 if (servicio != null)
@@ -55,12 +46,10 @@ namespace Sistema_Gestion_Electrica
                     _bd.SaveChanges();
                     MessageBox.Show("Servicio eliminado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Refrescar la tabla para mostrar los cambios
                     gvServiciosGisel.DataSource = _bd.ingresarServicio.ToList();
                 }
                 else
                 {
-                    // Este mensaje ya no debería aparecer, pero es una buena práctica mantenerlo.
                     MessageBox.Show("Servicio no encontrado en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -70,7 +59,6 @@ namespace Sistema_Gestion_Electrica
             }
         }
 
-        // Reemplaza este método también.
         private void lblVerUsuario_Click(object sender, EventArgs e)
         {
 
@@ -81,7 +69,7 @@ namespace Sistema_Gestion_Electrica
         private void btnAgregarServicio_Click(object sender, EventArgs e)
         {
             var ingresarServicio = new IngresarServicioUsuario();
-            ingresarServicio.MdiParent = PaginaPrincipal.ActiveForm; // <-- Añade esta línea
+            ingresarServicio.MdiParent = PaginaPrincipal.ActiveForm; 
             ingresarServicio.Show();
         }
 

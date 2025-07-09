@@ -8,14 +8,13 @@ namespace Sistema_Gestion_Electrica
     public partial class FacturaConsumo : Form
     {
         private readonly TablaFacturas _factura;
-        private readonly string _direccion; // Variable para guardar la dirección
+        private readonly string _direccion; 
 
-        // --- CAMBIO AQUÍ: El constructor ahora acepta la dirección ---
         public FacturaConsumo(TablaFacturas factura, string direccion)
         {
             InitializeComponent();
             _factura = factura;
-            _direccion = direccion; // Guardamos la dirección
+            _direccion = direccion; 
             CargarDatosFactura();
         }
 
@@ -23,13 +22,11 @@ namespace Sistema_Gestion_Electrica
         {
             if (_factura != null)
             {
-                // --- Rellenar información básica de la factura ---
                 lblNumeroDeServicioAQUI.Text = _factura.NIS.ToString();
                 lblNombreDeUsuarioAQUI.Text = _factura.NombreUsuario;
-                lblDireccionUsuarioAQUI.Text = _direccion; // ¡AQUÍ SE MUESTRA LA DIRECCIÓN!
+                lblDireccionUsuarioAQUI.Text = _direccion; 
                 
 
-                // ... (El resto del método CargarDatosFactura se mantiene igual)
                 decimal kwhConsumidos = _factura.KwhTotalAPagar ?? 0;
                 decimal precioPorKwh = _factura.PrecioKwhPorMes ?? 0;
                 decimal costoAlumbrado = _factura.PrecioAlumbradoPublicoTotal ?? 0;
@@ -60,21 +57,16 @@ namespace Sistema_Gestion_Electrica
         }
         public void GuardarComoImagen(string rutaArchivo)
         {
-            // Identificamos el panel que contiene toda la información.
             Control panel = this.panel1;
 
-            // Creamos una imagen (Bitmap) con el tamaño exacto del panel.
             using (Bitmap bmp = new Bitmap(panel.Width, panel.Height))
             {
-                // Dibujamos el panel y todo su contenido en la imagen.
                 panel.DrawToBitmap(bmp, new Rectangle(0, 0, panel.Width, panel.Height));
 
-                // Guardamos la imagen final.
                 bmp.Save(rutaArchivo, ImageFormat.Png);
             }
         }
 
-        // --- Mantén los otros métodos de tu formulario aquí ---
         private void lblAlumbradoPublicoTotal_Click(object sender, EventArgs e) { }
         private void lblNumeroDeServicioAQUI_Click(object sender, EventArgs e) { }
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e) { }
