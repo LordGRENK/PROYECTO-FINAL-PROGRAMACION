@@ -11,7 +11,6 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombredelServicio" Type="nchar" MaxLength="20" />
-          <Property Name="compañiadelServicio" Type="nchar" MaxLength="20" />
           <Property Name="voltajedelServicio" Type="int" />
         </EntityType>
         <EntityType Name="agregarUsuarioTabla">
@@ -39,8 +38,8 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="usuarioServicio" Type="nchar" MaxLength="10" />
-          <Property Name="servicioAnexado" Type="nchar" MaxLength="50" />
+          <Property Name="usuarioServicio" Type="nvarchar" MaxLength="80" />
+          <Property Name="servicioAnexado" Type="nvarchar" MaxLength="80" />
           <Property Name="voltajeServicio" Type="int" />
         </EntityType>
         <EntityType Name="PrecioAlumbradoPublico">
@@ -127,7 +126,6 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombredelServicio" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="compañiadelServicio" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="voltajedelServicio" Type="Int32" />
         </EntityType>
         <EntityType Name="agregarUsuarioTabla">
@@ -155,8 +153,8 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="usuarioServicio" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="servicioAnexado" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="usuarioServicio" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="servicioAnexado" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
           <Property Name="voltajeServicio" Type="Int32" />
         </EntityType>
         <EntityType Name="PrecioAlumbradoPublico">
@@ -243,7 +241,6 @@
               <MappingFragment StoreEntitySet="agregarServicioEléctrico">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="nombredelServicio" ColumnName="nombredelServicio" />
-                <ScalarProperty Name="compañiadelServicio" ColumnName="compañiadelServicio" />
                 <ScalarProperty Name="voltajedelServicio" ColumnName="voltajedelServicio" />
               </MappingFragment>
             </EntityTypeMapping>

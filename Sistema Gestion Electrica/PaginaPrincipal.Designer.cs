@@ -62,10 +62,10 @@
             // 
             this.uSUARIOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editarUsuarioToolStripMenuItem,
-            this.verServiciosToolStripMenuItem1,
-            this.verHistorialDeConsumosToolStripMenuItem,
             this.ingresarServicioAUsuarioToolStripMenuItem,
+            this.verServiciosToolStripMenuItem1,
             this.agregarConteoConsumoUsuarioToolStripMenuItem1,
+            this.verHistorialDeConsumosToolStripMenuItem,
             this.calcularCostoUsuarioToolStripMenuItem});
             this.uSUARIOToolStripMenuItem.Name = "uSUARIOToolStripMenuItem";
             this.uSUARIOToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
@@ -75,7 +75,7 @@
             // 
             this.editarUsuarioToolStripMenuItem.Name = "editarUsuarioToolStripMenuItem";
             this.editarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(318, 26);
-            this.editarUsuarioToolStripMenuItem.Text = "Ver Usuarios";
+            this.editarUsuarioToolStripMenuItem.Text = "Agregar Usuario";
             this.editarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.editarUsuarioToolStripMenuItem_Click);
             // 
             // verServiciosToolStripMenuItem1

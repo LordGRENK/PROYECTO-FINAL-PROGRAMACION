@@ -54,18 +54,29 @@ namespace Sistema_Gestion_Electrica
 
         private void btnSubiryGuardar_Click(object sender, EventArgs e)
         {
+            // Validamos que el NIS no esté vacío y sea un número.
+            if (!int.TryParse(tbIdUsuario.Text.Trim(), out int nis))
+            {
+                MessageBox.Show("Por favor, ingrese un NIS válido.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string voltajeSinV = lblEscrituraVoltaje.Text.Replace("V", "").Trim();
+
             var agregarServicio = new ingresarServicio
             {
+                // ¡AQUÍ ESTÁ EL CAMBIO! Asignamos el NIS al campo id.
+                id = nis,
 
                 usuarioServicio = lblNombreUsuario.Text,
-                servicioAnexado = cbServicios.SelectedItem.ToString(), 
-                voltajeServicio = Convert.ToInt32(lblEscrituraVoltaje.Text)
-            }; 
-            _bd.ingresarServicio.Add(agregarServicio); // Agrega el nuevo servicio a la base de datos
-            _bd.SaveChanges();
-            MessageBox.Show("Usuario agregado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+                servicioAnexado = cbServicios.SelectedItem.ToString(),
+                voltajeServicio = Convert.ToInt32(voltajeSinV)
+            };
 
+            _bd.ingresarServicio.Add(agregarServicio);
+            _bd.SaveChanges();
+            MessageBox.Show("Servicio con NIS " + nis + " asignado al usuario correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
         private void cbServicios_SelectedIndexChanged(object sender, EventArgs e)
         {
             var nombreServicio = cbServicios.SelectedItem?.ToString();

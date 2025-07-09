@@ -35,8 +35,6 @@ namespace Sistema_Gestion_Electrica
             var ingresarServicioElectrico = new agregarServicioEléctrico
             {
                 nombredelServicio = tbIngresarServicioEléctrico.Text,
-                // estadodelServicio eliminado
-                compañiadelServicio = tbCompañiaEléctrica.Text,
                 voltajedelServicio = Convert.ToInt32(tbVoltajeServicio.Text)
             };
             _bd.agregarServicioEléctrico.Add(ingresarServicioElectrico);
