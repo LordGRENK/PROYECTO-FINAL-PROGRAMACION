@@ -85,6 +85,7 @@ namespace Sistema_Gestion_Electrica
         private void btnAgregarServicio_Click(object sender, EventArgs e)
         {
             var ingresarServicio = new IngresarServicioUsuario();
+            ingresarServicio.MdiParent = PaginaPrincipal.ActiveForm; // <-- Añade esta línea
             ingresarServicio.Show();
         }
     }
