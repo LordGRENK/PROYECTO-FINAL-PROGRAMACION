@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Sistema_Gestion_Electrica
 {
     public partial class AgregarUsuario : Form
-    { 
+    {
         private readonly GISELEntities _bd; // Instancia de la clase agregarUsuarioTabla
         private agregarUsuarioTabla _usuarioExistente; // Campo para almacenar el usuario a editar
 
@@ -26,7 +27,7 @@ namespace Sistema_Gestion_Electrica
 
         private void llenarCampos(agregarUsuarioTabla agregarUsuario)
         {
-            tbNombreUsuario.Text = agregarUsuario.nombreUsuario; // Corregido: Asignar valores a los campos de texto
+            tbNombreUsuario.Text = agregarUsuario.nombreUsuario;
             tbDireccionUsuario.Text = agregarUsuario.direccionUsuario;
             tbTelefonoUsuario.Text = agregarUsuario.telefonoUsuario;
             tbEmailUsuario.Text = agregarUsuario.emailUsuario;
@@ -38,6 +39,32 @@ namespace Sistema_Gestion_Electrica
 
         private void btnGuardarUsuario_Click(object sender, EventArgs e)
         {
+            // Validaciones con Regex
+            if (!Regex.IsMatch(tbNombreUsuario.Text, @"^[a-zA-ZáéíóúÁÉÍÓÚ\s]+$"))
+            {
+                MessageBox.Show("El nombre de usuario solo puede contener letras y acentos.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!Regex.IsMatch(tbDireccionUsuario.Text, @"^[a-zA-Z0-9\s.]+$"))
+            {
+                MessageBox.Show("La dirección solo puede contener letras, números y puntos.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!Regex.IsMatch(tbTelefonoUsuario.Text, @"^\d{8}$"))
+            {
+                MessageBox.Show("El teléfono debe contener exactamente 8 dígitos numéricos.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!Regex.IsMatch(tbEmailUsuario.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            {
+                MessageBox.Show("El formato del correo electrónico no es válido.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
             if (_usuarioExistente != null)
             {
                 // Editar usuario existente

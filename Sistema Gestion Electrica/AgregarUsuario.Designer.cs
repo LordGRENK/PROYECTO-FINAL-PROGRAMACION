@@ -147,7 +147,7 @@
             // 
             this.lbTitulo.AutoSize = true;
             this.lbTitulo.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.Location = new System.Drawing.Point(215, 9);
+            this.lbTitulo.Location = new System.Drawing.Point(231, 27);
             this.lbTitulo.Name = "lbTitulo";
             this.lbTitulo.Size = new System.Drawing.Size(240, 33);
             this.lbTitulo.TabIndex = 11;
