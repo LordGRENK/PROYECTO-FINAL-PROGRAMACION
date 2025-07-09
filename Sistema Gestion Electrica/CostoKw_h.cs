@@ -90,5 +90,40 @@ namespace Sistema_Gestion_Electrica
         {
 
         }
+
+        private void tbSig25kWh_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbSig50kWh1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbSig50kWh2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbSig350kWh_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbAdi1000kWh_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close(); // Cierra el formulario sin guardar cambios
+        }
     }
 }

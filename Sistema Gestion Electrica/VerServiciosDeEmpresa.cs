@@ -42,16 +42,17 @@ namespace Sistema_Gestion_Electrica
             // Asegúrate de que haya una fila seleccionada
             if (gvServiciosGisel.SelectedRows.Count > 0)
             {
-                // Obtiene el ID (NIS) de la fila seleccionada
+                // Obtiene el ID de la fila seleccionada
                 int idServicio = Convert.ToInt32(gvServiciosGisel.SelectedRows[0].Cells["id"].Value);
 
-                var servicio = _bd.ingresarServicio.Find(idServicio);
+                var servicio = _bd.agregarServicioEléctrico.Find(idServicio);
                 if (servicio != null)
                 {
-                    _bd.ingresarServicio.Remove(servicio);
+                    _bd.agregarServicioEléctrico.Remove(servicio);
                     _bd.SaveChanges();
                     // Refresca la tabla para mostrar los cambios
-                    gvServiciosGisel.DataSource = _bd.ingresarServicio.ToList();
+                    gvServiciosGisel.DataSource = _bd.agregarServicioEléctrico.ToList();
+                    MessageBox.Show("Servicio eliminado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
