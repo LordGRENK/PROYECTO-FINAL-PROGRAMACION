@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
+
 namespace Sistema_Gestion_Electrica
 {
     public partial class CostoKw_h : Form
@@ -27,103 +28,110 @@ namespace Sistema_Gestion_Electrica
                     .ToList();
                 cbEmpresa.DataSource = servicios;
             }
-        }
-        public CostoKw_h(CostoKw_h costoKw_h)
-        {
-            InitializeComponent();
-            llenarCampos(costoKw_h);
-        }
-        private void llenarCampos(CostoKw_h costoKw_h)
-        {
-            nudAño = costoKw_h.nudAño; // Asignar valores a los campos de texto
-            nudMes = costoKw_h.nudMes;
-            tbPrimeros25kWh = costoKw_h.tbPrimeros25kWh;
-            cbEmpresa = costoKw_h.cbEmpresa;
-        }
-        private void lbTitulo_Click(object sender, EventArgs e)
-        {
 
+            // Asignar el mismo evento KeyPress a todos los campos de texto de costos
+            tbPrimeros25kWh.KeyPress += new KeyPressEventHandler(textBox_KeyPress_Decimal);
+            tbSig25kWh.KeyPress += new KeyPressEventHandler(textBox_KeyPress_Decimal);
+            tbSig50kWh1.KeyPress += new KeyPressEventHandler(textBox_KeyPress_Decimal);
+            tbSig50kWh2.KeyPress += new KeyPressEventHandler(textBox_KeyPress_Decimal);
+            tbSig350kWh.KeyPress += new KeyPressEventHandler(textBox_KeyPress_Decimal);
+            tb500kWh.KeyPress += new KeyPressEventHandler(textBox_KeyPress_Decimal);
+            tbAdi1000kWh.KeyPress += new KeyPressEventHandler(textBox_KeyPress_Decimal);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void textBox_KeyPress_Decimal(object sender, KeyPressEventArgs e)
         {
+            // Permitir números, el punto decimal y la tecla de retroceso
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
 
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
+            // Asegurarse de que solo haya un punto decimal
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
 
         private void btnAgregarServicio_Click(object sender, EventArgs e)
         {
-            var costoKw_h = new PrecioKwhPorMes
+            // --- VALIDACIONES ---
+            var campos = new[] { tbPrimeros25kWh, tbSig25kWh, tbSig50kWh1, tbSig50kWh2, tbSig350kWh, tb500kWh, tbAdi1000kWh };
+            foreach (var campo in campos)
             {
-                Año = (int)nudAño.Value,
-                Mes = (int)nudMes.Value,
-                Primeros25kWh = decimal.Parse(tbPrimeros25kWh.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
-                Siguientes25kWh = decimal.Parse(tbSig25kWh.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
-                Siguientes50kWh1 = decimal.Parse(tbSig50kWh1.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
-                Siguientes50kWh2 = decimal.Parse(tbSig50kWh2.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
-                Siguientes350kWh = decimal.Parse(tbSig350kWh.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
-                Siguientes500kWh = decimal.Parse(tb500kWh.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
-                Adicionalesa1000kWh = decimal.Parse(tbAdi1000kWh.Text.Replace(',', '.'), CultureInfo.InvariantCulture),
-                Compañia = cbEmpresa.SelectedItem.ToString()
-            };
-            _bd.PrecioKwhPorMes.Add(costoKw_h);
-            _bd.SaveChanges();
-            MessageBox.Show("Costo por kWh agregado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
-        }
+                if (string.IsNullOrWhiteSpace(campo.Text) || !decimal.TryParse(campo.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal valor) || valor <= 0)
+                {
+                    MessageBox.Show($"El valor en el campo '{campo.Name}' no es válido. Debe ser un número positivo.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
 
-        private void tbPrimeros25kWh_TextChanged(object sender, EventArgs e)
-        {
+            var año = (int)nudAño.Value;
+            var mes = (int)nudMes.Value;
+            var compañia = cbEmpresa.SelectedItem.ToString();
 
-        }
+            // --- VERIFICACIÓN DE REGISTRO EXISTENTE ---
+            var costoExistente = _bd.PrecioKwhPorMes.FirstOrDefault(p => p.Año == año && p.Mes == mes && p.Compañia == compañia);
 
-        private void tb500kWh_TextChanged(object sender, EventArgs e)
-        {
+            if (costoExistente != null)
+            {
+                // Si existe, preguntar si se desea reemplazar
+                var result = MessageBox.Show("Ya existe un registro de costos para este mes, año y compañía. ¿Desea reemplazarlo?", "Registro Duplicado", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    // Actualizar el registro existente
+                    costoExistente.Primeros25kWh = decimal.Parse(tbPrimeros25kWh.Text, CultureInfo.InvariantCulture);
+                    costoExistente.Siguientes25kWh = decimal.Parse(tbSig25kWh.Text, CultureInfo.InvariantCulture);
+                    costoExistente.Siguientes50kWh1 = decimal.Parse(tbSig50kWh1.Text, CultureInfo.InvariantCulture);
+                    costoExistente.Siguientes50kWh2 = decimal.Parse(tbSig50kWh2.Text, CultureInfo.InvariantCulture);
+                    costoExistente.Siguientes350kWh = decimal.Parse(tbSig350kWh.Text, CultureInfo.InvariantCulture);
+                    costoExistente.Siguientes500kWh = decimal.Parse(tb500kWh.Text, CultureInfo.InvariantCulture);
+                    costoExistente.Adicionalesa1000kWh = decimal.Parse(tbAdi1000kWh.Text, CultureInfo.InvariantCulture);
 
-        }
-
-        private void tbSig25kWh_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbSig50kWh1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbSig50kWh2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbSig350kWh_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbAdi1000kWh_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
+                    _bd.SaveChanges();
+                    MessageBox.Show("Costo por kWh actualizado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+            }
+            else
+            {
+                // Si no existe, agregar un nuevo registro
+                var costoKw_h = new PrecioKwhPorMes
+                {
+                    Año = año,
+                    Mes = mes,
+                    Primeros25kWh = decimal.Parse(tbPrimeros25kWh.Text, CultureInfo.InvariantCulture),
+                    Siguientes25kWh = decimal.Parse(tbSig25kWh.Text, CultureInfo.InvariantCulture),
+                    Siguientes50kWh1 = decimal.Parse(tbSig50kWh1.Text, CultureInfo.InvariantCulture),
+                    Siguientes50kWh2 = decimal.Parse(tbSig50kWh2.Text, CultureInfo.InvariantCulture),
+                    Siguientes350kWh = decimal.Parse(tbSig350kWh.Text, CultureInfo.InvariantCulture),
+                    Siguientes500kWh = decimal.Parse(tb500kWh.Text, CultureInfo.InvariantCulture),
+                    Adicionalesa1000kWh = decimal.Parse(tbAdi1000kWh.Text, CultureInfo.InvariantCulture),
+                    Compañia = compañia
+                };
+                _bd.PrecioKwhPorMes.Add(costoKw_h);
+                _bd.SaveChanges();
+                MessageBox.Show("Costo por kWh agregado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close(); // Cierra el formulario sin guardar cambios
         }
+
+        // --- MÉTODOS DE EVENTOS VACÍOS (puedes mantenerlos o eliminarlos si no los usas) ---
+        private void lbTitulo_Click(object sender, EventArgs e) { }
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e) { }
+        private void label3_Click(object sender, EventArgs e) { }
+        private void tbPrimeros25kWh_TextChanged(object sender, EventArgs e) { }
+        private void tb500kWh_TextChanged(object sender, EventArgs e) { }
+        private void tbSig25kWh_TextChanged(object sender, EventArgs e) { }
+        private void tbSig50kWh1_TextChanged(object sender, EventArgs e) { }
+        private void tbSig50kWh2_TextChanged(object sender, EventArgs e) { }
+        private void tbSig350kWh_TextChanged(object sender, EventArgs e) { }
+        private void tbAdi1000kWh_TextChanged(object sender, EventArgs e) { }
     }
 }

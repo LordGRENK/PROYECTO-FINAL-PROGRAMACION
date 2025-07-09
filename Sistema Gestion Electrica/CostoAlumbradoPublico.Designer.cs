@@ -48,7 +48,6 @@
             this.tb51s100kWh = new System.Windows.Forms.TextBox();
             this.lbl101a150 = new System.Windows.Forms.Label();
             this.tb101a150kWh = new System.Windows.Forms.TextBox();
-            this.lbl151a500 = new System.Windows.Forms.Label();
             this.tb151a500kWh = new System.Windows.Forms.TextBox();
             this.lbl501a1000 = new System.Windows.Forms.Label();
             this.tb501a1000kWh = new System.Windows.Forms.TextBox();
@@ -57,6 +56,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cbEmpresa = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.lbl151a500 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnAgregarServicio = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -325,16 +325,6 @@
             this.tb101a150kWh.Size = new System.Drawing.Size(132, 22);
             this.tb101a150kWh.TabIndex = 18;
             // 
-            // lbl151a500
-            // 
-            this.lbl151a500.AutoSize = true;
-            this.lbl151a500.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl151a500.Location = new System.Drawing.Point(3, 330);
-            this.lbl151a500.Name = "lbl151a500";
-            this.lbl151a500.Size = new System.Drawing.Size(215, 33);
-            this.lbl151a500.TabIndex = 19;
-            this.lbl151a500.Text = "De 151 a 500 kWh";
-            // 
             // tb151a500kWh
             // 
             this.tb151a500kWh.Location = new System.Drawing.Point(312, 334);
@@ -411,6 +401,16 @@
             this.label5.TabIndex = 25;
             this.label5.Text = "C$";
             // 
+            // lbl151a500
+            // 
+            this.lbl151a500.AutoSize = true;
+            this.lbl151a500.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl151a500.Location = new System.Drawing.Point(3, 330);
+            this.lbl151a500.Name = "lbl151a500";
+            this.lbl151a500.Size = new System.Drawing.Size(215, 33);
+            this.lbl151a500.TabIndex = 19;
+            this.lbl151a500.Text = "De 151 a 500 kWh";
+            // 
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -422,6 +422,7 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btnAgregarServicio
             // 

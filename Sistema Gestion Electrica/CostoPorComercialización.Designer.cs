@@ -57,8 +57,8 @@
             this.cbEmpresa = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lbl151a500 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnAgregarServicio = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAño)).BeginInit();
@@ -411,18 +411,6 @@
             this.lbl151a500.TabIndex = 19;
             this.lbl151a500.Text = "De 151 a 500 kWh";
             // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(368, 615);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(172, 43);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // btnAgregarServicio
             // 
             this.btnAgregarServicio.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -436,13 +424,26 @@
             this.btnAgregarServicio.UseVisualStyleBackColor = true;
             this.btnAgregarServicio.Click += new System.EventHandler(this.btnAgregarServicio_Click);
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelar.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(388, 615);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(181, 43);
+            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // CostoPorComercialización
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 669);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregarServicio);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lbTitulo);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -469,7 +470,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tb0a25kWh;
         private System.Windows.Forms.NumericUpDown nudMes;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnAgregarServicio;
         private System.Windows.Forms.Label lbl26a50;
         private System.Windows.Forms.TextBox tb26a60kWh;
@@ -490,5 +490,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
