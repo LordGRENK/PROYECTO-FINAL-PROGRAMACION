@@ -49,12 +49,12 @@ namespace Sistema_Gestion_Electrica
                 return;
             }
 
-            // Buscar si existe el NIS en la tabla ingresarServicio
-            var existeNIS = _bd.ingresarServicio.Any(s => s.id == nis);
+            // Buscar si existe el NIS en la tabla ingresarServicio para obtener el nombre del usuario
+            var servicio = _bd.ingresarServicio.FirstOrDefault(s => s.id == nis);
 
-            if (existeNIS)
+            if (servicio != null)
             {
-                MessageBox.Show("El NIS existe en la base de datos.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"El NIS pertenece al usuario: {servicio.usuarioServicio}.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -72,19 +72,57 @@ namespace Sistema_Gestion_Electrica
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            var conteoConsumo = new ConteoConsumoTabla()
+            // Validaciones de campos vacíos
+            if (string.IsNullOrWhiteSpace(tbNIS.Text) || string.IsNullOrWhiteSpace(tbKiloWattsConsumidos.Text))
             {
-                NIS = Convert.ToInt32(tbNIS.Text),
-                Año = Convert.ToInt32(nudAño.Text),
-                Mes = Convert.ToInt32(nudMes.Text),
-                KilowattsHora = Convert.ToDouble(tbKiloWattsConsumidos.Text) // Asegúrate de que el nombre esté correcto
-            };
+                MessageBox.Show("Los campos NIS y KiloWatts Consumidos no pueden estar vacíos.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            _bd.ConteoConsumoTabla.Add(conteoConsumo);
-            _bd.SaveChanges();
+            if (!int.TryParse(tbNIS.Text, out int nis) || !double.TryParse(tbKiloWattsConsumidos.Text, out double kilowatts))
+            {
+                MessageBox.Show("Por favor, ingrese valores numéricos válidos para NIS y KiloWatts.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            MessageBox.Show("Conteo de consumo agregado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+
+            var año = Convert.ToInt32(nudAño.Text);
+            var mes = Convert.ToInt32(nudMes.Text);
+
+            // Verificar si ya existe un registro para el mismo NIS, año y mes
+            var conteoExistente = _bd.ConteoConsumoTabla.FirstOrDefault(c => c.NIS == nis && c.Año == año && c.Mes == mes);
+
+            if (conteoExistente != null)
+            {
+                // Si existe, preguntar si se desea reemplazar
+                var resultado = MessageBox.Show("Ya existe un registro para este NIS, año y mes. ¿Desea reemplazarlo?", "Registro Duplicado", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    // Actualizar el registro existente
+                    conteoExistente.KilowattsHora = kilowatts;
+                    _bd.SaveChanges();
+                    MessageBox.Show("Conteo de consumo actualizado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+            }
+            else
+            {
+                // Si no existe, crear uno nuevo
+                var conteoConsumo = new ConteoConsumoTabla()
+                {
+                    NIS = nis,
+                    Año = año,
+                    Mes = mes,
+                    KilowattsHora = kilowatts // Asegúrate de que el nombre esté correcto
+                };
+
+                _bd.ConteoConsumoTabla.Add(conteoConsumo);
+                _bd.SaveChanges();
+
+                MessageBox.Show("Conteo de consumo agregado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
         }
 
 
