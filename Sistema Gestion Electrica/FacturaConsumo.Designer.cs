@@ -60,6 +60,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblDireccionUsuarioAQUI = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -166,6 +167,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lblFecha, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblDireccionUsuarioAQUI, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
@@ -459,6 +461,17 @@
             this.lblDireccionUsuarioAQUI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblDireccionUsuarioAQUI.Click += new System.EventHandler(this.lblDireccionUsuarioAQUI_Click);
             // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(221)))), ((int)(((byte)(231)))));
+            this.label7.Font = new System.Drawing.Font("Sitka Text", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label7.Location = new System.Drawing.Point(3, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(74, 23);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "SIGEL";
+            // 
             // FacturaConsumo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -513,5 +526,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblDireccionUsuarioAQUI;
+        private System.Windows.Forms.Label label7;
     }
 }
