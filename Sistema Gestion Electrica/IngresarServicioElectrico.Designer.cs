@@ -117,7 +117,6 @@
             this.tbVoltajeServicio.Name = "tbVoltajeServicio";
             this.tbVoltajeServicio.Size = new System.Drawing.Size(245, 22);
             this.tbVoltajeServicio.TabIndex = 13;
-            this.tbVoltajeServicio.Text = "*";
             // 
             // lbTitulo
             // 

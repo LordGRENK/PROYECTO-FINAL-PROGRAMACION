@@ -49,10 +49,13 @@
             // 
             // gvServiciosGisel
             // 
+            this.gvServiciosGisel.AllowUserToAddRows = false;
+            this.gvServiciosGisel.AllowUserToDeleteRows = false;
             this.gvServiciosGisel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvServiciosGisel.Location = new System.Drawing.Point(23, 76);
             this.gvServiciosGisel.Margin = new System.Windows.Forms.Padding(4);
             this.gvServiciosGisel.Name = "gvServiciosGisel";
+            this.gvServiciosGisel.ReadOnly = true;
             this.gvServiciosGisel.RowHeadersWidth = 51;
             this.gvServiciosGisel.Size = new System.Drawing.Size(576, 185);
             this.gvServiciosGisel.TabIndex = 13;
