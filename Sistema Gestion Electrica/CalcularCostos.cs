@@ -48,9 +48,16 @@ namespace Sistema_Gestion_Electrica
 
             using (var db = new GISELEntities())
             {
+                // Esta línea es CRUCIAL: Busca la factura en la base de datos.
                 var factura = db.TablaFacturas.FirstOrDefault(f => f.NIS == nis && f.Año == año && f.Mes == mes);
+
+                // Esta comprobación es NECESARIA para continuar.
                 if (factura != null)
                 {
+                    // Esta sección busca la dirección del usuario correspondiente.
+                    var usuario = db.agregarUsuarioTabla.FirstOrDefault(u => u.nombreUsuario == factura.NombreUsuario);
+                    string direccion = usuario?.direccionUsuario ?? "Dirección no encontrada";
+
                     SaveFileDialog saveFileDialog = new SaveFileDialog();
                     saveFileDialog.Filter = "PNG Image|*.png";
                     saveFileDialog.Title = "Guardar Factura como Imagen";
@@ -58,21 +65,14 @@ namespace Sistema_Gestion_Electrica
 
                     if (saveFileDialog.ShowDialog() == DialogResult.OK)
                     {
-                        // --- Forzar renderizado completo del formulario (Método Off-Screen) ---
-                        using (var facturaForm = new FacturaConsumo(factura))
+                        // Pasamos la factura y la dirección para crear el formulario.
+                        using (var facturaForm = new FacturaConsumo(factura, direccion))
                         {
-                            // 1. Posicionar el formulario fuera del área visible de la pantalla.
                             facturaForm.StartPosition = FormStartPosition.Manual;
                             facturaForm.Location = new Point(-9999, -9999);
                             facturaForm.ShowInTaskbar = false;
-
-                            // 2. Mostrarlo para que se active su ciclo de vida y se dibuje.
                             facturaForm.Show();
-
-                            // 3. Llamar al método para guardar la imagen ahora que está renderizado.
                             facturaForm.GuardarComoImagen(saveFileDialog.FileName);
-
-                            // 4. Ocultarlo y cerrarlo inmediatamente.
                             facturaForm.Hide();
                         }
                         MessageBox.Show("Factura guardada exitosamente en: " + saveFileDialog.FileName, "Guardado Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);

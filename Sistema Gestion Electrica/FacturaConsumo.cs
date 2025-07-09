@@ -8,11 +8,14 @@ namespace Sistema_Gestion_Electrica
     public partial class FacturaConsumo : Form
     {
         private readonly TablaFacturas _factura;
+        private readonly string _direccion; // Variable para guardar la dirección
 
-        public FacturaConsumo(TablaFacturas factura)
+        // --- CAMBIO AQUÍ: El constructor ahora acepta la dirección ---
+        public FacturaConsumo(TablaFacturas factura, string direccion)
         {
             InitializeComponent();
             _factura = factura;
+            _direccion = direccion; // Guardamos la dirección
             CargarDatosFactura();
         }
 
@@ -20,54 +23,37 @@ namespace Sistema_Gestion_Electrica
         {
             if (_factura != null)
             {
-                // --- 0. Obtener valores base de la factura ---
+                // --- Rellenar información básica de la factura ---
+                lblNumeroDeServicioAQUI.Text = _factura.NIS.ToString();
+                lblNombreDeUsuarioAQUI.Text = _factura.NombreUsuario;
+                lblDireccionUsuarioAQUI.Text = _direccion; // ¡AQUÍ SE MUESTRA LA DIRECCIÓN!
+                
+
+                // ... (El resto del método CargarDatosFactura se mantiene igual)
                 decimal kwhConsumidos = _factura.KwhTotalAPagar ?? 0;
                 decimal precioPorKwh = _factura.PrecioKwhPorMes ?? 0;
                 decimal costoAlumbrado = _factura.PrecioAlumbradoPublicoTotal ?? 0;
                 decimal costoComercializacion = _factura.PrecioFijoComercialicación ?? 0;
 
-                // --- Rellenar información básica de la factura ---
-                lblNumeroDeServicioAQUI.Text = _factura.NIS.ToString();
-                lblNombreDeUsuarioAQUI.Text = _factura.NombreUsuario;
-                lblTitulo.Text = _factura.Compañia;
                 lblkWhConsumidosAQUI.Text = kwhConsumidos.ToString("N2") + " kWh";
                 lblkWhMesAQUI.Text = precioPorKwh.ToString("N2");
                 lblAlumbradoPublicoAQUI.Text = costoAlumbrado.ToString("N2");
                 lblComercializaciónAQUI.Text = costoComercializacion.ToString("N2");
                 lblFechaAQUI.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
-                // --- Inician los cálculos según tu fórmula ---
-
-                // 1. Total de kWh consumidos * precio del kWh del mes
                 decimal costoConsumoKwh = kwhConsumidos * precioPorKwh;
-
-                // 2. Sumatoria inicial
                 decimal subtotal_1 = costoConsumoKwh + costoAlumbrado + costoComercializacion;
 
-                // 3. Cálculo del subsidio
                 decimal subsidio = 0;
-                if (kwhConsumidos > 0 && kwhConsumidos <= 50)
-                {
-                    subsidio = costoConsumoKwh * 0.50m; // 50% de subsidio
-                }
-                else if (kwhConsumidos > 50 && kwhConsumidos <= 100)
-                {
-                    subsidio = costoConsumoKwh * 0.45m; // 45% de subsidio
-                }
-                else if (kwhConsumidos > 100 && kwhConsumidos <= 150)
-                {
-                    subsidio = costoConsumoKwh * 0.25m; // 25% de subsidio
-                }
+                if (kwhConsumidos > 0 && kwhConsumidos <= 50) { subsidio = costoConsumoKwh * 0.50m; }
+                else if (kwhConsumidos > 50 && kwhConsumidos <= 100) { subsidio = costoConsumoKwh * 0.45m; }
+                else if (kwhConsumidos > 100 && kwhConsumidos <= 150) { subsidio = costoConsumoKwh * 0.25m; }
                 lblSubsidioAQUI.Text = subsidio.ToString("N2");
 
-                // 4. Resta del subsidio
                 decimal subtotal_2 = subtotal_1 - subsidio;
-
-                // 5. Cálculo del Impuesto INE (0.00064%)
                 decimal impuestoINE = subtotal_2 * 0.00064m;
-                label4.Text = impuestoINE.ToString("N2"); // 'label4' es el valor del Impuesto INE
+                label4.Text = impuestoINE.ToString("N2");
 
-                // 6. Suma del impuesto para obtener el total final
                 decimal totalAPagar = subtotal_2 + impuestoINE;
                 TotalAQUI.Text = totalAPagar.ToString("N2");
             }
