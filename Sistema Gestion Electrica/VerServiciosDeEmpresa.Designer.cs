@@ -47,6 +47,7 @@
             this.btnCancelar.TabIndex = 24;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAgregarServicio
             // 
@@ -59,6 +60,7 @@
             this.btnAgregarServicio.TabIndex = 23;
             this.btnAgregarServicio.Text = "Agregar";
             this.btnAgregarServicio.UseVisualStyleBackColor = true;
+            this.btnAgregarServicio.Click += new System.EventHandler(this.btnAgregarServicio_Click);
             // 
             // btnEliminar
             // 
@@ -71,6 +73,7 @@
             this.btnEliminar.TabIndex = 22;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // gvServiciosGisel
             // 
@@ -81,6 +84,7 @@
             this.gvServiciosGisel.RowHeadersWidth = 51;
             this.gvServiciosGisel.Size = new System.Drawing.Size(663, 185);
             this.gvServiciosGisel.TabIndex = 21;
+            this.gvServiciosGisel.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvServiciosGisel_CellContentClick);
             // 
             // lblVerServicio
             // 
@@ -91,6 +95,7 @@
             this.lblVerServicio.Size = new System.Drawing.Size(468, 63);
             this.lblVerServicio.TabIndex = 20;
             this.lblVerServicio.Text = "Servicios Existentes";
+            this.lblVerServicio.Click += new System.EventHandler(this.lblVerServicio_Click);
             // 
             // VerServiciosDeEmpresa
             // 
@@ -104,6 +109,7 @@
             this.Controls.Add(this.lblVerServicio);
             this.Name = "VerServiciosDeEmpresa";
             this.Text = "Servicios Existentes";
+            this.Load += new System.EventHandler(this.VerServiciosDeEmpresa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvServiciosGisel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

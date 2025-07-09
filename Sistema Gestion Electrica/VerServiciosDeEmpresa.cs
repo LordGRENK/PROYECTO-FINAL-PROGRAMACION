@@ -16,5 +16,35 @@ namespace Sistema_Gestion_Electrica
         {
             InitializeComponent();
         }
+
+        private void gvServiciosGisel_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnAgregarServicio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblVerServicio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void VerServiciosDeEmpresa_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
