@@ -107,7 +107,7 @@
             // tbIdUsuario
             // 
             this.tbIdUsuario.Location = new System.Drawing.Point(375, 89);
-            this.tbIdUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbIdUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.tbIdUsuario.Name = "tbIdUsuario";
             this.tbIdUsuario.Size = new System.Drawing.Size(132, 22);
             this.tbIdUsuario.TabIndex = 19;
@@ -171,9 +171,9 @@
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTitulo);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "IngresarServicioUsuario";
-            this.Text = "AsignarServicioUsuario";
+            this.Text = "Asignar Servicio Usuario";
             this.Load += new System.EventHandler(this.IngresarServicioUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
