@@ -29,7 +29,7 @@ namespace Sistema_Gestion_Electrica
                 // --- Rellenar información básica de la factura ---
                 lblNumeroDeServicioAQUI.Text = _factura.NIS.ToString();
                 lblNombreDeUsuarioAQUI.Text = _factura.NombreUsuario;
-                lblCompañiaDelServicioAQUI.Text = _factura.Compañia;
+                lblTitulo.Text = _factura.Compañia;
                 lblkWhConsumidosAQUI.Text = kwhConsumidos.ToString("N2") + " kWh";
                 lblkWhMesAQUI.Text = precioPorKwh.ToString("N2");
                 lblAlumbradoPublicoAQUI.Text = costoAlumbrado.ToString("N2");
@@ -74,13 +74,16 @@ namespace Sistema_Gestion_Electrica
         }
         public void GuardarComoImagen(string rutaArchivo)
         {
-            // Crea una imagen (Bitmap) con las mismas dimensiones que el formulario.
-            using (Bitmap bmp = new Bitmap(this.Width, this.Height))
-            {
-                // "Dibuja" el contenido actual del formulario en la imagen.
-                this.DrawToBitmap(bmp, new Rectangle(0, 0, this.Width, this.Height));
+            // Identificamos el panel que contiene toda la información.
+            Control panel = this.panel1;
 
-                // Guarda la imagen en el archivo y formato especificados.
+            // Creamos una imagen (Bitmap) con el tamaño exacto del panel.
+            using (Bitmap bmp = new Bitmap(panel.Width, panel.Height))
+            {
+                // Dibujamos el panel y todo su contenido en la imagen.
+                panel.DrawToBitmap(bmp, new Rectangle(0, 0, panel.Width, panel.Height));
+
+                // Guardamos la imagen final.
                 bmp.Save(rutaArchivo, ImageFormat.Png);
             }
         }
@@ -90,5 +93,25 @@ namespace Sistema_Gestion_Electrica
         private void lblNumeroDeServicioAQUI_Click(object sender, EventArgs e) { }
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e) { }
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e) { }
+
+        private void FacturaConsumo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDireccionUsuarioAQUI_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
