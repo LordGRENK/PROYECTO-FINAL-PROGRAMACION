@@ -203,7 +203,7 @@
             this.nudMes.Size = new System.Drawing.Size(136, 22);
             this.nudMes.TabIndex = 11;
             this.nudMes.Value = new decimal(new int[] {
-            12,
+            1,
             0,
             0,
             0});

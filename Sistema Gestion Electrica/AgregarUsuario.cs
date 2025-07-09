@@ -73,5 +73,25 @@ namespace Sistema_Gestion_Electrica
         {
             this.Close(); // Cierra el formulario actual
         }
+
+        private void tbNombreUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbDireccionUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbTelefonoUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbEmailUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
