@@ -77,12 +77,15 @@
             // 
             // gvServiciosGisel
             // 
+            this.gvServiciosGisel.AllowUserToAddRows = false;
+            this.gvServiciosGisel.AllowUserToDeleteRows = false;
             this.gvServiciosGisel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvServiciosGisel.Location = new System.Drawing.Point(61, 72);
+            this.gvServiciosGisel.Location = new System.Drawing.Point(166, 72);
             this.gvServiciosGisel.Margin = new System.Windows.Forms.Padding(4);
             this.gvServiciosGisel.Name = "gvServiciosGisel";
+            this.gvServiciosGisel.ReadOnly = true;
             this.gvServiciosGisel.RowHeadersWidth = 51;
-            this.gvServiciosGisel.Size = new System.Drawing.Size(663, 185);
+            this.gvServiciosGisel.Size = new System.Drawing.Size(469, 185);
             this.gvServiciosGisel.TabIndex = 21;
             this.gvServiciosGisel.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvServiciosGisel_CellContentClick);
             // 
@@ -90,7 +93,7 @@
             // 
             this.lblVerServicio.AutoSize = true;
             this.lblVerServicio.Font = new System.Drawing.Font("Sitka Text", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVerServicio.Location = new System.Drawing.Point(163, 9);
+            this.lblVerServicio.Location = new System.Drawing.Point(167, 9);
             this.lblVerServicio.Name = "lblVerServicio";
             this.lblVerServicio.Size = new System.Drawing.Size(468, 63);
             this.lblVerServicio.TabIndex = 20;

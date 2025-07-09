@@ -32,9 +32,9 @@ namespace Sistema_Gestion_Electrica
 
         private void ingresarServicioElectricoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var ingresarServicio = new IngresarServicioElectrico();
-            ingresarServicio.MdiParent = this;
-            ingresarServicio.Show();
+            var verServiciosDeEmpresa = new VerServiciosDeEmpresa();
+           verServiciosDeEmpresa.MdiParent = this;
+            verServiciosDeEmpresa.Show();
         }
 
 
@@ -102,13 +102,6 @@ namespace Sistema_Gestion_Electrica
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void agregarConteoConsumoUsuarioToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            var conteoConsumo = new ConteoConsumoUsuario();
-            conteoConsumo.MdiParent = this;
-            conteoConsumo.Show();
         }
 
 

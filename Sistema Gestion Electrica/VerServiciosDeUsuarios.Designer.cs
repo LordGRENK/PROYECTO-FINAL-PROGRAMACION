@@ -40,7 +40,7 @@
             // 
             this.lblVerUsuario.AutoSize = true;
             this.lblVerUsuario.Font = new System.Drawing.Font("Sitka Text", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVerUsuario.Location = new System.Drawing.Point(126, 9);
+            this.lblVerUsuario.Location = new System.Drawing.Point(64, 9);
             this.lblVerUsuario.Name = "lblVerUsuario";
             this.lblVerUsuario.Size = new System.Drawing.Size(497, 63);
             this.lblVerUsuario.TabIndex = 12;
@@ -50,11 +50,11 @@
             // gvServiciosGisel
             // 
             this.gvServiciosGisel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvServiciosGisel.Location = new System.Drawing.Point(44, 76);
+            this.gvServiciosGisel.Location = new System.Drawing.Point(23, 76);
             this.gvServiciosGisel.Margin = new System.Windows.Forms.Padding(4);
             this.gvServiciosGisel.Name = "gvServiciosGisel";
             this.gvServiciosGisel.RowHeadersWidth = 51;
-            this.gvServiciosGisel.Size = new System.Drawing.Size(663, 185);
+            this.gvServiciosGisel.Size = new System.Drawing.Size(576, 185);
             this.gvServiciosGisel.TabIndex = 13;
             this.gvServiciosGisel.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuariosGisel_CellContentClick);
             // 
@@ -62,7 +62,7 @@
             // 
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminar.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(285, 267);
+            this.btnEliminar.Location = new System.Drawing.Point(217, 267);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(188, 43);
@@ -75,7 +75,7 @@
             // 
             this.btnAgregarServicio.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAgregarServicio.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarServicio.Location = new System.Drawing.Point(86, 267);
+            this.btnAgregarServicio.Location = new System.Drawing.Point(23, 267);
             this.btnAgregarServicio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregarServicio.Name = "btnAgregarServicio";
             this.btnAgregarServicio.Size = new System.Drawing.Size(188, 43);
@@ -88,19 +88,20 @@
             // 
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancelar.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(479, 267);
+            this.btnCancelar.Location = new System.Drawing.Point(411, 267);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(188, 43);
             this.btnCancelar.TabIndex = 19;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // VerServiciosDelUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(751, 391);
+            this.ClientSize = new System.Drawing.Size(625, 334);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregarServicio);
             this.Controls.Add(this.btnEliminar);

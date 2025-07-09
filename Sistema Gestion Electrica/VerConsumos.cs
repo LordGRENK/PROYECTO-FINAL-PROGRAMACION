@@ -32,7 +32,7 @@ namespace Sistema_Gestion_Electrica
             {
                 gvConsumosGisel.Columns["id"].Visible = false;
             }
-            tbNIS.Text = "Ingresar NIS";
+            tbNIS.Text = "Filtrar Usuarios (NIS)";
             tbNIS.ForeColor = Color.Gray;
             /*
             gvUsuariosGisel.DataSource = usuarios;
@@ -55,10 +55,7 @@ namespace Sistema_Gestion_Electrica
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Close(); // Cierra el formulario actual
-        }
+
 
         private void tbNIS_TextChanged(object sender, EventArgs e)
         {
@@ -67,7 +64,7 @@ namespace Sistema_Gestion_Electrica
 
         private void tbNIS_Enter(object sender, EventArgs e)
         {
-            if (tbNIS.Text == "Ingresar NIS")
+            if (tbNIS.Text == "Filtrar Usuarios (NIS)")
             {
                 tbNIS.Text = "";
                 tbNIS.ForeColor = Color.Black; // Opcional si el texto inicial es gris
@@ -78,7 +75,7 @@ namespace Sistema_Gestion_Electrica
         {
             if (tbNIS.Text == "")
             {
-                tbNIS.Text = "Ingresar NIS";
+                tbNIS.Text = "Filtrar Usuarios (NIS)";
                 tbNIS.ForeColor = Color.Gray; // Para que se note que es texto de ayuda
             }
         }
@@ -109,6 +106,18 @@ namespace Sistema_Gestion_Electrica
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             var conteoConsumo = new ConteoConsumoUsuario();
+            conteoConsumo.Show();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAgregarNuevoConsumo_Click(object sender, EventArgs e)
+        {
+            var conteoConsumo = new ConteoConsumoUsuario();
+            conteoConsumo.MdiParent = PaginaPrincipal.ActiveForm; // Establece el formulario padre como la página principal
             conteoConsumo.Show();
         }
     }

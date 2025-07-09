@@ -28,14 +28,10 @@ namespace Sistema_Gestion_Electrica
         {
             var servicios = _bd.ingresarServicio.ToList(); // Obtiene la lista de servicios eléctricos
             gvServiciosGisel.DataSource = servicios; // Asigna la lista de servicios al DataGridView
-
-            /*
-            gvUsuariosGisel.DataSource = usuarios;
-            gvUsuariosGisel.Columns["id"].HeaderText = "ID"; 
-            gvUsuariosGisel.Columns["nombreUsuario"].HeaderText = "Nombre de Usuario";
-            gvUsuariosGisel.Columns["direccionUsuario"].HeaderText = "Dirección";
-            gvUsuariosGisel.Columns["telefonoUsuario"].HeaderText = "Teléfono";
-            gvUsuariosGisel.Columns["emailUsuario"].HeaderText = "Email";*/
+            gvServiciosGisel.Columns["id"].HeaderText = "NIS";
+            gvServiciosGisel.Columns["usuarioServicio"].HeaderText = "Usuario";
+            gvServiciosGisel.Columns["servicioAnexado"].HeaderText = "Servicio";
+            gvServiciosGisel.Columns["voltajeServicio"].HeaderText = "Voltaje (V)";
         }
 
         
@@ -87,6 +83,11 @@ namespace Sistema_Gestion_Electrica
             var ingresarServicio = new IngresarServicioUsuario();
             ingresarServicio.MdiParent = PaginaPrincipal.ActiveForm; // <-- Añade esta línea
             ingresarServicio.Show();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

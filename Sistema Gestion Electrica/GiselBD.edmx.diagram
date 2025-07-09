@@ -8,7 +8,7 @@
         <EntityTypeShape EntityType="GISELModel.agregarServicioEléctrico" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GISELModel.agregarUsuarioTabla" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GISELModel.ConteoConsumoTabla" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GISELModel.ingresarServicio" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GISELModel.ingresarServicio" Width="1.5" PointX="8.625" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="GISELModel.PrecioAlumbradoPublico" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GISELModel.PrecioFijoComercialización" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GISELModel.PrecioKwhPorMes" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
