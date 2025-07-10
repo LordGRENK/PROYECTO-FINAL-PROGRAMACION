@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarUsuario));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tbEmailUsuario = new System.Windows.Forms.TextBox();
             this.tbDireccionUsuario = new System.Windows.Forms.TextBox();
@@ -57,7 +58,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.tbTelefonoUsuario, 1, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(41, 64);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -70,7 +71,7 @@
             // tbEmailUsuario
             // 
             this.tbEmailUsuario.Location = new System.Drawing.Point(164, 124);
-            this.tbEmailUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbEmailUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.tbEmailUsuario.Name = "tbEmailUsuario";
             this.tbEmailUsuario.Size = new System.Drawing.Size(471, 22);
             this.tbEmailUsuario.TabIndex = 12;
@@ -79,7 +80,7 @@
             // tbDireccionUsuario
             // 
             this.tbDireccionUsuario.Location = new System.Drawing.Point(164, 44);
-            this.tbDireccionUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbDireccionUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.tbDireccionUsuario.Name = "tbDireccionUsuario";
             this.tbDireccionUsuario.Size = new System.Drawing.Size(471, 22);
             this.tbDireccionUsuario.TabIndex = 11;
@@ -88,7 +89,7 @@
             // tbNombreUsuario
             // 
             this.tbNombreUsuario.Location = new System.Drawing.Point(164, 4);
-            this.tbNombreUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbNombreUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.tbNombreUsuario.Name = "tbNombreUsuario";
             this.tbNombreUsuario.Size = new System.Drawing.Size(471, 22);
             this.tbNombreUsuario.TabIndex = 10;
@@ -137,7 +138,7 @@
             // tbTelefonoUsuario
             // 
             this.tbTelefonoUsuario.Location = new System.Drawing.Point(164, 84);
-            this.tbTelefonoUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbTelefonoUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.tbTelefonoUsuario.Name = "tbTelefonoUsuario";
             this.tbTelefonoUsuario.Size = new System.Drawing.Size(471, 22);
             this.tbTelefonoUsuario.TabIndex = 9;
@@ -188,7 +189,8 @@
             this.Controls.Add(this.btnGuardarUsuario);
             this.Controls.Add(this.lbTitulo);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AgregarUsuario";
             this.Text = "AgregarUsuario";
             this.Load += new System.EventHandler(this.AgregarUsuario_Load);

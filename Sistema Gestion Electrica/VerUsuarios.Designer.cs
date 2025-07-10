@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerUsuarios));
             this.lblVerUsuario = new System.Windows.Forms.Label();
             this.gvUsuariosGisel = new System.Windows.Forms.DataGridView();
             this.btnAgregarUsuario = new System.Windows.Forms.Button();
@@ -54,7 +55,7 @@
             this.gvUsuariosGisel.AllowUserToDeleteRows = false;
             this.gvUsuariosGisel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvUsuariosGisel.Location = new System.Drawing.Point(69, 76);
-            this.gvUsuariosGisel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gvUsuariosGisel.Margin = new System.Windows.Forms.Padding(4);
             this.gvUsuariosGisel.Name = "gvUsuariosGisel";
             this.gvUsuariosGisel.ReadOnly = true;
             this.gvUsuariosGisel.RowHeadersWidth = 51;
@@ -125,7 +126,8 @@
             this.Controls.Add(this.btnAgregarUsuario);
             this.Controls.Add(this.gvUsuariosGisel);
             this.Controls.Add(this.lblVerUsuario);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "VerUsuarios";
             this.Text = "VER USUARIOS GISEL";
             this.Load += new System.EventHandler(this.EditarUsuario_Load);

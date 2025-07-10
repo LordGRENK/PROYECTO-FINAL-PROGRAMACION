@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CostoPorComercialización));
             this.lbTitulo = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
@@ -446,6 +447,7 @@
             this.Controls.Add(this.btnAgregarServicio);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lbTitulo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CostoPorComercialización";
             this.Text = "Costo FIjo por Comercialización";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalcularCostos));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblNIS = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
@@ -225,6 +226,7 @@
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.lblNIS);
             this.Controls.Add(this.lblTitulo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CalcularCostos";
             this.Text = "Facturación de Consumo Eléctrico";

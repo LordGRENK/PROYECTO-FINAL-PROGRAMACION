@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerServiciosDelUsuario));
             this.lblVerUsuario = new System.Windows.Forms.Label();
             this.gvServiciosGisel = new System.Windows.Forms.DataGridView();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -110,6 +111,7 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.gvServiciosGisel);
             this.Controls.Add(this.lblVerUsuario);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "VerServiciosDelUsuario";
             this.Text = "Servicios de Usuarios";

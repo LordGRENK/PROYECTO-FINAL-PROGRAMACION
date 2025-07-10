@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IngresarServicioElectrico));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tbIngresarServicioEléctrico = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -149,6 +150,7 @@
             this.Controls.Add(this.btnGuardarServicio);
             this.Controls.Add(this.lbTitulo);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "IngresarServicioElectrico";
             this.Text = "AñadirServicioEléctrico";

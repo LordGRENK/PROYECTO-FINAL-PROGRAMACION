@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConteoConsumoUsuario));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.nudMes = new System.Windows.Forms.NumericUpDown();
@@ -232,6 +233,7 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lbTitulo);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ConteoConsumoUsuario";
             this.Text = "ConteoConsumoUsuario";
