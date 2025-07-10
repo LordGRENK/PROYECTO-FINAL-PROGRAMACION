@@ -176,7 +176,7 @@
             this.btnAñadirConsumo.Name = "btnAñadirConsumo";
             this.btnAñadirConsumo.Size = new System.Drawing.Size(130, 81);
             this.btnAñadirConsumo.TabIndex = 35;
-            this.btnAñadirConsumo.Text = "Añadir Consumo";
+            this.btnAñadirConsumo.Text = "Guardar Consumo";
             this.btnAñadirConsumo.UseVisualStyleBackColor = true;
             this.btnAñadirConsumo.Click += new System.EventHandler(this.btnAñadirConsumo_Click);
             // 
@@ -202,7 +202,7 @@
             this.btnCalcularFacturacion.Name = "btnCalcularFacturacion";
             this.btnCalcularFacturacion.Size = new System.Drawing.Size(217, 43);
             this.btnCalcularFacturacion.TabIndex = 25;
-            this.btnCalcularFacturacion.Text = "Calcular y Guardar";
+            this.btnCalcularFacturacion.Text = "Imprimir Recibo";
             this.btnCalcularFacturacion.UseVisualStyleBackColor = true;
             this.btnCalcularFacturacion.Click += new System.EventHandler(this.btnCalcularFacturacion_Click);
             // 

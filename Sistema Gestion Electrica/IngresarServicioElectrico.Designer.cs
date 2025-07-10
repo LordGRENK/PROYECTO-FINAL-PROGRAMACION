@@ -153,7 +153,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "IngresarServicioElectrico";
-            this.Text = "AñadirServicioEléctrico";
+            this.Text = "Añadir Servicio Eléctrico";
             this.Load += new System.EventHandler(this.IngresarServicioElectrico_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

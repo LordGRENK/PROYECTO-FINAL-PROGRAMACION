@@ -141,9 +141,9 @@
             this.label4.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(3, 153);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(232, 33);
+            this.label4.Size = new System.Drawing.Size(224, 33);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Kw-h Consumidos:";
+            this.label4.Text = "kWh Consumidos:";
             // 
             // label2
             // 
@@ -236,7 +236,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ConteoConsumoUsuario";
-            this.Text = "ConteoConsumoUsuario";
+            this.Text = "Conteo Consumo Usuario";
             this.Load += new System.EventHandler(this.btnBuscarUsuario_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

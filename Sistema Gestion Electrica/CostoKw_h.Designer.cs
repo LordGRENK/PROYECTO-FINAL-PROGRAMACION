@@ -71,9 +71,9 @@
             this.lbTitulo.Font = new System.Drawing.Font("Sitka Text", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitulo.Location = new System.Drawing.Point(295, 20);
             this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(146, 33);
+            this.lbTitulo.Size = new System.Drawing.Size(138, 33);
             this.lbTitulo.TabIndex = 1;
-            this.lbTitulo.Text = "Costo Kw-h";
+            this.lbTitulo.Text = "Costo kWh";
             this.lbTitulo.Click += new System.EventHandler(this.lbTitulo_Click);
             // 
             // tableLayoutPanel1
@@ -455,7 +455,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CostoKw_h";
-            this.Text = "CostoKw_h";
+            this.Text = "Costo kWh";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMes)).EndInit();
