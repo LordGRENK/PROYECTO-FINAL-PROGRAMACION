@@ -1,18 +1,22 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace Sistema_Gestion_Electrica
 {
     public partial class ConteoConsumoUsuario : Form
     {
-        private readonly GISELEntities _bd; 
+        private readonly GISELEntities _bd;
 
         public ConteoConsumoUsuario()
         {
             InitializeComponent();
-            _bd = new GISELEntities(); 
+            _bd = new GISELEntities();
+            tbKiloWattsConsumidos.KeyPress += new KeyPressEventHandler(tbKiloWattsConsumidos_KeyPress);
+            tbNIS.KeyPress += new KeyPressEventHandler(tbNIS_KeyPress);
         }
+
         public ConteoConsumoUsuario(ConteoConsumoUsuario conteoConsumoUsuario)
         {
             InitializeComponent();
@@ -20,14 +24,11 @@ namespace Sistema_Gestion_Electrica
         }
         private void llenarCampos(ConteoConsumoUsuario conteoConsumoUsuario)
         {
-            tbNIS = conteoConsumoUsuario.tbNIS; 
-            nudAño.Text = conteoConsumoUsuario.nudAño.Text;
-            nudMes.Text = conteoConsumoUsuario.nudMes.Text;
+            tbNIS.Text = conteoConsumoUsuario.tbNIS.Text;
+            nudAño.Value = conteoConsumoUsuario.nudAño.Value;
+            nudMes.Value = conteoConsumoUsuario.nudMes.Value;
             tbKiloWattsConsumidos.Text = conteoConsumoUsuario.tbKiloWattsConsumidos.Text;
         }
-
-
-
 
         private void btnBuscarUsuario_Load(object sender, EventArgs e)
         {
@@ -36,14 +37,12 @@ namespace Sistema_Gestion_Electrica
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-           
             if (string.IsNullOrWhiteSpace(tbNIS.Text) || !int.TryParse(tbNIS.Text, out int nis))
             {
                 MessageBox.Show("Por favor, ingrese un NIS válido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-           
             var servicio = _bd.ingresarServicio.FirstOrDefault(s => s.id == nis);
 
             if (servicio != null)
@@ -54,7 +53,6 @@ namespace Sistema_Gestion_Electrica
             {
                 MessageBox.Show("El NIS no existe en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -62,39 +60,45 @@ namespace Sistema_Gestion_Electrica
 
         }
 
-
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-           
             if (string.IsNullOrWhiteSpace(tbNIS.Text) || string.IsNullOrWhiteSpace(tbKiloWattsConsumidos.Text))
             {
                 MessageBox.Show("Los campos NIS y KiloWatts Consumidos no pueden estar vacíos.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (!int.TryParse(tbNIS.Text, out int nis) || !double.TryParse(tbKiloWattsConsumidos.Text, out double kilowatts))
+            if (!int.TryParse(tbNIS.Text, out int nis) || nis < 0)
             {
-                MessageBox.Show("Por favor, ingrese valores numéricos válidos para NIS y KiloWatts.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor, ingrese un valor numérico positivo y válido para NIS.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
+            var nisExistente = _bd.ingresarServicio.Any(s => s.id == nis);
+            if (!nisExistente)
+            {
+                MessageBox.Show("El NIS ingresado no está registrado en la base de datos. Por favor, verifíquelo.", "NIS no Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; 
+            }
 
-            var año = Convert.ToInt32(nudAño.Text);
-            var mes = Convert.ToInt32(nudMes.Text);
+            if (!decimal.TryParse(tbKiloWattsConsumidos.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal kilowatts) || kilowatts < 0)
+            {
+                MessageBox.Show("Por favor, ingrese un valor numérico positivo y válido para KiloWatts.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-           
+            var año = Convert.ToInt32(nudAño.Value);
+            var mes = Convert.ToInt32(nudMes.Value);
+
             var conteoExistente = _bd.ConteoConsumoTabla.FirstOrDefault(c => c.NIS == nis && c.Año == año && c.Mes == mes);
 
             if (conteoExistente != null)
             {
-           
                 var resultado = MessageBox.Show("Ya existe un registro para este NIS, año y mes. ¿Desea reemplazarlo?", "Registro Duplicado", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resultado == DialogResult.Yes)
                 {
-           
-                    conteoExistente.KilowattsHora = kilowatts;
+                    conteoExistente.KilowattsHora = (double?)kilowatts;
                     _bd.SaveChanges();
                     MessageBox.Show("Conteo de consumo actualizado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
@@ -102,32 +106,46 @@ namespace Sistema_Gestion_Electrica
             }
             else
             {
-           
                 var conteoConsumo = new ConteoConsumoTabla()
                 {
                     NIS = nis,
                     Año = año,
                     Mes = mes,
-                    KilowattsHora = kilowatts 
+                    KilowattsHora = (double?)kilowatts
                 };
 
                 _bd.ConteoConsumoTabla.Add(conteoConsumo);
                 _bd.SaveChanges();
 
-                MessageBox.Show("Conteo de consumo agregado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Conteo de consumo agregado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
         }
 
-
-        private void btnGuardarCambios_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close(); 
+            this.Close();
+        }
+
+        private void tbKiloWattsConsumidos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbNIS_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
